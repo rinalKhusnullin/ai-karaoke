@@ -213,6 +213,7 @@ class KaraokeGenerator
             'timeline' => $this->extractTimeline($slides),
             'audio_url' => $localMinusUrl,
             'duration' => $audioDuration,
+            'track_id' => $apiResponse['track_id'] ?? null, // Передаем track_id для анализа
         ];
     }
 

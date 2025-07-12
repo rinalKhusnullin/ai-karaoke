@@ -206,6 +206,7 @@ class KaraokePlayer {
             if (result.success) {
                 this.slides = result.slides;
                 this.timeline = result.timeline;
+                this.currentTrackId = result.track_id; // Сохраняем track_id для анализа
                 this.displaySlides();
                 this.showKaraokePlayer();
 
@@ -603,151 +604,270 @@ class KaraokePlayer {
         this.recordingUrl = url;
         this.recordingBlob = blob;
 
-        this.showNotification('✅ Запись завершена! Теперь вы можете скачать свою запись.');
+        // Добавляем кнопку анализа записи
+        this.showAnalysisButton();
+
+        this.showNotification('✅ Запись завершена! Теперь вы можете скачать свою запись или отправить на анализ.');
     }
 
-    downloadRecording() {
-        if (!this.recordingUrl) {
-            alert('Нет записи для скачивания');
+    showAnalysisButton() {
+        // Проверяем, есть ли уже кнопка анализа
+        let analysisBtn = document.getElementById('analyze-recording-btn');
+        if (!analysisBtn) {
+            analysisBtn = document.createElement('button');
+            analysisBtn.id = 'analyze-recording-btn';
+            analysisBtn.className = 'ui-btn ui-btn-warning sign-ai-karaoke__button';
+            analysisBtn.textContent = '🎯 Анализ исполнения';
+            analysisBtn.style.display = 'none';
+
+            // Добавляем кнопку после кнопки скачивания
+            const downloadBtn = document.getElementById('download-recording-btn');
+            if (downloadBtn && downloadBtn.parentNode) {
+                downloadBtn.parentNode.insertBefore(analysisBtn, downloadBtn.nextSibling);
+            }
+
+            analysisBtn.addEventListener('click', () => this.analyzeRecording());
+        }
+
+        analysisBtn.style.display = 'inline-block';
+        analysisBtn.disabled = false;
+    }
+
+    async analyzeRecording() {
+        if (!this.recordingBlob || !this.currentTrackId) {
+            alert('Нет записи для анализа или отсутствует ID трека');
             return;
         }
 
-        const a = document.createElement('a');
-        a.href = this.recordingUrl;
-        a.download = `karaoke-recording-${new Date().toISOString().slice(0,19)}.webm`;
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
+        const analysisBtn = document.getElementById('analyze-recording-btn');
+        if (analysisBtn) {
+            analysisBtn.disabled = true;
+            analysisBtn.textContent = '⏳ Анализирую...';
+        }
 
-        this.showNotification('📥 Запись скачивается...');
-    }
+        try {
+            // Создаем FormData для отправки
+            const formData = new FormData();
 
-    updateMicrophoneButton() {
-        const micBtn = document.getElementById('mic-toggle-btn');
-        if (micBtn) {
-            if (this.microphoneEnabled) {
-                micBtn.textContent = '🔇 Выключить микрофон';
-                micBtn.className = 'ui-btn ui-btn-danger sign-ai-karaoke__button';
+            // Конвертируем WebM в MP3 если нужно, или отправляем как есть
+            const audioFile = new File([this.recordingBlob], 'vocal_performance.webm', {
+                type: this.recordingBlob.type
+            });
+
+            formData.append('vocal_track', audioFile);
+            formData.append('track_id', this.currentTrackId);
+
+            const response = await fetch('http://212.113.116.182:8080/api/compare_vocals', {
+                method: 'POST',
+                body: formData
+            });
+
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+
+            const result = await response.json();
+
+            if (result.success) {
+                this.showAnalysisResults(result);
             } else {
-                micBtn.textContent = '🎤 Включить микрофон';
-                micBtn.className = 'ui-btn ui-btn-secondary sign-ai-karaoke__button';
+                throw new Error('Анализ не удался');
+            }
+
+        } catch (error) {
+            console.error('Ошибка анализа записи:', error);
+            this.showNotification('❌ Ошибка при анализе записи: ' + error.message, 'error');
+        } finally {
+            if (analysisBtn) {
+                analysisBtn.disabled = false;
+                analysisBtn.textContent = '🎯 Анализ исполнения';
             }
         }
     }
 
-    updateRecordingStatus() {
-        const playBtn = document.getElementById('play-karaoke-btn');
-        const recordingIndicator = document.getElementById('recording-indicator');
+    showAnalysisResults(analysisData) {
+        // Создаем модальное окно с результатами
+        const modal = this.createAnalysisModal(analysisData);
+        document.body.appendChild(modal);
 
-        if (this.isRecording) {
-            // Показываем индикатор записи
-            if (recordingIndicator) {
-                recordingIndicator.style.display = 'inline-block';
-                recordingIndicator.textContent = '🔴 ЗАПИСЬ';
-            }
-        } else {
-            // Скрываем индикатор записи
-            if (recordingIndicator) {
-                recordingIndicator.style.display = 'none';
-            }
-        }
+        // Показываем модальное окно
+        setTimeout(() => {
+            modal.style.display = 'block';
+            modal.style.opacity = '1';
+        }, 100);
     }
 
-    togglePlayback() {
-        if (!this.audioElement) {
-            alert('Сначала сгенерируйте караоке');
-            return;
-        }
+    createAnalysisModal(data) {
+        const modal = document.createElement('div');
+        modal.className = 'analysis-modal';
+        modal.id = 'analysis-modal';
 
-        if (this.isPlaying) {
-            this.audioElement.pause();
-            this.isPlaying = false;
-            document.getElementById('play-karaoke-btn').textContent = 'Воспроизвести';
+        const comparison = data.comparison_analysis;
+        const processingInfo = data.processing_info;
 
-            // Останавливаем запись при паузе
-            if (this.isRecording) {
-                this.stopRecording();
-            }
-        } else {
-            this.audioElement.play();
-            this.isPlaying = true;
-            document.getElementById('play-karaoke-btn').textContent = 'Пауза';
+        // Определяем цвет оценки на основе общего балла
+        const overallScore = comparison.overall_score || 0;
+        let scoreColor = '#dc3545'; // красный
+        if (overallScore >= 80) scoreColor = '#28a745'; // зеленый
+        else if (overallScore >= 60) scoreColor = '#ffc107'; // желтый
+        else if (overallScore >= 40) scoreColor = '#fd7e14'; // оранжевый
 
-            // Начинаем запись при воспроизведении, если микрофон включен
-            if (this.microphoneEnabled && !this.isRecording) {
-                this.startRecording();
-            }
-        }
-    }
-
-    onAudioEnded() {
-        this.isPlaying = false;
-        this.showSlide(0); // Показываем первый слайд
-        document.getElementById('play-karaoke-btn').textContent = 'Воспроизвести';
-
-        // Останавливаем запись при окончании песни
-        if (this.isRecording) {
-            this.stopRecording();
-        }
-    }
-
-    showLoading(show) {
-        const loader = document.getElementById('loading-overlay');
-        if (loader) {
-            loader.style.display = show ? 'block' : 'none';
-        }
-    }
-
-    formatTime(seconds) {
-        if (isNaN(seconds)) return '0:00';
-        const mins = Math.floor(seconds / 60);
-        const secs = Math.floor(seconds % 60);
-        return `${mins}:${secs.toString().padStart(2, '0')}`;
-    }
-
-    showNotification(message) {
-        // Создаем уведомление
-        const notification = document.createElement('div');
-        notification.className = 'karaoke-notification';
-        notification.textContent = message;
-
-        // Добавляем стили
-        notification.style.cssText = `
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background: #28a745;
-            color: white;
-            padding: 15px 20px;
-            border-radius: 5px;
-            z-index: 10000;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            font-family: inherit;
-            font-size: 14px;
-            max-width: 300px;
-            opacity: 0;
-            transform: translateX(100%);
-            transition: all 0.3s ease;
+        modal.innerHTML = `
+            <div class="analysis-modal__content">
+                <div class="analysis-modal__header">
+                    <h2 class="analysis-modal__title">🎤 Результаты анализа вокала</h2>
+                    <button class="analysis-modal__close" onclick="this.closest('.analysis-modal').remove()">&times;</button>
+                </div>
+                
+                <div class="analysis-modal__body">
+                    <!-- Общая оценка -->
+                    <div class="analysis-section">
+                        <div class="overall-score" style="background: linear-gradient(135deg, ${scoreColor}20, ${scoreColor}10);">
+                            <div class="score-circle" style="border-color: ${scoreColor};">
+                                <span class="score-number" style="color: ${scoreColor};">${overallScore}</span>
+                                <span class="score-label">из 100</span>
+                            </div>
+                            <div class="score-description">
+                                <h3>Общая оценка исполнения</h3>
+                                <p>${this.getScoreDescription(overallScore)}</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Детальный анализ -->
+                    <div class="analysis-section">
+                        <h3>📊 Детальный анализ</h3>
+                        <div class="analysis-metrics">
+                            ${this.renderMetric('🎵 Точность высоты тона', comparison.pitch_accuracy || 'N/A')}
+                            ${this.renderMetric('⏱️ Синхронизация по времени', comparison.timing_accuracy || 'N/A')}
+                            ${this.renderMetric('🔊 Качество звука', comparison.audio_quality || 'N/A')}
+                            ${this.renderMetric('🎭 Эмоциональная передача', comparison.emotion_match || 'N/A')}
+                        </div>
+                    </div>
+                    
+                    <!-- Транскрипция -->
+                    ${data.new_vocal_transcript ? `
+                    <div class="analysis-section">
+                        <h3>📝 Распознанный текст</h3>
+                        <div class="transcript-box">
+                            ${data.new_vocal_transcript}
+                        </div>
+                    </div>
+                    ` : ''}
+                    
+                    <!-- Рекомендации -->
+                    ${comparison.recommendations ? `
+                    <div class="analysis-section">
+                        <h3>💡 Рекомендации</h3>
+                        <ul class="recommendations-list">
+                            ${comparison.recommendations.map(rec => `<li>${rec}</li>`).join('')}
+                        </ul>
+                    </div>
+                    ` : ''}
+                    
+                    <!-- Кнопки действий -->
+                    <div class="analysis-actions">
+                        <button class="ui-btn ui-btn-success" onclick="window.karaokePlayer.downloadMixedTrack('${data.mixed_track_url}')">
+                            🎵 Скачать финальную запись
+                        </button>
+                        <button class="ui-btn ui-btn-info" onclick="window.karaokePlayer.downloadVocalTrack('${data.new_vocal_url}')">
+                            🎤 Скачать только вокал
+                        </button>
+                        <button class="ui-btn ui-btn-secondary" onclick="this.closest('.analysis-modal').remove()">
+                            Закрыть
+                        </button>
+                    </div>
+                    
+                    <!-- Информация о обработке -->
+                    <div class="processing-info">
+                        <small>
+                            Файл: ${processingInfo.original_filename} 
+                            (${processingInfo.new_vocal_file_size_mb} МБ)
+                        </small>
+                    </div>
+                </div>
+            </div>
         `;
 
-        document.body.appendChild(notification);
+        return modal;
+    }
 
-        // Анимация появления
-        setTimeout(() => {
-            notification.style.opacity = '1';
-            notification.style.transform = 'translateX(0)';
-        }, 100);
+    renderMetric(label, value) {
+        let numericValue = parseFloat(value);
+        let displayValue = value;
+        let barWidth = 0;
+        let barColor = '#6c757d';
 
-        // Удаляем через 4 секунды
-        setTimeout(() => {
-            notification.style.opacity = '0';
-            notification.style.transform = 'translateX(100%)';
-            setTimeout(() => {
-                if (notification.parentNode) {
-                    notification.parentNode.removeChild(notification);
-                }
-            }, 300);
-        }, 4000);
+        if (!isNaN(numericValue)) {
+            barWidth = numericValue;
+            displayValue = `${numericValue}%`;
+
+            if (numericValue >= 80) barColor = '#28a745';
+            else if (numericValue >= 60) barColor = '#ffc107';
+            else if (numericValue >= 40) barColor = '#fd7e14';
+            else barColor = '#dc3545';
+        }
+
+        return `
+            <div class="metric-item">
+                <div class="metric-label">${label}</div>
+                <div class="metric-value">${displayValue}</div>
+                <div class="metric-bar">
+                    <div class="metric-fill" style="width: ${barWidth}%; background-color: ${barColor};"></div>
+                </div>
+            </div>
+        `;
+    }
+
+    getScoreDescription(score) {
+        if (score >= 90) return 'Превосходное исполнение! 🌟';
+        if (score >= 80) return 'Отличное исполнение! 🎉';
+        if (score >= 70) return 'Хорошее исполнение! 👏';
+        if (score >= 60) return 'Неплохое исполнение! 👍';
+        if (score >= 40) return 'Есть над чем поработать 💪';
+        return 'Продолжайте тренироваться! 🎯';
+    }
+
+    async downloadMixedTrack(url) {
+        try {
+            this.showNotification('📥 Скачивание финальной записи...');
+
+            const response = await fetch(url);
+            const blob = await response.blob();
+
+            const a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = `karaoke-final-${new Date().toISOString().slice(0,19)}.mp3`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+
+            this.showNotification('✅ Финальная запись скачана!');
+        } catch (error) {
+            console.error('Ошибка скачивания:', error);
+            this.showNotification('❌ Ошибка скачивания файла', 'error');
+        }
+    }
+
+    async downloadVocalTrack(url) {
+        try {
+            this.showNotification('📥 Скачивание вокальной дорожки...');
+
+            const response = await fetch(url);
+            const blob = await response.blob();
+
+            const a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = `karaoke-vocal-${new Date().toISOString().slice(0,19)}.mp3`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+
+            this.showNotification('✅ Вокальная дорожка скачана!');
+        } catch (error) {
+            console.error('Ошибка скачивания:', error);
+            this.showNotification('❌ Ошибка скачивания файла', 'error');
+        }
     }
 }
 
