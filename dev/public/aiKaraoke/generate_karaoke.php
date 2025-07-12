@@ -34,7 +34,7 @@ class KaraokeGenerator
         AIKaraokeConfig::debugLog('Karaoke Generator initialized', [
             'api_key_configured' => AIKaraokeConfig::isAPIKeyConfigured(),
             'audio_api' => $this->audioProcessAPI,
-            'directories' => $directories
+            'directories' => $directories,
         ]);
     }
 
@@ -83,27 +83,6 @@ class KaraokeGenerator
 
 			// Сохраняем информацию о песне в БД
 	        $duration = $karaokeData['duration'];
-	        $songId = $this->saveSongToDatabase($userId, $_FILES['minus_file']['name'], $minusPath, $title, $artist, $duration);
-
-	        if ($songId) {
-		        // Сохраняем версии песни
-		        $this->saveSongVersions($songId, $minusPath, $plusPath);
-
-		        // Сохраняем текст песни с таймингами
-		        $lyricsData = [];
-		        foreach ($karaokeData['slides'] as $index => $slide) {
-			        $lyricsData[] = [
-				        'line_number' => $index,
-				        'text' => $slide['text'],
-				        'start_time' => $slide['start'],
-				        'end_time' => $slide['end']
-			        ];
-		        }
-		        $this->saveLyricsToDatabase($songId, $lyricsData);
-
-		        // Добавляем ID песни в ответ
-		        $karaokeData['song_id'] = $songId;
-	        }
 
             return $this->successResponse($karaokeData);
 
@@ -226,14 +205,14 @@ class KaraokeGenerator
 
         AIKaraokeConfig::debugLog('Karaoke generation completed', [
             'slides_count' => count($slides),
-            'duration' => $audioDuration
+            'duration' => $audioDuration,
         ]);
 
         return [
             'slides' => $slides,
             'timeline' => $this->extractTimeline($slides),
             'audio_url' => $localMinusUrl,
-            'duration' => $audioDuration
+            'duration' => $audioDuration,
         ];
     }
 
@@ -360,7 +339,7 @@ class KaraokeGenerator
             'text' => implode("\n", $texts),
             'start' => $minStart,
             'end' => $maxEnd,
-            'image' => null // Будет заполнено позже
+            'image' => null, // Будет заполнено позже
         ];
     }
 
@@ -370,7 +349,7 @@ class KaraokeGenerator
         foreach ($slides as $slide) {
             $timeline[] = [
                 'start' => $slide['start'],
-                'end' => $slide['end']
+                'end' => $slide['end'],
             ];
         }
         return $timeline;
@@ -438,15 +417,15 @@ class KaraokeGenerator
             'messages' => [
                 [
                     'role' => 'system',
-                    'content' => 'You are an expert in analyzing musical texts. Determine theme and mood for creating visual images. Answer briefly in English, maximum 50 words.'
+                    'content' => 'You are an expert in analyzing musical texts. Determine theme and mood for creating visual images. Answer briefly in English, maximum 50 words.',
                 ],
                 [
                     'role' => 'user',
-                    'content' => $prompt
-                ]
+                    'content' => $prompt,
+                ],
             ],
             'max_tokens' => 100,
-            'temperature' => AIKaraokeConfig::GPT_TEMPERATURE
+            'temperature' => AIKaraokeConfig::GPT_TEMPERATURE,
         ];
 
         $ch = curl_init();
@@ -456,7 +435,7 @@ class KaraokeGenerator
         curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
         curl_setopt($ch, CURLOPT_HTTPHEADER, [
             'Content-Type: application/json',
-            'Authorization: Bearer ' . AIKaraokeConfig::getOpenAIKey()
+            'Authorization: Bearer ' . AIKaraokeConfig::getOpenAIKey(),
         ]);
 
         $response = curl_exec($ch);
@@ -492,7 +471,7 @@ class KaraokeGenerator
             'n' => 1,
             'size' => AIKaraokeConfig::DALLE_SIZE,
             'quality' => AIKaraokeConfig::DALLE_QUALITY,
-            'style' => AIKaraokeConfig::DALLE_STYLE
+            'style' => AIKaraokeConfig::DALLE_STYLE,
         ];
 
         $ch = curl_init();
@@ -502,7 +481,7 @@ class KaraokeGenerator
         curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
         curl_setopt($ch, CURLOPT_HTTPHEADER, [
             'Content-Type: application/json',
-            'Authorization: Bearer ' . AIKaraokeConfig::getOpenAIKey()
+            'Authorization: Bearer ' . AIKaraokeConfig::getOpenAIKey(),
         ]);
 
         $response = curl_exec($ch);
@@ -589,7 +568,7 @@ class KaraokeGenerator
             'путь' => 'path',
             'осень' => 'autumn',
             'цвета' => 'colors',
-            'музыкальная атмосфера' => 'musical atmosphere'
+            'музыкальная атмосфера' => 'musical atmosphere',
         ];
 
         $englishText = $text;
@@ -614,8 +593,8 @@ class KaraokeGenerator
             $context = stream_context_create([
                 'http' => [
                     'timeout' => 30,
-                    'user_agent' => 'Mozilla/5.0 (compatible; AI Karaoke Generator)'
-                ]
+                    'user_agent' => 'Mozilla/5.0 (compatible; AI Karaoke Generator)',
+                ],
             ]);
 
             $imageData = file_get_contents($imageUrl, false, $context);
@@ -709,7 +688,7 @@ class KaraokeGenerator
             [251, 146, 60],   // Orange
             [34, 197, 94],    // Green
             [168, 85, 247],   // Violet
-            [14, 165, 233]    // Sky blue
+            [14, 165, 233],    // Sky blue
         ];
 
         $colorIndex = $index % count($colors);
@@ -749,7 +728,7 @@ class KaraokeGenerator
                 $points = array(
                     $centerX, $centerY - 40,
                     $centerX - 35, $centerY + 20,
-                    $centerX + 35, $centerY + 20
+                    $centerX + 35, $centerY + 20,
                 );
                 imagefilledpolygon($image, $points, 3, $white);
                 break;
@@ -763,7 +742,7 @@ class KaraokeGenerator
                     $centerX, $centerY - 40,
                     $centerX + 40, $centerY,
                     $centerX, $centerY + 40,
-                    $centerX - 40, $centerY
+                    $centerX - 40, $centerY,
                 );
                 imagefilledpolygon($image, $points, 4, $white);
                 break;
@@ -804,54 +783,24 @@ class KaraokeGenerator
         return null;
     }
 
-	private function saveSongToDatabase($userId, $originalFilename, $storagePath, $title = null, $artist = null, $duration = null)
-	{
-		try {
-			$songData = [
-				'USER_ID' => $userId,
-				'ORIGINAL_FILENAME' => $originalFilename,
-				'STORAGE_PATH' => $storagePath,
-				'TITLE' => $title,
-				'ARTIST' => $artist,
-				'DURATION' => $duration,
-				'STATUS' => 'processed'
-			];
-
-			$result = \Bitrix\AIKaraoke\Table\SongsTable::add($songData);
-
-			if ($result->isSuccess()) {
-				$songId = $result->getId();
-				$this->debugLog("Song saved to database with ID: $songId");
-				return $songId;
-			} else {
-				$errors = implode(', ', $result->getErrorMessages());
-				$this->debugLog("Failed to save song to database: $errors");
-				return false;
-			}
-		} catch (\Exception $e) {
-			$this->debugLog("Exception when saving song to database: " . $e->getMessage());
-			return false;
-		}
-	}
-
 	private function saveSongVersions($songId, $minusPath, $plusPath, $lyricsPath = null)
 	{
 		$versions = [
 			[
 				'SONG_ID' => $songId,
 				'VERSION_TYPE' => 'original',
-				'STORAGE_PATH' => $minusPath
+				'STORAGE_PATH' => $minusPath,
 			],
 			[
 				'SONG_ID' => $songId,
 				'VERSION_TYPE' => 'instrumental',
-				'STORAGE_PATH' => $minusPath
+				'STORAGE_PATH' => $minusPath,
 			],
 			[
 				'SONG_ID' => $songId,
 				'VERSION_TYPE' => 'vocals',
-				'STORAGE_PATH' => $plusPath
-			]
+				'STORAGE_PATH' => $plusPath,
+			],
 		];
 
 		if ($lyricsPath) {
@@ -859,51 +808,14 @@ class KaraokeGenerator
 				'SONG_ID' => $songId,
 				'VERSION_TYPE' => 'lyrics',
 				'STORAGE_PATH' => $lyricsPath,
-				'METADATA' => json_encode(['format' => 'json'])
+				'METADATA' => json_encode(['format' => 'json']),
 			];
 		}
 
-		foreach ($versions as $versionData) {
-			try {
-				$result = \Bitrix\AiKaraoke\Table\SongVersionsTable::add($versionData);
-				if (!$result->isSuccess()) {
-					$errors = implode(', ', $result->getErrorMessages());
-					$this->debugLog("Failed to save song version: $errors");
-				}
-			} catch (\Exception $e) {
-				$this->debugLog("Exception when saving song version: " . $e->getMessage());
-			}
-		}
 	}
 
-	private function saveLyricsToDatabase($songId, $lyricsData)
-	{
-		if (empty($lyricsData)) {
-			return false;
-		}
 
-		try {
-			foreach ($lyricsData as $line) {
-				$lyricData = [
-					'SONG_ID' => $songId,
-					'LINE_NUMBER' => $line['line_number'],
-					'TEXT' => $line['text'],
-					'START_TIME' => $line['start_time'],
-					'END_TIME' => $line['end_time']
-				];
 
-				$result = \Bitrix\AiKaraoke\Table\LyricsTable::add($lyricData);
-				if (!$result->isSuccess()) {
-					$errors = implode(', ', $result->getErrorMessages());
-					$this->debugLog("Failed to save lyric line: $errors");
-				}
-			}
-			return true;
-		} catch (\Exception $e) {
-			$this->debugLog("Exception when saving lyrics: " . $e->getMessage());
-			return false;
-		}
-	}
 }
 
 // Обработка запроса
