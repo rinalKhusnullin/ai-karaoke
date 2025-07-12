@@ -5,50 +5,31 @@ use Bitrix\Main\Error;
 use Bitrix\Main\Web\Json;
 
 // НЕ подключаем header и footer для чистого JSON ответа
-// require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
-
-// Подключаем только необходимые компоненты Битрикс
 require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/modules/main/include/prolog_before.php");
+
+// Подключаем конфигурацию
+require_once __DIR__ . '/config.php';
 
 \Bitrix\Main\Loader::requireModule('sign');
 
 class KaraokeGenerator
 {
-    private $openaiApiKey;
     private $uploadDir;
     private $imagesDir;
 
     public function __construct()
     {
-        // Получаем API ключ из настроек Битрикс
-        $this->openaiApiKey = \Bitrix\Main\Config\Option::get('sign', 'openai_api_key', '');
+        // Используем централизованную конфигурацию
+        $this->uploadDir = AIKaraokeConfig::getUploadDir();
+        $this->imagesDir = AIKaraokeConfig::getImagesDir();
 
-        // Если ключ не найден в настройках, используем захардкоженный
-        if (empty($this->openaiApiKey)) {
-            $this->openaiApiKey = '';
-        }
+        // Создаем директории через конфигурацию
+        $directories = AIKaraokeConfig::createDirectories();
 
-        // Логируем состояние API ключа (без показа самого ключа)
-        $this->debugLog('API Key present: ' . (!empty($this->openaiApiKey) ? 'YES' : 'NO'));
-        $this->debugLog('API Key length: ' . strlen($this->openaiApiKey));
-
-        $this->uploadDir = $_SERVER["DOCUMENT_ROOT"] . "/upload/aikaraoke/";
-        // Используем локальную директорию проекта для изображений
-        $this->imagesDir = __DIR__ . "/images/";
-
-        if (!is_dir($this->uploadDir)) {
-            mkdir($this->uploadDir, 0755, true);
-            $this->debugLog('Created upload directory: ' . $this->uploadDir);
-        }
-
-        if (!is_dir($this->imagesDir)) {
-            mkdir($this->imagesDir, 0755, true);
-            $this->debugLog('Created images directory: ' . $this->imagesDir);
-        }
-
-        $this->debugLog('Upload dir: ' . $this->uploadDir);
-        $this->debugLog('Images dir: ' . $this->imagesDir);
-        $this->debugLog('Images dir writable: ' . (is_writable($this->imagesDir) ? 'YES' : 'NO'));
+        AIKaraokeConfig::debugLog('Karaoke Generator initialized', [
+            'api_key_configured' => AIKaraokeConfig::isAPIKeyConfigured(),
+            'directories' => $directories
+        ]);
     }
 
     private function debugLog($message)
@@ -165,8 +146,12 @@ class KaraokeGenerator
         ];
     }
 
-    private function groupLinesIntoSlides($lyricsLines, $linesPerSlide = 3)
+    private function groupLinesIntoSlides($lyricsLines, $linesPerSlide = null)
     {
+        if ($linesPerSlide === null) {
+            $linesPerSlide = AIKaraokeConfig::LINES_PER_SLIDE;
+        }
+
         $slides = [];
         $currentSlide = [];
 
@@ -190,10 +175,10 @@ class KaraokeGenerator
 
     private function generateImagesForSlides($lyricsLines)
     {
-        $this->debugLog('Starting image generation for ' . count($lyricsLines) . ' slides');
+        AIKaraokeConfig::debugLog('Starting image generation for ' . count($lyricsLines) . ' slides');
 
-        if (empty($this->openaiApiKey)) {
-            $this->debugLog('No OpenAI API key, skipping image generation');
+        if (!AIKaraokeConfig::isAPIKeyConfigured()) {
+            AIKaraokeConfig::debugLog('No OpenAI API key configured, skipping image generation');
             return [];
         }
 
@@ -202,30 +187,30 @@ class KaraokeGenerator
 
         // Генерируем общую тему песни для контекста
         $songTheme = $this->analyzeSongTheme($fullLyrics);
-        $this->debugLog('Song theme detected: ' . $songTheme);
+        AIKaraokeConfig::debugLog('Song theme detected: ' . $songTheme);
 
         foreach ($lyricsLines as $index => $line) {
-            $this->debugLog('Generating image for slide ' . $index . ': "' . $line . '"');
+            AIKaraokeConfig::debugLog('Generating image for slide ' . $index . ': "' . $line . '"');
 
             $imageUrl = $this->generateImageForLine($line, $songTheme, $index);
             if ($imageUrl) {
                 $images[$index] = $imageUrl;
-                $this->debugLog('Image generated successfully for slide ' . $index . ': ' . $imageUrl);
+                AIKaraokeConfig::debugLog('Image generated successfully for slide ' . $index . ': ' . $imageUrl);
             } else {
-                $this->debugLog('Failed to generate image for slide ' . $index);
+                AIKaraokeConfig::debugLog('Failed to generate image for slide ' . $index);
             }
 
-            // Небольшая пауза между запросами к API
-            usleep(500000); // 0.5 секунды
+            // Используем задержку из конфигурации
+            usleep(AIKaraokeConfig::API_REQUEST_DELAY);
         }
 
-        $this->debugLog('Image generation completed. Generated: ' . count($images) . ' images');
+        AIKaraokeConfig::debugLog('Image generation completed. Generated: ' . count($images) . ' images');
         return $images;
     }
 
     private function analyzeSongTheme($fullLyrics)
     {
-        if (empty($this->openaiApiKey)) {
+        if (!AIKaraokeConfig::isAPIKeyConfigured()) {
             return "musical atmosphere";
         }
 
@@ -233,7 +218,7 @@ class KaraokeGenerator
         $prompt = "Analyze the song lyrics and determine the main theme, mood and visual style. Describe in a few key words for image generation:\n\n" . $fullLyrics;
 
         $data = [
-            'model' => 'gpt-4',
+            'model' => AIKaraokeConfig::GPT_MODEL,
             'messages' => [
                 [
                     'role' => 'system',
@@ -244,8 +229,8 @@ class KaraokeGenerator
                     'content' => $prompt
                 ]
             ],
-            'max_tokens' => 100, // Уменьшаем лимит для краткого ответа
-            'temperature' => 0.3
+            'max_tokens' => 100,
+            'temperature' => AIKaraokeConfig::GPT_TEMPERATURE
         ];
 
         $ch = curl_init();
@@ -255,7 +240,7 @@ class KaraokeGenerator
         curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
         curl_setopt($ch, CURLOPT_HTTPHEADER, [
             'Content-Type: application/json',
-            'Authorization: Bearer ' . $this->openaiApiKey
+            'Authorization: Bearer ' . AIKaraokeConfig::getOpenAIKey()
         ]);
 
         $response = curl_exec($ch);
@@ -266,7 +251,7 @@ class KaraokeGenerator
             $result = json_decode($response, true);
             if (isset($result['choices'][0]['message']['content'])) {
                 $theme = trim($result['choices'][0]['message']['content']);
-                $this->debugLog('Full theme response: ' . $theme);
+                AIKaraokeConfig::debugLog('Full theme response: ' . $theme);
                 return $theme;
             }
         }
@@ -276,22 +261,22 @@ class KaraokeGenerator
 
     private function generateImageForLine($line, $songTheme, $index)
     {
-        if (empty($this->openaiApiKey)) {
-            $this->debugLog('No API key for image generation');
+        if (!AIKaraokeConfig::isAPIKeyConfigured()) {
+            AIKaraokeConfig::debugLog('No API key for image generation');
             return $this->generatePlaceholderImage($line, $index);
         }
 
         // Создаем промпт для генерации изображения
         $prompt = $this->createImagePrompt($line, $songTheme);
-        $this->debugLog('Image prompt for slide ' . $index . ': ' . $prompt);
+        AIKaraokeConfig::debugLog('Image prompt for slide ' . $index . ': ' . $prompt);
 
         $data = [
-            'model' => 'dall-e-3',
+            'model' => AIKaraokeConfig::DALLE_MODEL,
             'prompt' => $prompt,
             'n' => 1,
-            'size' => '1024x1024',
-            'quality' => 'standard',
-            'style' => 'vivid'
+            'size' => AIKaraokeConfig::DALLE_SIZE,
+            'quality' => AIKaraokeConfig::DALLE_QUALITY,
+            'style' => AIKaraokeConfig::DALLE_STYLE
         ];
 
         $ch = curl_init();
@@ -301,7 +286,7 @@ class KaraokeGenerator
         curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
         curl_setopt($ch, CURLOPT_HTTPHEADER, [
             'Content-Type: application/json',
-            'Authorization: Bearer ' . $this->openaiApiKey
+            'Authorization: Bearer ' . AIKaraokeConfig::getOpenAIKey()
         ]);
 
         $response = curl_exec($ch);
@@ -309,32 +294,32 @@ class KaraokeGenerator
         $curlError = curl_error($ch);
         curl_close($ch);
 
-        $this->debugLog('DALL-E API response code: ' . $httpCode);
+        AIKaraokeConfig::debugLog('DALL-E API response code: ' . $httpCode);
 
         if (!empty($curlError)) {
-            $this->debugLog('CURL error: ' . $curlError);
+            AIKaraokeConfig::debugLog('CURL error: ' . $curlError);
         }
 
         if ($httpCode === 200) {
             $result = json_decode($response, true);
             if (isset($result['data'][0]['url'])) {
                 $imageUrl = $result['data'][0]['url'];
-                $this->debugLog('Image URL received: ' . $imageUrl);
+                AIKaraokeConfig::debugLog('Image URL received: ' . $imageUrl);
 
                 // Скачиваем и сохраняем изображение локально
                 $localUrl = $this->saveImageLocally($imageUrl, $index);
                 if ($localUrl) {
-                    $this->debugLog('Image saved locally: ' . $localUrl);
+                    AIKaraokeConfig::debugLog('Image saved locally: ' . $localUrl);
                     return $localUrl;
                 } else {
-                    $this->debugLog('Failed to save image locally');
+                    AIKaraokeConfig::debugLog('Failed to save image locally');
                 }
             } else {
-                $this->debugLog('No image URL in response: ' . $response);
+                AIKaraokeConfig::debugLog('No image URL in response: ' . $response);
             }
         } else {
             // Логируем ошибку генерации изображения
-            $this->debugLog('Image generation failed for line: "' . $line . '". HTTP Code: ' . $httpCode . '. Response: ' . $response);
+            AIKaraokeConfig::debugLog('Image generation failed for line: "' . $line . '". HTTP Code: ' . $httpCode . '. Response: ' . $response);
         }
 
         // Если DALL-E не сработал, создаем placeholder
@@ -407,7 +392,7 @@ class KaraokeGenerator
     private function saveImageLocally($imageUrl, $index)
     {
         try {
-            $this->debugLog('Attempting to download image from: ' . $imageUrl);
+            AIKaraokeConfig::debugLog('Attempting to download image from: ' . $imageUrl);
 
             // Создаем контекст для file_get_contents с таймаутом
             $context = stream_context_create([
@@ -419,32 +404,32 @@ class KaraokeGenerator
 
             $imageData = file_get_contents($imageUrl, false, $context);
             if ($imageData === false) {
-                $this->debugLog('Failed to download image from URL');
+                AIKaraokeConfig::debugLog('Failed to download image from URL');
                 return null;
             }
 
-            $this->debugLog('Image downloaded, size: ' . strlen($imageData) . ' bytes');
+            AIKaraokeConfig::debugLog('Image downloaded, size: ' . strlen($imageData) . ' bytes');
 
             $filename = 'slide_' . $index . '_' . time() . '.png';
             $filepath = $this->imagesDir . $filename;
 
-            $this->debugLog('Saving image to: ' . $filepath);
+            AIKaraokeConfig::debugLog('Saving image to: ' . $filepath);
 
             // Проверяем права на запись в директорию
             if (!is_writable($this->imagesDir)) {
-                $this->debugLog('Images directory is not writable: ' . $this->imagesDir);
+                AIKaraokeConfig::debugLog('Images directory is not writable: ' . $this->imagesDir);
                 return null;
             }
 
             if (file_put_contents($filepath, $imageData)) {
                 $relativeUrl = $this->getRelativeUrl($filepath);
-                $this->debugLog('Image saved successfully. Relative URL: ' . $relativeUrl);
+                AIKaraokeConfig::debugLog('Image saved successfully. Relative URL: ' . $relativeUrl);
                 return $relativeUrl;
             } else {
-                $this->debugLog('Failed to write image file');
+                AIKaraokeConfig::debugLog('Failed to write image file');
             }
         } catch (Exception $e) {
-            $this->debugLog('Exception in saveImageLocally: ' . $e->getMessage());
+            AIKaraokeConfig::debugLog('Exception in saveImageLocally: ' . $e->getMessage());
         }
 
         return null;
@@ -493,7 +478,7 @@ class KaraokeGenerator
 
     private function generateTimingsWithOpenAI($lyricsLines, $audioDuration)
     {
-        if (empty($this->openaiApiKey)) {
+        if (!AIKaraokeConfig::isAPIKeyConfigured()) {
             return false;
         }
 
@@ -504,7 +489,7 @@ class KaraokeGenerator
         $prompt .= "Учитывай естественные паузы и ритм песни.";
 
         $data = [
-            'model' => 'gpt-4',
+            'model' => AIKaraokeConfig::GPT_MODEL,
             'messages' => [
                 [
                     'role' => 'system',
@@ -515,8 +500,8 @@ class KaraokeGenerator
                     'content' => $prompt
                 ]
             ],
-            'max_tokens' => 1000,
-            'temperature' => 0.3
+            'max_tokens' => AIKaraokeConfig::GPT_MAX_TOKENS,
+            'temperature' => AIKaraokeConfig::GPT_TEMPERATURE
         ];
 
         $ch = curl_init();
@@ -526,7 +511,7 @@ class KaraokeGenerator
         curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
         curl_setopt($ch, CURLOPT_HTTPHEADER, [
             'Content-Type: application/json',
-            'Authorization: Bearer ' . $this->openaiApiKey
+            'Authorization: Bearer ' . AIKaraokeConfig::getOpenAIKey()
         ]);
 
         $response = curl_exec($ch);
@@ -573,7 +558,7 @@ class KaraokeGenerator
     private function generatePlaceholderImage($line, $index)
     {
         // Создаем красивую заглушку с градиентом и текстом
-        $this->debugLog('Generating placeholder image for slide ' . $index);
+        AIKaraokeConfig::debugLog('Generating placeholder image for slide ' . $index);
 
         // Создаем изображение 512x512
         $image = imagecreatetruecolor(512, 512);
@@ -674,7 +659,7 @@ class KaraokeGenerator
         if (imagepng($image, $filepath)) {
             imagedestroy($image);
             $relativeUrl = $this->getRelativeUrl($filepath);
-            $this->debugLog('Placeholder image created: ' . $relativeUrl);
+            AIKaraokeConfig::debugLog('Placeholder image created: ' . $relativeUrl);
             return $relativeUrl;
         }
 
@@ -695,4 +680,3 @@ try {
 // НЕ подключаем footer для чистого JSON ответа
 // require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php");
 ?>
-

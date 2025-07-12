@@ -258,8 +258,9 @@ class KaraokePlayer {
 
         container.innerHTML = '';
 
-        console.log('AI Karaoke Debug: Displaying', this.slides.length, 'slides');
+        console.log('AI Karaoke Debug: Displaying', this.slides.length, 'slides in big format');
 
+        // Создаем основные большие слайды
         this.slides.forEach((slide, index) => {
             console.log('AI Karaoke Debug: Slide', index, 'data:', {
                 text: slide.text,
@@ -272,94 +273,143 @@ class KaraokePlayer {
             slideElement.className = 'karaoke-slide';
             slideElement.id = `slide-${index}`;
 
-            // Создаем HTML для слайда с изображением
-            let imageHtml = '';
+            // Устанавливаем фоновое изображение
             if (slide.image) {
-                imageHtml = `<img src="${slide.image}" alt="Slide ${index + 1}" class="slide-image" loading="lazy" 
-                    onerror="console.error('AI Karaoke Debug: Failed to load image for slide ${index}:', '${slide.image}'); this.style.display='none';"
-                    onload="console.log('AI Karaoke Debug: Image loaded successfully for slide ${index}');">`;
+                slideElement.style.backgroundImage = `url(${slide.image})`;
             } else {
-                console.log('AI Karaoke Debug: No image for slide', index, '- showing placeholder');
-                imageHtml = `<div class="slide-placeholder">🎵<br>Изображение<br>не найдено</div>`;
+                slideElement.style.background = 'linear-gradient(135deg, #1a1a2e, #16213e)';
             }
 
-            // Преобразуем переносы строк в HTML <br> теги для корректного отображения
+            // Преобразуем переносы строк в HTML <br> теги
             const formattedText = slide.text.replace(/\n/g, '<br>');
 
             slideElement.innerHTML = `
-                ${imageHtml}
                 <div class="slide-content">
                     <div class="slide-text">${formattedText}</div>
                     <div class="slide-timing">${this.formatTime(slide.start)} - ${this.formatTime(slide.end)}</div>
                 </div>
             `;
 
-            // Добавляем возможность перехода к слайду по клику
+            // Только обычный клик для перехода к времени, БЕЗ двойного клика
             slideElement.addEventListener('click', () => {
                 if (this.audioElement) {
                     this.audioElement.currentTime = slide.start;
                 }
             });
 
-            // Добавляем возможность полноэкранного просмотра по двойному клике на изображение
-            const imageElement = slideElement.querySelector('.slide-image');
-            if (imageElement) {
-                imageElement.addEventListener('dblclick', (e) => {
-                    e.stopPropagation();
-                    this.showFullscreenSlide(slide, index);
-                });
-            }
-
             container.appendChild(slideElement);
         });
 
-        console.log('AI Karaoke Debug: All slides added to container');
+        // Добавляем навигационные точки
+        this.createSlideNavigation(container);
+
+        // Добавляем миниатюры
+        this.createSlideThumbnails();
+
+        // Показываем первый слайд
+        this.showSlide(0);
+
+        console.log('AI Karaoke Debug: All slides added to container in big format');
     }
 
-    showFullscreenSlide(slide, index) {
-        // Создаем полноэкранный контейнер если его нет
-        let fullscreenContainer = document.getElementById('slides-fullscreen');
-        if (!fullscreenContainer) {
-            fullscreenContainer = document.createElement('div');
-            fullscreenContainer.id = 'slides-fullscreen';
-            fullscreenContainer.className = 'slides-fullscreen';
-            document.body.appendChild(fullscreenContainer);
+    createSlideNavigation(container) {
+        const navigation = document.createElement('div');
+        navigation.className = 'slides-navigation';
+        navigation.id = 'slides-navigation';
+
+        this.slides.forEach((slide, index) => {
+            const dot = document.createElement('div');
+            dot.className = 'slide-nav-dot';
+            dot.addEventListener('click', () => this.showSlide(index));
+            navigation.appendChild(dot);
+        });
+
+        container.appendChild(navigation);
+    }
+
+    createSlideThumbnails() {
+        const player = document.getElementById('karaoke-player');
+        if (!player) return;
+
+        // Удаляем существующие миниатюры
+        const existingThumbnails = player.querySelector('.slides-thumbnails');
+        if (existingThumbnails) {
+            existingThumbnails.remove();
         }
 
-        // Преобразуем переносы строк в HTML <br> теги для полноэкранного режима
-        const formattedText = slide.text.replace(/\n/g, '<br>');
+        const thumbnailsContainer = document.createElement('div');
+        thumbnailsContainer.className = 'slides-thumbnails';
+        thumbnailsContainer.id = 'slides-thumbnails';
 
-        // Заполняем контент
-        fullscreenContainer.innerHTML = `
-            <div class="fullscreen-controls">
-                <button class="fullscreen-btn" onclick="this.parentElement.parentElement.style.display='none'">
-                    Закрыть (ESC)
-                </button>
-            </div>
-            <div class="fullscreen-slide">
-                ${slide.image ? `<img src="${slide.image}" alt="Slide ${index + 1}" class="fullscreen-slide-image">` : ''}
-                <div class="fullscreen-slide-text">${formattedText}</div>
-            </div>
-        `;
+        this.slides.forEach((slide, index) => {
+            const thumbnail = document.createElement('div');
+            thumbnail.className = 'slide-thumbnail';
+            thumbnail.id = `thumbnail-${index}`;
 
-        // Показываем полноэкранный режим
-        fullscreenContainer.style.display = 'flex';
-
-        // Добавляем обработчик ESC
-        const escHandler = (e) => {
-            if (e.key === 'Escape') {
-                fullscreenContainer.style.display = 'none';
-                document.removeEventListener('keydown', escHandler);
+            // Устанавливаем фоновое изображение для миниатюры
+            if (slide.image) {
+                thumbnail.style.backgroundImage = `url(${slide.image})`;
+            } else {
+                thumbnail.innerHTML = '<div class="slide-thumbnail-placeholder">🎵</div>';
             }
-        };
-        document.addEventListener('keydown', escHandler);
 
-        // Закрытие по клику на фон
-        fullscreenContainer.addEventListener('click', (e) => {
-            if (e.target === fullscreenContainer) {
-                fullscreenContainer.style.display = 'none';
-            }
+            // Добавляем текст миниатюры
+            const thumbnailText = document.createElement('div');
+            thumbnailText.className = 'slide-thumbnail-text';
+            thumbnailText.textContent = slide.text.substring(0, 30) + (slide.text.length > 30 ? '...' : '');
+            thumbnail.appendChild(thumbnailText);
+
+            // Обработчик клика
+            thumbnail.addEventListener('click', () => {
+                this.showSlide(index);
+                if (this.audioElement) {
+                    this.audioElement.currentTime = slide.start;
+                }
+            });
+
+            thumbnailsContainer.appendChild(thumbnail);
         });
+
+        player.appendChild(thumbnailsContainer);
+    }
+
+    showSlide(index) {
+        // Скрываем все слайды
+        document.querySelectorAll('.karaoke-slide').forEach(slide => {
+            slide.classList.remove('active');
+        });
+
+        // Убираем активный класс с навигационных точек
+        document.querySelectorAll('.slide-nav-dot').forEach(dot => {
+            dot.classList.remove('active');
+        });
+
+        // Убираем активный класс с миниатюр
+        document.querySelectorAll('.slide-thumbnail').forEach(thumbnail => {
+            thumbnail.classList.remove('active');
+        });
+
+        // Показываем текущий слайд
+        const currentSlide = document.getElementById(`slide-${index}`);
+        if (currentSlide) {
+            currentSlide.classList.add('active');
+        }
+
+        // Активируем навигационную точку
+        const navDots = document.querySelectorAll('.slide-nav-dot');
+        if (navDots[index]) {
+            navDots[index].classList.add('active');
+        }
+
+        // Активируем миниатюру
+        const thumbnail = document.getElementById(`thumbnail-${index}`);
+        if (thumbnail) {
+            thumbnail.classList.add('active');
+            // Прокручиваем к активной миниатюре
+            thumbnail.scrollIntoView({ behavior: 'smooth', inline: 'center' });
+        }
+
+        this.currentSlide = index;
     }
 
     updateSlides() {
@@ -376,20 +426,8 @@ class KaraokePlayer {
         );
 
         if (newSlide !== -1 && newSlide !== this.currentSlide) {
-            // Убираем активный класс с предыдущего слайда
-            const prevSlide = document.getElementById(`slide-${this.currentSlide}`);
-            if (prevSlide) {
-                prevSlide.classList.remove('active');
-            }
-
-            // Добавляем активный класс текущему слайду
-            const currentSlideElement = document.getElementById(`slide-${newSlide}`);
-            if (currentSlideElement) {
-                currentSlideElement.classList.add('active');
-                currentSlideElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            }
-
-            this.currentSlide = newSlide;
+            // Показываем новый слайд
+            this.showSlide(newSlide);
         }
     }
 
@@ -412,13 +450,8 @@ class KaraokePlayer {
 
     onAudioEnded() {
         this.isPlaying = false;
-        this.currentSlide = 0;
+        this.showSlide(0); // Показываем первый слайд
         document.getElementById('play-karaoke-btn').textContent = 'Воспроизвести';
-
-        // Убираем активные классы со всех слайдов
-        document.querySelectorAll('.karaoke-slide.active').forEach(slide => {
-            slide.classList.remove('active');
-        });
     }
 
     showLoading(show) {
@@ -438,3 +471,4 @@ class KaraokePlayer {
 
 // Инициализация при загрузке страницы
 const karaokePlayer = new KaraokePlayer();
+
