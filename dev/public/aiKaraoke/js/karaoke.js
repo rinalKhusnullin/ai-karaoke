@@ -59,14 +59,11 @@ class KaraokePlayer {
                 });
             }
 
-            // Обработка изменения файлов
-            ['minus-file', 'plus-file', 'lyrics-text'].forEach(id => {
-                const element = document.getElementById(id);
-                if (element) {
-                    element.addEventListener('change', () => this.validateUploadForm());
-                    element.addEventListener('input', () => this.validateUploadForm());
-                }
-            });
+            // Обработка изменения файлов - убираем lyrics-text, так как теперь API сам распознает текст
+            const plusFileElement = document.getElementById('plus-file');
+            if (plusFileElement) {
+                plusFileElement.addEventListener('change', () => this.validateUploadForm());
+            }
         });
     }
 
@@ -94,12 +91,22 @@ class KaraokePlayer {
     }
 
     validateUploadForm() {
-        const minusFile = document.getElementById('minus-file').files[0];
-        const plusFile = document.getElementById('plus-file').files[0];
-        const lyricsText = document.getElementById('lyrics-text').value.trim();
+        const plusFileElement = document.getElementById('plus-file');
         const confirmBtn = document.getElementById('confirm-upload');
 
-        const isValid = minusFile && plusFile && lyricsText;
+        // Проверяем существование элемента перед обращением к его свойствам
+        if (!plusFileElement) {
+            console.warn('Element plus-file not found');
+            if (confirmBtn) {
+                confirmBtn.disabled = true;
+            }
+            return false;
+        }
+
+        const plusFile = plusFileElement.files[0];
+
+        // Теперь нужен только файл плюсовки - API сам сделает расшифровку и минус
+        const isValid = plusFile;
 
         if (confirmBtn) {
             confirmBtn.disabled = !isValid;
@@ -114,36 +121,41 @@ class KaraokePlayer {
             document.getElementById('generate-karaoke-btn').disabled = false;
             this.hideUploadModal();
 
-            // Показываем информацию о загруженных файлах
+            // Показываем информацию о загруженном файле
             this.showUploadedFilesInfo();
         }
     }
 
     showUploadedFilesInfo() {
-        const minusFile = document.getElementById('minus-file').files[0];
-        const plusFile = document.getElementById('plus-file').files[0];
+        const plusFileElement = document.getElementById('plus-file');
 
-        // Можно добавить уведомление о успешной загрузке
-        console.log('Файлы готовы к обработке:', {
-            minus: minusFile.name,
+        // Проверяем существование элемента перед обращением к его свойствам
+        if (!plusFileElement || !plusFileElement.files[0]) {
+            console.warn('Element plus-file not found or no file selected');
+            return;
+        }
+
+        const plusFile = plusFileElement.files[0];
+
+        // Показываем уведомление о готовности
+        console.log('Файл готов к обработке:', {
             plus: plusFile.name
         });
+
+        // Показываем уведомление пользователю
+        this.showNotification('✅ Файл загружен! Теперь нажмите "Генерировать караоке" для автоматической обработки.');
     }
 
     async generateKaraoke() {
         const formData = new FormData();
-        const minusFile = document.getElementById('minus-file').files[0];
         const plusFile = document.getElementById('plus-file').files[0];
-        const lyricsText = document.getElementById('lyrics-text').value;
 
-        if (!minusFile || !plusFile || !lyricsText.trim()) {
-            alert('Пожалуйста, сначала загрузите все файлы через кнопку "Загрузить файлы"');
+        if (!plusFile) {
+            alert('Пожалуйста, сначала загрузите аудио файл через кнопку "Загрузить файлы"');
             return;
         }
 
-        formData.append('minus_file', minusFile);
         formData.append('plus_file', plusFile);
-        formData.append('lyrics', lyricsText);
 
         try {
             this.showLoading(true);
@@ -467,8 +479,52 @@ class KaraokePlayer {
         const secs = Math.floor(seconds % 60);
         return `${mins}:${secs.toString().padStart(2, '0')}`;
     }
+
+    showNotification(message) {
+        // Создаем уведомление
+        const notification = document.createElement('div');
+        notification.className = 'karaoke-notification';
+        notification.textContent = message;
+
+        // Добавляем стили
+        notification.style.cssText = `
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #28a745;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 5px;
+            z-index: 10000;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            font-family: inherit;
+            font-size: 14px;
+            max-width: 300px;
+            opacity: 0;
+            transform: translateX(100%);
+            transition: all 0.3s ease;
+        `;
+
+        document.body.appendChild(notification);
+
+        // Анимация появления
+        setTimeout(() => {
+            notification.style.opacity = '1';
+            notification.style.transform = 'translateX(0)';
+        }, 100);
+
+        // Удаляем через 4 секунды
+        setTimeout(() => {
+            notification.style.opacity = '0';
+            notification.style.transform = 'translateX(100%)';
+            setTimeout(() => {
+                if (notification.parentNode) {
+                    notification.parentNode.removeChild(notification);
+                }
+            }, 300);
+        }, 4000);
+    }
 }
 
 // Инициализация при загрузке страницы
 const karaokePlayer = new KaraokePlayer();
-

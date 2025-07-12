@@ -16,6 +16,7 @@ class KaraokeGenerator
 {
     private $uploadDir;
     private $imagesDir;
+    private $audioProcessAPI;
 
     public function __construct()
     {
@@ -23,27 +24,17 @@ class KaraokeGenerator
         $this->uploadDir = AIKaraokeConfig::getUploadDir();
         $this->imagesDir = AIKaraokeConfig::getImagesDir();
 
+        // URL вашего API для обработки аудио
+        $this->audioProcessAPI = 'http://212.113.116.182:8080/api/process';
+
         // Создаем директории через конфигурацию
         $directories = AIKaraokeConfig::createDirectories();
 
         AIKaraokeConfig::debugLog('Karaoke Generator initialized', [
             'api_key_configured' => AIKaraokeConfig::isAPIKeyConfigured(),
+            'audio_api' => $this->audioProcessAPI,
             'directories' => $directories
         ]);
-    }
-
-    private function debugLog($message)
-    {
-        $logMessage = '[' . date('Y-m-d H:i:s') . '] AI Karaoke Debug: ' . $message . PHP_EOL;
-
-        // Пишем в несколько мест для надежности
-        error_log('AI Karaoke Debug: ' . $message);
-        file_put_contents(__DIR__ . '/debug.log', $logMessage, FILE_APPEND | LOCK_EX);
-
-        // Также в стандартный лог PHP
-        if (function_exists('error_log')) {
-            error_log($logMessage, 3, '/tmp/aikaraoke_debug.log');
-        }
     }
 
     public function processRequest()
@@ -53,23 +44,31 @@ class KaraokeGenerator
         }
 
         try {
-            // Проверяем наличие файлов и текста
-            if (!isset($_FILES['minus_file']) || !isset($_FILES['plus_file']) || empty($_POST['lyrics'])) {
-                return $this->errorResponse('Отсутствуют необходимые данные');
+            // Проверяем наличие файла
+            if (!isset($_FILES['plus_file'])) {
+                return $this->errorResponse('Отсутствует аудио файл');
             }
 
-            // Сохраняем загруженные файлы
-            $minusPath = $this->saveUploadedFile($_FILES['minus_file'], 'minus');
-            $plusPath = $this->saveUploadedFile($_FILES['plus_file'], 'plus');
+            // Сохраняем загруженный файл
+            $audioPath = $this->saveUploadedFile($_FILES['plus_file'], 'audio');
 
-            if (!$minusPath || !$plusPath) {
-                return $this->errorResponse('Ошибка сохранения файлов');
+            if (!$audioPath) {
+                return $this->errorResponse('Ошибка сохранения файла');
             }
 
-            $lyrics = $_POST['lyrics'];
+            AIKaraokeConfig::debugLog('Audio file saved: ' . $audioPath);
 
-            // Анализируем аудио и генерируем тайминги с помощью ИИ
-            $karaokeData = $this->generateKaraokeWithAI($minusPath, $plusPath, $lyrics);
+            // Отправляем файл на ваш API для обработки
+            $apiResponse = $this->processAudioWithAPI($audioPath);
+
+            if (!$apiResponse) {
+                return $this->errorResponse('Ошибка обработки аудио через API');
+            }
+
+            AIKaraokeConfig::debugLog('API response received', $apiResponse);
+
+            // Генерируем караоке на основе ответа API
+            $karaokeData = $this->generateKaraokeFromAPIResponse($apiResponse);
 
             if (!$karaokeData) {
                 return $this->errorResponse('Ошибка генерации караоке');
@@ -78,6 +77,7 @@ class KaraokeGenerator
             return $this->successResponse($karaokeData);
 
         } catch (Exception $e) {
+            AIKaraokeConfig::debugLog('Exception in processRequest: ' . $e->getMessage());
             return $this->errorResponse('Внутренняя ошибка: ' . $e->getMessage());
         }
     }
@@ -85,6 +85,7 @@ class KaraokeGenerator
     private function saveUploadedFile($file, $prefix)
     {
         if ($file['error'] !== UPLOAD_ERR_OK) {
+            AIKaraokeConfig::debugLog('Upload error: ' . $file['error']);
             return false;
         }
 
@@ -93,119 +94,303 @@ class KaraokeGenerator
         $filepath = $this->uploadDir . $filename;
 
         if (move_uploaded_file($file['tmp_name'], $filepath)) {
+            AIKaraokeConfig::debugLog('File uploaded successfully: ' . $filepath);
             return $filepath;
         }
 
+        AIKaraokeConfig::debugLog('Failed to move uploaded file');
         return false;
     }
 
-    private function generateKaraokeWithAI($minusPath, $plusPath, $lyrics)
+    private function processAudioWithAPI($audioPath)
     {
-        // Получаем длительность аудио файла
-        $audioDuration = $this->getAudioDuration($minusPath);
+        AIKaraokeConfig::debugLog('Sending audio to API: ' . $this->audioProcessAPI);
 
-        if (!$audioDuration) {
+        try {
+            // Создаем CURLFile для отправки файла
+            $cFile = new CURLFile($audioPath, mime_content_type($audioPath), basename($audioPath));
+
+            $ch = curl_init();
+            curl_setopt($ch, CURLOPT_URL, $this->audioProcessAPI);
+            curl_setopt($ch, CURLOPT_POST, true);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, ['audio' => $cFile]);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($ch, CURLOPT_TIMEOUT, 300); // 5 минут таймаут
+            curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+
+            $response = curl_exec($ch);
+            $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+            $curlError = curl_error($ch);
+            curl_close($ch);
+
+            AIKaraokeConfig::debugLog('API response code: ' . $httpCode);
+
+            if (!empty($curlError)) {
+                AIKaraokeConfig::debugLog('CURL error: ' . $curlError);
+                return false;
+            }
+
+            if ($httpCode !== 200) {
+                AIKaraokeConfig::debugLog('API returned non-200 status: ' . $httpCode . ', Response: ' . $response);
+                return false;
+            }
+
+            // Парсим JSON ответ
+            $data = json_decode($response, true);
+            if (json_last_error() !== JSON_ERROR_NONE) {
+                AIKaraokeConfig::debugLog('JSON decode error: ' . json_last_error_msg() . ', Raw response: ' . $response);
+                return false;
+            }
+
+            AIKaraokeConfig::debugLog('API response parsed successfully');
+            return $data;
+
+        } catch (Exception $e) {
+            AIKaraokeConfig::debugLog('Exception in processAudioWithAPI: ' . $e->getMessage());
+            return false;
+        }
+    }
+
+    private function generateKaraokeFromAPIResponse($apiResponse)
+    {
+        AIKaraokeConfig::debugLog('Generating karaoke from API response');
+
+        // API возвращает:
+        // - transcript_chunks: массив чанков с текстом и таймкодами
+        // - accompaniment_url: URL минусовки
+        // - transcript: полный текст песни
+        // - success: статус обработки
+
+        if (!isset($apiResponse['transcript_chunks']) || !isset($apiResponse['accompaniment_url'])) {
+            AIKaraokeConfig::debugLog('Invalid API response structure', $apiResponse);
             return false;
         }
 
-        // Разбиваем текст на строки
-        $lyricsLines = array_filter(array_map('trim', explode("\n", $lyrics)));
-
-        // Группируем строки по 3 в один слайд
-        $groupedSlides = $this->groupLinesIntoSlides($lyricsLines, 3);
-
-        $this->debugLog('Original lines: ' . count($lyricsLines) . ', Grouped slides: ' . count($groupedSlides));
-
-        // Генерируем тайминги с помощью OpenAI для сгруппированных слайдов
-        $timings = $this->generateTimingsWithOpenAI($groupedSlides, $audioDuration);
-
-        if (!$timings) {
-            // Если ИИ недоступен, используем равномерное распределение
-            $timings = $this->generateEvenTimings($groupedSlides, $audioDuration);
+        if (!$apiResponse['success']) {
+            AIKaraokeConfig::debugLog('API processing failed');
+            return false;
         }
 
-        // Генерируем изображения для каждого слайда
-        $images = $this->generateImagesForSlides($groupedSlides);
+        $transcriptChunks = $apiResponse['transcript_chunks'];
+        $accompanimentUrl = $apiResponse['accompaniment_url'];
 
-        // Создаем слайды
-        $slides = [];
-        foreach ($groupedSlides as $index => $slideText) {
-            $slides[] = [
-                'text' => $slideText,
-                'start' => $timings[$index]['start'],
-                'end' => $timings[$index]['end'],
-                'image' => isset($images[$index]) ? $images[$index] : null
-            ];
+        AIKaraokeConfig::debugLog('Processing transcript chunks', ['count' => count($transcriptChunks)]);
+
+        // Сохраняем минусовку локально
+        $localMinusUrl = $this->saveMinusAudio($accompanimentUrl);
+        if (!$localMinusUrl) {
+            AIKaraokeConfig::debugLog('Failed to save minus audio');
+            return false;
         }
+
+        // Группируем строки в слайды из transcript_chunks
+        $slides = $this->createSlidesFromTranscriptChunks($transcriptChunks);
+
+        // Генерируем изображения для слайдов
+        $this->generateImagesForSlides($slides);
+
+        // Получаем длительность аудио
+        $audioDuration = $this->getAudioDurationFromSlides($slides);
+
+        AIKaraokeConfig::debugLog('Karaoke generation completed', [
+            'slides_count' => count($slides),
+            'duration' => $audioDuration
+        ]);
 
         return [
             'slides' => $slides,
-            'timeline' => $timings,
-            'audio_url' => $this->getRelativeUrl($minusPath),
+            'timeline' => $this->extractTimeline($slides),
+            'audio_url' => $localMinusUrl,
             'duration' => $audioDuration
         ];
     }
 
-    private function groupLinesIntoSlides($lyricsLines, $linesPerSlide = null)
+    private function saveMinusAudio($minusAudioUrl)
     {
-        if ($linesPerSlide === null) {
-            $linesPerSlide = AIKaraokeConfig::LINES_PER_SLIDE;
+        AIKaraokeConfig::debugLog('Saving minus audio');
+
+        try {
+            // Проверяем, это URL или base64
+            if (filter_var($minusAudioUrl, FILTER_VALIDATE_URL)) {
+                // Это URL, скачиваем файл
+                $audioData = file_get_contents($minusAudioUrl);
+                if ($audioData === false) {
+                    AIKaraokeConfig::debugLog('Failed to download minus audio from URL: ' . $minusAudioUrl);
+                    return false;
+                }
+            } else {
+                // Предполагаем, что это base64
+                $audioData = base64_decode($minusAudioUrl);
+                if ($audioData === false) {
+                    AIKaraokeConfig::debugLog('Failed to decode base64 audio data');
+                    return false;
+                }
+            }
+
+            // Сохраняем файл
+            $filename = 'minus_' . time() . '_' . rand(1000, 9999) . '.mp3';
+            $filepath = $this->uploadDir . $filename;
+
+            if (file_put_contents($filepath, $audioData)) {
+                $relativeUrl = $this->getRelativeUrl($filepath);
+                AIKaraokeConfig::debugLog('Minus audio saved: ' . $relativeUrl);
+                return $relativeUrl;
+            } else {
+                AIKaraokeConfig::debugLog('Failed to save minus audio file');
+                return false;
+            }
+
+        } catch (Exception $e) {
+            AIKaraokeConfig::debugLog('Exception in saveMinusAudio: ' . $e->getMessage());
+            return false;
         }
+    }
+
+    private function createSlidesFromLyrics($lyrics)
+    {
+        AIKaraokeConfig::debugLog('Creating slides from lyrics');
 
         $slides = [];
-        $currentSlide = [];
+        $linesPerSlide = AIKaraokeConfig::LINES_PER_SLIDE;
+        $currentSlideLines = [];
 
-        foreach ($lyricsLines as $line) {
-            $currentSlide[] = $line;
+        foreach ($lyrics as $line) {
+            // Ожидаем структуру: {text: "текст", start: секунды, end: секунды}
+            if (!isset($line['text']) || !isset($line['start']) || !isset($line['end'])) {
+                AIKaraokeConfig::debugLog('Invalid line structure', $line);
+                continue;
+            }
 
-            // Если набрали нужное количество строк, создаем слайд
-            if (count($currentSlide) >= $linesPerSlide) {
-                $slides[] = implode("\n", $currentSlide);
-                $currentSlide = [];
+            $currentSlideLines[] = $line;
+
+            // Когда набралось нужное количество строк, создаем слайд
+            if (count($currentSlideLines) >= $linesPerSlide) {
+                $slides[] = $this->createSlideFromLines($currentSlideLines);
+                $currentSlideLines = [];
             }
         }
 
         // Добавляем оставшиеся строки, если есть
-        if (!empty($currentSlide)) {
-            $slides[] = implode("\n", $currentSlide);
+        if (!empty($currentSlideLines)) {
+            $slides[] = $this->createSlideFromLines($currentSlideLines);
         }
 
+        AIKaraokeConfig::debugLog('Slides created', ['count' => count($slides)]);
         return $slides;
     }
 
-    private function generateImagesForSlides($lyricsLines)
+    private function createSlidesFromTranscriptChunks($transcriptChunks)
     {
-        AIKaraokeConfig::debugLog('Starting image generation for ' . count($lyricsLines) . ' slides');
+        AIKaraokeConfig::debugLog('Creating slides from transcript chunks');
+
+        $slides = [];
+        $linesPerSlide = AIKaraokeConfig::LINES_PER_SLIDE;
+        $currentSlideLines = [];
+
+        foreach ($transcriptChunks as $chunk) {
+            // API возвращает структуру: {text: "текст", start: секунды, end: секунды, word_count: число}
+            if (!isset($chunk['text']) || !isset($chunk['start']) || !isset($chunk['end'])) {
+                AIKaraokeConfig::debugLog('Invalid chunk structure', $chunk);
+                continue;
+            }
+
+            $currentSlideLines[] = $chunk;
+
+            // Когда набралось нужное количество строк, создаем слайд
+            if (count($currentSlideLines) >= $linesPerSlide) {
+                $slides[] = $this->createSlideFromLines($currentSlideLines);
+                $currentSlideLines = [];
+            }
+        }
+
+        // Добавляем оставшиеся строки, если есть
+        if (!empty($currentSlideLines)) {
+            $slides[] = $this->createSlideFromLines($currentSlideLines);
+        }
+
+        AIKaraokeConfig::debugLog('Slides created', ['count' => count($slides)]);
+        return $slides;
+    }
+
+    private function createSlideFromLines($lines)
+    {
+        $texts = [];
+        $minStart = PHP_FLOAT_MAX;
+        $maxEnd = 0;
+
+        foreach ($lines as $line) {
+            $texts[] = $line['text'];
+            $minStart = min($minStart, $line['start']);
+            $maxEnd = max($maxEnd, $line['end']);
+        }
+
+        return [
+            'text' => implode("\n", $texts),
+            'start' => $minStart,
+            'end' => $maxEnd,
+            'image' => null // Будет заполнено позже
+        ];
+    }
+
+    private function extractTimeline($slides)
+    {
+        $timeline = [];
+        foreach ($slides as $slide) {
+            $timeline[] = [
+                'start' => $slide['start'],
+                'end' => $slide['end']
+            ];
+        }
+        return $timeline;
+    }
+
+    private function getAudioDurationFromSlides($slides)
+    {
+        if (empty($slides)) {
+            return 0;
+        }
+
+        $lastSlide = end($slides);
+        return $lastSlide['end'];
+    }
+
+    private function generateImagesForSlides(&$slides)
+    {
+        AIKaraokeConfig::debugLog('Starting image generation for ' . count($slides) . ' slides');
 
         if (!AIKaraokeConfig::isAPIKeyConfigured()) {
             AIKaraokeConfig::debugLog('No OpenAI API key configured, skipping image generation');
             return [];
         }
 
-        $images = [];
-        $fullLyrics = implode(' ', $lyricsLines);
+        // Собираем весь текст для анализа темы
+        $fullLyrics = '';
+        foreach ($slides as $slide) {
+            $fullLyrics .= $slide['text'] . ' ';
+        }
 
         // Генерируем общую тему песни для контекста
         $songTheme = $this->analyzeSongTheme($fullLyrics);
         AIKaraokeConfig::debugLog('Song theme detected: ' . $songTheme);
 
-        foreach ($lyricsLines as $index => $line) {
-            AIKaraokeConfig::debugLog('Generating image for slide ' . $index . ': "' . $line . '"');
+        foreach ($slides as $index => &$slide) {
+            AIKaraokeConfig::debugLog('Generating image for slide ' . $index . ': "' . $slide['text'] . '"');
 
-            $imageUrl = $this->generateImageForLine($line, $songTheme, $index);
+            $imageUrl = $this->generateImageForLine($slide['text'], $songTheme, $index);
             if ($imageUrl) {
-                $images[$index] = $imageUrl;
+                $slide['image'] = $imageUrl;
                 AIKaraokeConfig::debugLog('Image generated successfully for slide ' . $index . ': ' . $imageUrl);
             } else {
                 AIKaraokeConfig::debugLog('Failed to generate image for slide ' . $index);
+                $slide['image'] = null;
             }
 
             // Используем задержку из конфигурации
             usleep(AIKaraokeConfig::API_REQUEST_DELAY);
         }
 
-        AIKaraokeConfig::debugLog('Image generation completed. Generated: ' . count($images) . ' images');
-        return $images;
+        AIKaraokeConfig::debugLog('Image generation completed. Generated images for slides.');
     }
 
     private function analyzeSongTheme($fullLyrics)
@@ -474,85 +659,6 @@ class KaraokeGenerator
         header('Content-Type: application/json; charset=utf-8');
         header('Cache-Control: no-cache, must-revalidate');
         return json_encode(['success' => false, 'error' => $message], JSON_UNESCAPED_UNICODE);
-    }
-
-    private function generateTimingsWithOpenAI($lyricsLines, $audioDuration)
-    {
-        if (!AIKaraokeConfig::isAPIKeyConfigured()) {
-            return false;
-        }
-
-        $prompt = "Создай тайминги для караоке. Длительность песни: {$audioDuration} секунд. ";
-        $prompt .= "Количество строк: " . count($lyricsLines) . ". ";
-        $prompt .= "Строки песни:\n" . implode("\n", $lyricsLines) . "\n\n";
-        $prompt .= "Верни JSON массив с таймингами в формате: [{\"start\": секунды, \"end\": секунды}, ...]. ";
-        $prompt .= "Учитывай естественные паузы и ритм песни.";
-
-        $data = [
-            'model' => AIKaraokeConfig::GPT_MODEL,
-            'messages' => [
-                [
-                    'role' => 'system',
-                    'content' => 'Ты эксперт по музыке и караоке. Создаешь оптимальные тайминги для синхронизации текста с музыкой.'
-                ],
-                [
-                    'role' => 'user',
-                    'content' => $prompt
-                ]
-            ],
-            'max_tokens' => AIKaraokeConfig::GPT_MAX_TOKENS,
-            'temperature' => AIKaraokeConfig::GPT_TEMPERATURE
-        ];
-
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, 'https://api.openai.com/v1/chat/completions');
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_POST, true);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
-        curl_setopt($ch, CURLOPT_HTTPHEADER, [
-            'Content-Type: application/json',
-            'Authorization: Bearer ' . AIKaraokeConfig::getOpenAIKey()
-        ]);
-
-        $response = curl_exec($ch);
-        $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-        curl_close($ch);
-
-        if ($httpCode === 200) {
-            $result = json_decode($response, true);
-            if (isset($result['choices'][0]['message']['content'])) {
-                $timingsJson = trim($result['choices'][0]['message']['content']);
-
-                // Пытаемся извлечь JSON из ответа
-                if (preg_match('/\[.*\]/', $timingsJson, $matches)) {
-                    $timings = json_decode($matches[0], true);
-                    if ($timings && count($timings) === count($lyricsLines)) {
-                        return $timings;
-                    }
-                }
-            }
-        }
-
-        return false;
-    }
-
-    private function generateEvenTimings($lyricsLines, $audioDuration)
-    {
-        $timings = [];
-        $linesCount = count($lyricsLines);
-        $timePerLine = $audioDuration / $linesCount;
-
-        for ($i = 0; $i < $linesCount; $i++) {
-            $start = $i * $timePerLine;
-            $end = ($i + 1) * $timePerLine;
-
-            $timings[] = [
-                'start' => $start,
-                'end' => $end
-            ];
-        }
-
-        return $timings;
     }
 
     private function generatePlaceholderImage($line, $index)

@@ -14,8 +14,8 @@ $APPLICATION->AddHeadString('<script src="js/karaoke.js" defer></script>');
 		<div class="sign-ai-karaoke__title">Караоке Генератор</div>
 		<div class="sign-ai-karaoke__subtitle">Создавайте караоке с синхронизированными слайдами</div>
 		<div class="sign-ai-karaoke__description">
-			Загрузите минусовку, плюсовку и текст песни. Наш ИИ автоматически создаст
-			синхронизированные слайды с уникальными изображениями для идеального караоке
+			Загрузите аудио файл с голосом. Наш ИИ автоматически распознает текст,
+			создаст минусовку и синхронизированные слайды с уникальными изображениями для идеального караоке
 		</div>
 
 		<div class="sign-ai-karaoke__controls">
@@ -53,33 +53,20 @@ $APPLICATION->AddHeadString('<script src="js/karaoke.js" defer></script>');
 	<div class="upload-modal" id="upload-modal">
 		<div class="upload-modal__content">
 			<div class="upload-modal__header">
-				<div class="upload-modal__title">Загрузка файлов для караоке</div>
+				<div class="upload-modal__title">Загрузка файла для караоке</div>
 				<button class="upload-modal__close" id="upload-modal-close">&times;</button>
 			</div>
 
 			<form id="upload-form">
 				<div class="upload-form__group">
-					<label class="upload-form__label" for="minus-file">
-						Минусовка (аудио файл без вокала):
-					</label>
-					<input type="file" class="upload-form__input" id="minus-file"
-						   accept="audio/*" required>
-				</div>
-
-				<div class="upload-form__group">
 					<label class="upload-form__label" for="plus-file">
-						Плюсовка (аудио файл с вокалом):
+						Аудио файл с голосом (плюсовка):
 					</label>
 					<input type="file" class="upload-form__input" id="plus-file"
 						   accept="audio/*" required>
-				</div>
-
-				<div class="upload-form__group">
-					<label class="upload-form__label" for="lyrics-text">
-						Текст песни:
-					</label>
-					<textarea class="upload-form__input upload-form__textarea"
-							  id="lyrics-text" placeholder="Введите текст песни, каждая строка на новой строке..." required></textarea>
+					<small style="color: #666; font-size: 0.85rem; margin-top: 5px; display: block;">
+						Наш ИИ автоматически распознает текст и создаст минусовку
+					</small>
 				</div>
 
 				<div class="upload-form__buttons">
@@ -87,7 +74,7 @@ $APPLICATION->AddHeadString('<script src="js/karaoke.js" defer></script>');
 						Отмена
 					</button>
 					<button type="button" class="ui-btn ui-btn-primary" id="confirm-upload">
-						Загрузить файлы
+						Загрузить файл
 					</button>
 				</div>
 			</form>
@@ -109,5 +96,3 @@ $APPLICATION->AddHeadString('<script src="js/karaoke.js" defer></script>');
 
 require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php");
 ?>
-
-
