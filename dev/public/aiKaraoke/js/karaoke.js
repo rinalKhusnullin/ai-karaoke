@@ -869,6 +869,150 @@ class KaraokePlayer {
             this.showNotification('❌ Ошибка скачивания файла', 'error');
         }
     }
+
+	updateMicrophoneButton() {
+		const micBtn = document.getElementById('mic-toggle-btn');
+		if (micBtn) {
+			if (this.microphoneEnabled) {
+				micBtn.textContent = '🔇 Выключить микрофон';
+				micBtn.className = 'ui-btn ui-btn-danger sign-ai-karaoke__button';
+			} else {
+				micBtn.textContent = '🎤 Включить микрофон';
+				micBtn.className = 'ui-btn ui-btn-secondary sign-ai-karaoke__button';
+			}
+		}
+	}
+
+	updateRecordingStatus() {
+		const playBtn = document.getElementById('play-karaoke-btn');
+		const recordingIndicator = document.getElementById('recording-indicator');
+
+		if (this.isRecording) {
+			// Показываем индикатор записи
+			if (recordingIndicator) {
+				recordingIndicator.style.display = 'inline-block';
+				recordingIndicator.textContent = '🔴 ЗАПИСЬ';
+			}
+		} else {
+			// Скрываем индикатор записи
+			if (recordingIndicator) {
+				recordingIndicator.style.display = 'none';
+			}
+		}
+	}
+
+	togglePlayback() {
+		if (!this.audioElement) {
+			alert('Сначала сгенерируйте караоке');
+			return;
+		}
+
+		if (this.isPlaying) {
+			this.audioElement.pause();
+			this.isPlaying = false;
+			document.getElementById('play-karaoke-btn').textContent = 'Воспроизвести';
+
+			// Останавливаем запись при паузе
+			if (this.isRecording) {
+				this.stopRecording();
+			}
+		} else {
+			this.audioElement.play();
+			this.isPlaying = true;
+			document.getElementById('play-karaoke-btn').textContent = 'Пауза';
+
+			// Начинаем запись при воспроизведении, если микрофон включен
+			if (this.microphoneEnabled && !this.isRecording) {
+				this.startRecording();
+			}
+		}
+	}
+
+	onAudioEnded() {
+		this.isPlaying = false;
+		this.showSlide(0); // Показываем первый слайд
+		document.getElementById('play-karaoke-btn').textContent = 'Воспроизвести';
+
+		// Останавливаем запись при окончании песни
+		if (this.isRecording) {
+			this.stopRecording();
+		}
+	}
+
+	showLoading(show) {
+		const loader = document.getElementById('loading-overlay');
+		if (loader) {
+			loader.style.display = show ? 'block' : 'none';
+		}
+	}
+
+	formatTime(seconds) {
+		if (isNaN(seconds)) return '0:00';
+		const mins = Math.floor(seconds / 60);
+		const secs = Math.floor(seconds % 60);
+		return `${mins}:${secs.toString().padStart(2, '0')}`;
+	}
+
+	showNotification(message) {
+		// Создаем уведомление
+		const notification = document.createElement('div');
+		notification.className = 'karaoke-notification';
+		notification.textContent = message;
+
+		// Добавляем стили
+		notification.style.cssText = `
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #28a745;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 5px;
+            z-index: 10000;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            font-family: inherit;
+            font-size: 14px;
+            max-width: 300px;
+            opacity: 0;
+            transform: translateX(100%);
+            transition: all 0.3s ease;
+        `;
+
+		document.body.appendChild(notification);
+
+		// Анимация появления
+		setTimeout(() => {
+			notification.style.opacity = '1';
+			notification.style.transform = 'translateX(0)';
+		}, 100);
+
+		// Удаляем через 4 секунды
+		setTimeout(() => {
+			notification.style.opacity = '0';
+			notification.style.transform = 'translateX(100%)';
+			setTimeout(() => {
+				if (notification.parentNode) {
+					notification.parentNode.removeChild(notification);
+				}
+			}, 300);
+		}, 4000);
+	}
+
+	downloadRecording() {
+		if (!this.recordingUrl) {
+			alert('Нет записи для скачивания');
+			return;
+		}
+
+		const a = document.createElement('a');
+		a.href = this.recordingUrl;
+		a.download = `karaoke-recording-${new Date().toISOString().slice(0,19)}.webm`;
+		document.body.appendChild(a);
+		a.click();
+		document.body.removeChild(a);
+
+		this.showNotification('📥 Запись скачивается...');
+	}
 }
 
 // Инициализация при загрузке страницы
