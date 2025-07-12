@@ -70,7 +70,25 @@ class AIKaraoke extends CModule
 	 */
 	public function DoUninstall()
 	{
-		return true;
+		global $APPLICATION;
+
+		$step = isset($_GET['step']) ? intval($_GET['step']) : 1;
+
+		if ($step < 2)
+		{
+			$APPLICATION->includeAdminFile(
+				'Удалить aikaraoke',
+				$this->getDocumentRoot() . '/bitrix/modules/aikaraoke/install/unstep1.php'
+			);
+		}
+		elseif ($step === 2)
+		{
+			unregisterModule('aikaraoke');
+			$APPLICATION->includeAdminFile(
+				'Удалить aikaraoke',
+				$this->getDocumentRoot() . '/bitrix/modules/aikaraoke/install/unstep2.php'
+			);
+		}
 	}
 
 	/**

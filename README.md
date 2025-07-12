@@ -1,23 +1,23 @@
 # AI KARAOKE Blood
 
-## Установка
+## РЈСЃС‚Р°РЅРѕРІРєР°
 
-После установки нужно
+РџРѕСЃР»Рµ СѓСЃС‚Р°РЅРѕРІРєРё РЅСѓР¶РЅРѕ
 
 `.htaccess`
-Заменяем
+Р—Р°РјРµРЅСЏРµРј
 ```
 #RewriteCond %{REQUEST_FILENAME} !/bitrix/urlrewrite.php$
 #RewriteRule ^(.*)$ /bitrix/urlrewrite.php [L]
 ```
 
-На
+РќР°
 ```
 RewriteCond %{REQUEST_FILENAME} !/bitrix/routing_index.php$
 RewriteRule ^(.*)$ /bitrix/routing_index.php [L]
 ```
 
-Добавляем новый роутинг
+Р”РѕР±Р°РІР»СЏРµРј РЅРѕРІС‹Р№ СЂРѕСѓС‚РёРЅРі
 
 `.settings`
 ```
@@ -35,4 +35,4 @@ RewriteRule ^(.*)$ /bitrix/routing_index.php [L]
   ),
 ```
 
-И на всякий перезагружаем сервак
+Р РЅР° РІСЃСЏРєРёР№ РїРµСЂРµР·Р°РіСЂСѓР¶Р°РµРј СЃРµСЂРІР°Рє
