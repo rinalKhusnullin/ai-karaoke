@@ -258,13 +258,40 @@ class KaraokePlayer {
 
         container.innerHTML = '';
 
+        console.log('AI Karaoke Debug: Displaying', this.slides.length, 'slides');
+
         this.slides.forEach((slide, index) => {
+            console.log('AI Karaoke Debug: Slide', index, 'data:', {
+                text: slide.text,
+                image: slide.image,
+                start: slide.start,
+                end: slide.end
+            });
+
             const slideElement = document.createElement('div');
             slideElement.className = 'karaoke-slide';
             slideElement.id = `slide-${index}`;
+
+            // Создаем HTML для слайда с изображением
+            let imageHtml = '';
+            if (slide.image) {
+                imageHtml = `<img src="${slide.image}" alt="Slide ${index + 1}" class="slide-image" loading="lazy" 
+                    onerror="console.error('AI Karaoke Debug: Failed to load image for slide ${index}:', '${slide.image}'); this.style.display='none';"
+                    onload="console.log('AI Karaoke Debug: Image loaded successfully for slide ${index}');">`;
+            } else {
+                console.log('AI Karaoke Debug: No image for slide', index, '- showing placeholder');
+                imageHtml = `<div class="slide-placeholder">🎵<br>Изображение<br>не найдено</div>`;
+            }
+
+            // Преобразуем переносы строк в HTML <br> теги для корректного отображения
+            const formattedText = slide.text.replace(/\n/g, '<br>');
+
             slideElement.innerHTML = `
-                <div class="slide-text">${slide.text}</div>
-                <div class="slide-timing">${this.formatTime(slide.start)} - ${this.formatTime(slide.end)}</div>
+                ${imageHtml}
+                <div class="slide-content">
+                    <div class="slide-text">${formattedText}</div>
+                    <div class="slide-timing">${this.formatTime(slide.start)} - ${this.formatTime(slide.end)}</div>
+                </div>
             `;
 
             // Добавляем возможность перехода к слайду по клику
@@ -274,7 +301,64 @@ class KaraokePlayer {
                 }
             });
 
+            // Добавляем возможность полноэкранного просмотра по двойному клике на изображение
+            const imageElement = slideElement.querySelector('.slide-image');
+            if (imageElement) {
+                imageElement.addEventListener('dblclick', (e) => {
+                    e.stopPropagation();
+                    this.showFullscreenSlide(slide, index);
+                });
+            }
+
             container.appendChild(slideElement);
+        });
+
+        console.log('AI Karaoke Debug: All slides added to container');
+    }
+
+    showFullscreenSlide(slide, index) {
+        // Создаем полноэкранный контейнер если его нет
+        let fullscreenContainer = document.getElementById('slides-fullscreen');
+        if (!fullscreenContainer) {
+            fullscreenContainer = document.createElement('div');
+            fullscreenContainer.id = 'slides-fullscreen';
+            fullscreenContainer.className = 'slides-fullscreen';
+            document.body.appendChild(fullscreenContainer);
+        }
+
+        // Преобразуем переносы строк в HTML <br> теги для полноэкранного режима
+        const formattedText = slide.text.replace(/\n/g, '<br>');
+
+        // Заполняем контент
+        fullscreenContainer.innerHTML = `
+            <div class="fullscreen-controls">
+                <button class="fullscreen-btn" onclick="this.parentElement.parentElement.style.display='none'">
+                    Закрыть (ESC)
+                </button>
+            </div>
+            <div class="fullscreen-slide">
+                ${slide.image ? `<img src="${slide.image}" alt="Slide ${index + 1}" class="fullscreen-slide-image">` : ''}
+                <div class="fullscreen-slide-text">${formattedText}</div>
+            </div>
+        `;
+
+        // Показываем полноэкранный режим
+        fullscreenContainer.style.display = 'flex';
+
+        // Добавляем обработчик ESC
+        const escHandler = (e) => {
+            if (e.key === 'Escape') {
+                fullscreenContainer.style.display = 'none';
+                document.removeEventListener('keydown', escHandler);
+            }
+        };
+        document.addEventListener('keydown', escHandler);
+
+        // Закрытие по клику на фон
+        fullscreenContainer.addEventListener('click', (e) => {
+            if (e.target === fullscreenContainer) {
+                fullscreenContainer.style.display = 'none';
+            }
         });
     }
 

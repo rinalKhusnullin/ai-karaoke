@@ -16,16 +16,52 @@ class KaraokeGenerator
 {
     private $openaiApiKey;
     private $uploadDir;
+    private $imagesDir;
 
     public function __construct()
     {
-        // ЗАХАРДКОЖЕННЫЙ API КЛЮЧ - ЗАМЕНИТЕ НА ВАШ РЕАЛЬНЫЙ КЛЮЧ
-        $this->openaiApiKey = 'sk-ваш-реальный-api-ключ-openai-здесь';
+        // Получаем API ключ из настроек Битрикс
+        $this->openaiApiKey = \Bitrix\Main\Config\Option::get('sign', 'openai_api_key', '');
+
+        // Если ключ не найден в настройках, используем захардкоженный
+        if (empty($this->openaiApiKey)) {
+            $this->openaiApiKey = '';
+        }
+
+        // Логируем состояние API ключа (без показа самого ключа)
+        $this->debugLog('API Key present: ' . (!empty($this->openaiApiKey) ? 'YES' : 'NO'));
+        $this->debugLog('API Key length: ' . strlen($this->openaiApiKey));
 
         $this->uploadDir = $_SERVER["DOCUMENT_ROOT"] . "/upload/aikaraoke/";
+        // Используем локальную директорию проекта для изображений
+        $this->imagesDir = __DIR__ . "/images/";
 
         if (!is_dir($this->uploadDir)) {
             mkdir($this->uploadDir, 0755, true);
+            $this->debugLog('Created upload directory: ' . $this->uploadDir);
+        }
+
+        if (!is_dir($this->imagesDir)) {
+            mkdir($this->imagesDir, 0755, true);
+            $this->debugLog('Created images directory: ' . $this->imagesDir);
+        }
+
+        $this->debugLog('Upload dir: ' . $this->uploadDir);
+        $this->debugLog('Images dir: ' . $this->imagesDir);
+        $this->debugLog('Images dir writable: ' . (is_writable($this->imagesDir) ? 'YES' : 'NO'));
+    }
+
+    private function debugLog($message)
+    {
+        $logMessage = '[' . date('Y-m-d H:i:s') . '] AI Karaoke Debug: ' . $message . PHP_EOL;
+
+        // Пишем в несколько мест для надежности
+        error_log('AI Karaoke Debug: ' . $message);
+        file_put_contents(__DIR__ . '/debug.log', $logMessage, FILE_APPEND | LOCK_EX);
+
+        // Также в стандартный лог PHP
+        if (function_exists('error_log')) {
+            error_log($logMessage, 3, '/tmp/aikaraoke_debug.log');
         }
     }
 
@@ -94,21 +130,30 @@ class KaraokeGenerator
         // Разбиваем текст на строки
         $lyricsLines = array_filter(array_map('trim', explode("\n", $lyrics)));
 
-        // Генерируем тайминги с помощью OpenAI
-        $timings = $this->generateTimingsWithOpenAI($lyricsLines, $audioDuration);
+        // Группируем строки по 3 в один слайд
+        $groupedSlides = $this->groupLinesIntoSlides($lyricsLines, 3);
+
+        $this->debugLog('Original lines: ' . count($lyricsLines) . ', Grouped slides: ' . count($groupedSlides));
+
+        // Генерируем тайминги с помощью OpenAI для сгруппированных слайдов
+        $timings = $this->generateTimingsWithOpenAI($groupedSlides, $audioDuration);
 
         if (!$timings) {
             // Если ИИ недоступен, используем равномерное распределение
-            $timings = $this->generateEvenTimings($lyricsLines, $audioDuration);
+            $timings = $this->generateEvenTimings($groupedSlides, $audioDuration);
         }
+
+        // Генерируем изображения для каждого слайда
+        $images = $this->generateImagesForSlides($groupedSlides);
 
         // Создаем слайды
         $slides = [];
-        foreach ($lyricsLines as $index => $line) {
+        foreach ($groupedSlides as $index => $slideText) {
             $slides[] = [
-                'text' => $line,
+                'text' => $slideText,
                 'start' => $timings[$index]['start'],
-                'end' => $timings[$index]['end']
+                'end' => $timings[$index]['end'],
+                'image' => isset($images[$index]) ? $images[$index] : null
             ];
         }
 
@@ -120,30 +165,86 @@ class KaraokeGenerator
         ];
     }
 
-    private function generateTimingsWithOpenAI($lyricsLines, $duration)
+    private function groupLinesIntoSlides($lyricsLines, $linesPerSlide = 3)
     {
-        if (empty($this->openaiApiKey)) {
-            return false;
+        $slides = [];
+        $currentSlide = [];
+
+        foreach ($lyricsLines as $line) {
+            $currentSlide[] = $line;
+
+            // Если набрали нужное количество строк, создаем слайд
+            if (count($currentSlide) >= $linesPerSlide) {
+                $slides[] = implode("\n", $currentSlide);
+                $currentSlide = [];
+            }
         }
 
-        $prompt = "Проанализируй текст песни и создай тайминги для караоке. Общая длительность песни: {$duration} секунд.\n\n";
-        $prompt .= "Текст песни:\n" . implode("\n", $lyricsLines) . "\n\n";
-        $prompt .= "Верни JSON массив с объектами, содержащими 'start' и 'end' в секундах для каждой строки. ";
-        $prompt .= "Учти паузы между куплетами и припевами. Пример: [{\"start\": 0, \"end\": 3.5}, {\"start\": 4, \"end\": 7.2}]";
+        // Добавляем оставшиеся строки, если есть
+        if (!empty($currentSlide)) {
+            $slides[] = implode("\n", $currentSlide);
+        }
+
+        return $slides;
+    }
+
+    private function generateImagesForSlides($lyricsLines)
+    {
+        $this->debugLog('Starting image generation for ' . count($lyricsLines) . ' slides');
+
+        if (empty($this->openaiApiKey)) {
+            $this->debugLog('No OpenAI API key, skipping image generation');
+            return [];
+        }
+
+        $images = [];
+        $fullLyrics = implode(' ', $lyricsLines);
+
+        // Генерируем общую тему песни для контекста
+        $songTheme = $this->analyzeSongTheme($fullLyrics);
+        $this->debugLog('Song theme detected: ' . $songTheme);
+
+        foreach ($lyricsLines as $index => $line) {
+            $this->debugLog('Generating image for slide ' . $index . ': "' . $line . '"');
+
+            $imageUrl = $this->generateImageForLine($line, $songTheme, $index);
+            if ($imageUrl) {
+                $images[$index] = $imageUrl;
+                $this->debugLog('Image generated successfully for slide ' . $index . ': ' . $imageUrl);
+            } else {
+                $this->debugLog('Failed to generate image for slide ' . $index);
+            }
+
+            // Небольшая пауза между запросами к API
+            usleep(500000); // 0.5 секунды
+        }
+
+        $this->debugLog('Image generation completed. Generated: ' . count($images) . ' images');
+        return $images;
+    }
+
+    private function analyzeSongTheme($fullLyrics)
+    {
+        if (empty($this->openaiApiKey)) {
+            return "musical atmosphere";
+        }
+
+        // Делаем промпт на английском для лучшей работы с API
+        $prompt = "Analyze the song lyrics and determine the main theme, mood and visual style. Describe in a few key words for image generation:\n\n" . $fullLyrics;
 
         $data = [
             'model' => 'gpt-4',
             'messages' => [
                 [
                     'role' => 'system',
-                    'content' => 'Ты эксперт по созданию караоке. Анализируй тексты песен и создавай точные тайминги.'
+                    'content' => 'You are an expert in analyzing musical texts. Determine theme and mood for creating visual images. Answer briefly in English, maximum 50 words.'
                 ],
                 [
                     'role' => 'user',
                     'content' => $prompt
                 ]
             ],
-            'max_tokens' => 2000,
+            'max_tokens' => 100, // Уменьшаем лимит для краткого ответа
             'temperature' => 0.3
         ];
 
@@ -164,38 +265,189 @@ class KaraokeGenerator
         if ($httpCode === 200) {
             $result = json_decode($response, true);
             if (isset($result['choices'][0]['message']['content'])) {
-                $content = $result['choices'][0]['message']['content'];
-                // Извлекаем JSON из ответа
-                preg_match('/\[.*\]/s', $content, $matches);
-                if ($matches) {
-                    $timings = json_decode($matches[0], true);
-                    if ($timings && count($timings) === count($lyricsLines)) {
-                        return $timings;
-                    }
-                }
+                $theme = trim($result['choices'][0]['message']['content']);
+                $this->debugLog('Full theme response: ' . $theme);
+                return $theme;
             }
         }
 
-        return false;
+        return "musical atmosphere, urban lifestyle, luxury, success";
     }
 
-    private function generateEvenTimings($lyricsLines, $duration)
+    private function generateImageForLine($line, $songTheme, $index)
     {
-        $count = count($lyricsLines);
-        $segmentDuration = $duration / $count;
-
-        $timings = [];
-        for ($i = 0; $i < $count; $i++) {
-            $start = $i * $segmentDuration;
-            $end = ($i + 1) * $segmentDuration;
-
-            $timings[] = [
-                'start' => round($start, 2),
-                'end' => round($end, 2)
-            ];
+        if (empty($this->openaiApiKey)) {
+            $this->debugLog('No API key for image generation');
+            return $this->generatePlaceholderImage($line, $index);
         }
 
-        return $timings;
+        // Создаем промпт для генерации изображения
+        $prompt = $this->createImagePrompt($line, $songTheme);
+        $this->debugLog('Image prompt for slide ' . $index . ': ' . $prompt);
+
+        $data = [
+            'model' => 'dall-e-3',
+            'prompt' => $prompt,
+            'n' => 1,
+            'size' => '1024x1024',
+            'quality' => 'standard',
+            'style' => 'vivid'
+        ];
+
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, 'https://api.openai.com/v1/images/generations');
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
+        curl_setopt($ch, CURLOPT_HTTPHEADER, [
+            'Content-Type: application/json',
+            'Authorization: Bearer ' . $this->openaiApiKey
+        ]);
+
+        $response = curl_exec($ch);
+        $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        $curlError = curl_error($ch);
+        curl_close($ch);
+
+        $this->debugLog('DALL-E API response code: ' . $httpCode);
+
+        if (!empty($curlError)) {
+            $this->debugLog('CURL error: ' . $curlError);
+        }
+
+        if ($httpCode === 200) {
+            $result = json_decode($response, true);
+            if (isset($result['data'][0]['url'])) {
+                $imageUrl = $result['data'][0]['url'];
+                $this->debugLog('Image URL received: ' . $imageUrl);
+
+                // Скачиваем и сохраняем изображение локально
+                $localUrl = $this->saveImageLocally($imageUrl, $index);
+                if ($localUrl) {
+                    $this->debugLog('Image saved locally: ' . $localUrl);
+                    return $localUrl;
+                } else {
+                    $this->debugLog('Failed to save image locally');
+                }
+            } else {
+                $this->debugLog('No image URL in response: ' . $response);
+            }
+        } else {
+            // Логируем ошибку генерации изображения
+            $this->debugLog('Image generation failed for line: "' . $line . '". HTTP Code: ' . $httpCode . '. Response: ' . $response);
+        }
+
+        // Если DALL-E не сработал, создаем placeholder
+        return $this->generatePlaceholderImage($line, $index);
+    }
+
+    private function createImagePrompt($line, $songTheme)
+    {
+        // Убираем лишние символы и создаем описательный промпт
+        $cleanLine = preg_replace('/[^\p{L}\p{N}\s]/u', '', $line);
+
+        // Переводим на английский для лучшего качества генерации
+        $englishLine = $this->translateToEnglish($cleanLine);
+        $englishTheme = $this->translateToEnglish($songTheme);
+
+        $prompt = "Create a beautiful, artistic image that represents the concept: \"$englishLine\". ";
+        $prompt .= "Overall theme and mood: $englishTheme. ";
+        $prompt .= "Style: cinematic, vibrant colors, emotional, abstract art, suitable for music visualization. ";
+        $prompt .= "NO TEXT, NO WORDS, NO LETTERS in the image. ";
+        $prompt .= "Focus on mood, atmosphere, colors and abstract visual metaphors. ";
+        $prompt .= "Professional photography style, high quality, artistic composition.";
+
+        return $prompt;
+    }
+
+    private function translateToEnglish($text)
+    {
+        // Простой словарь для базового перевода ключевых слов
+        $translations = [
+            'любовь' => 'love',
+            'сердце' => 'heart',
+            'город' => 'city',
+            'небо' => 'sky',
+            'дорога' => 'road',
+            'машина' => 'car',
+            'деньги' => 'money',
+            'богатство' => 'wealth',
+            'роскошь' => 'luxury',
+            'успех' => 'success',
+            'борьба' => 'struggle',
+            'триумф' => 'triumph',
+            'ностальгия' => 'nostalgia',
+            'рефлексия' => 'reflection',
+            'гордость' => 'pride',
+            'решимость' => 'determination',
+            'непреклонность' => 'steadfastness',
+            'быстрый темп' => 'fast pace',
+            'жизнь' => 'life',
+            'проблемы' => 'problems',
+            'трудности' => 'difficulties',
+            'путь' => 'path',
+            'осень' => 'autumn',
+            'цвета' => 'colors',
+            'музыкальная атмосфера' => 'musical atmosphere'
+        ];
+
+        $englishText = $text;
+        foreach ($translations as $russian => $english) {
+            $englishText = str_ireplace($russian, $english, $englishText);
+        }
+
+        // Если не удалось перевести, используем общие термины
+        if (mb_strlen($englishText) > 0 && preg_match('/[а-яё]/iu', $englishText)) {
+            return "abstract artistic concept, emotional atmosphere, cinematic mood";
+        }
+
+        return $englishText;
+    }
+
+    private function saveImageLocally($imageUrl, $index)
+    {
+        try {
+            $this->debugLog('Attempting to download image from: ' . $imageUrl);
+
+            // Создаем контекст для file_get_contents с таймаутом
+            $context = stream_context_create([
+                'http' => [
+                    'timeout' => 30,
+                    'user_agent' => 'Mozilla/5.0 (compatible; AI Karaoke Generator)'
+                ]
+            ]);
+
+            $imageData = file_get_contents($imageUrl, false, $context);
+            if ($imageData === false) {
+                $this->debugLog('Failed to download image from URL');
+                return null;
+            }
+
+            $this->debugLog('Image downloaded, size: ' . strlen($imageData) . ' bytes');
+
+            $filename = 'slide_' . $index . '_' . time() . '.png';
+            $filepath = $this->imagesDir . $filename;
+
+            $this->debugLog('Saving image to: ' . $filepath);
+
+            // Проверяем права на запись в директорию
+            if (!is_writable($this->imagesDir)) {
+                $this->debugLog('Images directory is not writable: ' . $this->imagesDir);
+                return null;
+            }
+
+            if (file_put_contents($filepath, $imageData)) {
+                $relativeUrl = $this->getRelativeUrl($filepath);
+                $this->debugLog('Image saved successfully. Relative URL: ' . $relativeUrl);
+                return $relativeUrl;
+            } else {
+                $this->debugLog('Failed to write image file');
+            }
+        } catch (Exception $e) {
+            $this->debugLog('Exception in saveImageLocally: ' . $e->getMessage());
+        }
+
+        return null;
     }
 
     private function getAudioDuration($filepath)
@@ -215,6 +467,13 @@ class KaraokeGenerator
 
     private function getRelativeUrl($filepath)
     {
+        // Для изображений используем относительный путь от текущей директории
+        if (strpos($filepath, $this->imagesDir) === 0) {
+            $relativePath = str_replace($this->imagesDir, '', $filepath);
+            return 'images/' . $relativePath;
+        }
+
+        // Для аудио файлов используем стандартный путь
         return str_replace($_SERVER["DOCUMENT_ROOT"], '', $filepath);
     }
 
@@ -231,6 +490,197 @@ class KaraokeGenerator
         header('Cache-Control: no-cache, must-revalidate');
         return json_encode(['success' => false, 'error' => $message], JSON_UNESCAPED_UNICODE);
     }
+
+    private function generateTimingsWithOpenAI($lyricsLines, $audioDuration)
+    {
+        if (empty($this->openaiApiKey)) {
+            return false;
+        }
+
+        $prompt = "Создай тайминги для караоке. Длительность песни: {$audioDuration} секунд. ";
+        $prompt .= "Количество строк: " . count($lyricsLines) . ". ";
+        $prompt .= "Строки песни:\n" . implode("\n", $lyricsLines) . "\n\n";
+        $prompt .= "Верни JSON массив с таймингами в формате: [{\"start\": секунды, \"end\": секунды}, ...]. ";
+        $prompt .= "Учитывай естественные паузы и ритм песни.";
+
+        $data = [
+            'model' => 'gpt-4',
+            'messages' => [
+                [
+                    'role' => 'system',
+                    'content' => 'Ты эксперт по музыке и караоке. Создаешь оптимальные тайминги для синхронизации текста с музыкой.'
+                ],
+                [
+                    'role' => 'user',
+                    'content' => $prompt
+                ]
+            ],
+            'max_tokens' => 1000,
+            'temperature' => 0.3
+        ];
+
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, 'https://api.openai.com/v1/chat/completions');
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
+        curl_setopt($ch, CURLOPT_HTTPHEADER, [
+            'Content-Type: application/json',
+            'Authorization: Bearer ' . $this->openaiApiKey
+        ]);
+
+        $response = curl_exec($ch);
+        $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        curl_close($ch);
+
+        if ($httpCode === 200) {
+            $result = json_decode($response, true);
+            if (isset($result['choices'][0]['message']['content'])) {
+                $timingsJson = trim($result['choices'][0]['message']['content']);
+
+                // Пытаемся извлечь JSON из ответа
+                if (preg_match('/\[.*\]/', $timingsJson, $matches)) {
+                    $timings = json_decode($matches[0], true);
+                    if ($timings && count($timings) === count($lyricsLines)) {
+                        return $timings;
+                    }
+                }
+            }
+        }
+
+        return false;
+    }
+
+    private function generateEvenTimings($lyricsLines, $audioDuration)
+    {
+        $timings = [];
+        $linesCount = count($lyricsLines);
+        $timePerLine = $audioDuration / $linesCount;
+
+        for ($i = 0; $i < $linesCount; $i++) {
+            $start = $i * $timePerLine;
+            $end = ($i + 1) * $timePerLine;
+
+            $timings[] = [
+                'start' => $start,
+                'end' => $end
+            ];
+        }
+
+        return $timings;
+    }
+
+    private function generatePlaceholderImage($line, $index)
+    {
+        // Создаем красивую заглушку с градиентом и текстом
+        $this->debugLog('Generating placeholder image for slide ' . $index);
+
+        // Создаем изображение 512x512
+        $image = imagecreatetruecolor(512, 512);
+
+        // Создаем градиент
+        $colors = [
+            [74, 144, 226],   // Blue
+            [147, 51, 234],   // Purple
+            [236, 72, 153],   // Pink
+            [245, 101, 101],  // Red
+            [251, 146, 60],   // Orange
+            [34, 197, 94],    // Green
+            [168, 85, 247],   // Violet
+            [14, 165, 233]    // Sky blue
+        ];
+
+        $colorIndex = $index % count($colors);
+        $color = $colors[$colorIndex];
+
+        // Заливаем градиентом
+        for ($y = 0; $y < 512; $y++) {
+            $ratio = $y / 512;
+            $r = $color[0] + ($ratio * (255 - $color[0]) * 0.3);
+            $g = $color[1] + ($ratio * (255 - $color[1]) * 0.3);
+            $b = $color[2] + ($ratio * (255 - $color[2]) * 0.3);
+
+            $lineColor = imagecolorallocate($image, $r, $g, $b);
+            imageline($image, 0, $y, 512, $y, $lineColor);
+        }
+
+        // Добавляем декоративные элементы вместо текста
+        $white = imagecolorallocate($image, 255, 255, 255);
+        $lightColor = imagecolorallocate($image,
+            min(255, $color[0] + 50),
+            min(255, $color[1] + 50),
+            min(255, $color[2] + 50)
+        );
+
+        // Рисуем геометрические фигуры для создания абстрактного образа
+        $centerX = 256;
+        $centerY = 256;
+
+        // Основной круг
+        imagefilledellipse($image, $centerX, $centerY, 120, 120, $white);
+        imagefilledellipse($image, $centerX, $centerY, 100, 100, $lightColor);
+
+        // Дополнительные элементы в зависимости от индекса
+        switch ($index % 5) {
+            case 0:
+                // Треугольники
+                $points = array(
+                    $centerX, $centerY - 40,
+                    $centerX - 35, $centerY + 20,
+                    $centerX + 35, $centerY + 20
+                );
+                imagefilledpolygon($image, $points, 3, $white);
+                break;
+            case 1:
+                // Прямоугольники
+                imagefilledrectangle($image, $centerX - 30, $centerY - 30, $centerX + 30, $centerY + 30, $white);
+                break;
+            case 2:
+                // Ромб
+                $points = array(
+                    $centerX, $centerY - 40,
+                    $centerX + 40, $centerY,
+                    $centerX, $centerY + 40,
+                    $centerX - 40, $centerY
+                );
+                imagefilledpolygon($image, $points, 4, $white);
+                break;
+            case 3:
+                // Звезда
+                for ($i = 0; $i < 8; $i++) {
+                    $angle = $i * pi() / 4;
+                    $x = $centerX + cos($angle) * 30;
+                    $y = $centerY + sin($angle) * 30;
+                    imagefilledellipse($image, $x, $y, 15, 15, $white);
+                }
+                break;
+            case 4:
+                // Волны
+                for ($i = 0; $i < 3; $i++) {
+                    $y = $centerY - 20 + $i * 20;
+                    imageline($image, $centerX - 40, $y, $centerX + 40, $y, $white);
+                }
+                break;
+        }
+
+        // Добавляем номер слайда
+        $slideNumber = $index + 1;
+        imagestring($image, 5, $centerX - 10, $centerY + 50, "#$slideNumber", $white);
+
+        // Сохраняем
+        $filename = 'placeholder_' . $index . '_' . time() . '.png';
+        $filepath = $this->imagesDir . $filename;
+
+        if (imagepng($image, $filepath)) {
+            imagedestroy($image);
+            $relativeUrl = $this->getRelativeUrl($filepath);
+            $this->debugLog('Placeholder image created: ' . $relativeUrl);
+            return $relativeUrl;
+        }
+
+        imagedestroy($image);
+        return null;
+    }
 }
 
 // Обработка запроса
@@ -245,3 +695,4 @@ try {
 // НЕ подключаем footer для чистого JSON ответа
 // require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php");
 ?>
+
