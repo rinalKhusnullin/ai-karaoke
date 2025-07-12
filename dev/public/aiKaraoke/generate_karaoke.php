@@ -11,6 +11,7 @@ require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/modules/main/include/prolog_before.
 require_once __DIR__ . '/config.php';
 
 \Bitrix\Main\Loader::requireModule('sign');
+\Bitrix\Main\Loader::requireModule('aikaraoke');
 
 class KaraokeGenerator
 {
@@ -52,6 +53,12 @@ class KaraokeGenerator
             return $this->errorResponse('Метод не поддерживается');
         }
 
+		global $USER;
+	    if (!$USER->IsAuthorized()) {
+		    return $this->errorResponse('Требуется авторизация');
+	    }
+	    $userId = $USER->GetID();
+
         try {
             // Проверяем наличие файлов и текста
             if (!isset($_FILES['minus_file']) || !isset($_FILES['plus_file']) || empty($_POST['lyrics'])) {
@@ -74,6 +81,30 @@ class KaraokeGenerator
             if (!$karaokeData) {
                 return $this->errorResponse('Ошибка генерации караоке');
             }
+
+			// Сохраняем информацию о песне в БД
+	        $duration = $karaokeData['duration'];
+	        $songId = $this->saveSongToDatabase($userId, $_FILES['minus_file']['name'], $minusPath, $title, $artist, $duration);
+
+	        if ($songId) {
+		        // Сохраняем версии песни
+		        $this->saveSongVersions($songId, $minusPath, $plusPath);
+
+		        // Сохраняем текст песни с таймингами
+		        $lyricsData = [];
+		        foreach ($karaokeData['slides'] as $index => $slide) {
+			        $lyricsData[] = [
+				        'line_number' => $index,
+				        'text' => $slide['text'],
+				        'start_time' => $slide['start'],
+				        'end_time' => $slide['end']
+			        ];
+		        }
+		        $this->saveLyricsToDatabase($songId, $lyricsData);
+
+		        // Добавляем ID песни в ответ
+		        $karaokeData['song_id'] = $songId;
+	        }
 
             return $this->successResponse($karaokeData);
 
@@ -666,6 +697,107 @@ class KaraokeGenerator
         imagedestroy($image);
         return null;
     }
+
+	private function saveSongToDatabase($userId, $originalFilename, $storagePath, $title = null, $artist = null, $duration = null)
+	{
+		try {
+			$songData = [
+				'USER_ID' => $userId,
+				'ORIGINAL_FILENAME' => $originalFilename,
+				'STORAGE_PATH' => $storagePath,
+				'TITLE' => $title,
+				'ARTIST' => $artist,
+				'DURATION' => $duration,
+				'STATUS' => 'processed'
+			];
+
+			$result = \Bitrix\AIKaraoke\Table\SongsTable::add($songData);
+
+			if ($result->isSuccess()) {
+				$songId = $result->getId();
+				$this->debugLog("Song saved to database with ID: $songId");
+				return $songId;
+			} else {
+				$errors = implode(', ', $result->getErrorMessages());
+				$this->debugLog("Failed to save song to database: $errors");
+				return false;
+			}
+		} catch (\Exception $e) {
+			$this->debugLog("Exception when saving song to database: " . $e->getMessage());
+			return false;
+		}
+	}
+
+	private function saveSongVersions($songId, $minusPath, $plusPath, $lyricsPath = null)
+	{
+		$versions = [
+			[
+				'SONG_ID' => $songId,
+				'VERSION_TYPE' => 'original',
+				'STORAGE_PATH' => $minusPath
+			],
+			[
+				'SONG_ID' => $songId,
+				'VERSION_TYPE' => 'instrumental',
+				'STORAGE_PATH' => $minusPath
+			],
+			[
+				'SONG_ID' => $songId,
+				'VERSION_TYPE' => 'vocals',
+				'STORAGE_PATH' => $plusPath
+			]
+		];
+
+		if ($lyricsPath) {
+			$versions[] = [
+				'SONG_ID' => $songId,
+				'VERSION_TYPE' => 'lyrics',
+				'STORAGE_PATH' => $lyricsPath,
+				'METADATA' => json_encode(['format' => 'json'])
+			];
+		}
+
+		foreach ($versions as $versionData) {
+			try {
+				$result = \Bitrix\AiKaraoke\Table\SongVersionsTable::add($versionData);
+				if (!$result->isSuccess()) {
+					$errors = implode(', ', $result->getErrorMessages());
+					$this->debugLog("Failed to save song version: $errors");
+				}
+			} catch (\Exception $e) {
+				$this->debugLog("Exception when saving song version: " . $e->getMessage());
+			}
+		}
+	}
+
+	private function saveLyricsToDatabase($songId, $lyricsData)
+	{
+		if (empty($lyricsData)) {
+			return false;
+		}
+
+		try {
+			foreach ($lyricsData as $line) {
+				$lyricData = [
+					'SONG_ID' => $songId,
+					'LINE_NUMBER' => $line['line_number'],
+					'TEXT' => $line['text'],
+					'START_TIME' => $line['start_time'],
+					'END_TIME' => $line['end_time']
+				];
+
+				$result = \Bitrix\AiKaraoke\Table\LyricsTable::add($lyricData);
+				if (!$result->isSuccess()) {
+					$errors = implode(', ', $result->getErrorMessages());
+					$this->debugLog("Failed to save lyric line: $errors");
+				}
+			}
+			return true;
+		} catch (\Exception $e) {
+			$this->debugLog("Exception when saving lyrics: " . $e->getMessage());
+			return false;
+		}
+	}
 }
 
 // Обработка запроса

@@ -8,6 +8,7 @@ require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
 // Добавляем стили и скрипты
 $APPLICATION->AddHeadString('<link rel="stylesheet" href="css/karaoke.css">');
 $APPLICATION->AddHeadString('<script src="js/karaoke.js" defer></script>');
+$APPLICATION->SetTitle('Караоке генератор');
 
 ?>
 	<div class="sign-ai-karaoke">
