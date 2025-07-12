@@ -23,56 +23,54 @@ export class KaraokePlayer
 	}
 
 	setupEventListeners() {
-		document.addEventListener('DOMContentLoaded', () => {
-			const uploadBtn = document.getElementById('upload-files-btn');
-			const generateBtn = document.getElementById('generate-karaoke-btn');
-			const playBtn = document.getElementById('play-karaoke-btn');
-			const confirmUploadBtn = document.getElementById('confirm-upload');
-			const cancelUploadBtn = document.getElementById('cancel-upload');
-			const modalCloseBtn = document.getElementById('upload-modal-close');
+		const uploadBtn = document.getElementById('upload-files-btn');
+		const generateBtn = document.getElementById('generate-karaoke-btn');
+		const playBtn = document.getElementById('play-karaoke-btn');
+		const confirmUploadBtn = document.getElementById('confirm-upload');
+		const cancelUploadBtn = document.getElementById('cancel-upload');
+		const modalCloseBtn = document.getElementById('upload-modal-close');
 
-			if (uploadBtn) {
-				uploadBtn.addEventListener('click', () => this.showUploadModal());
-			}
+		if (uploadBtn) {
+			uploadBtn.addEventListener('click', () => this.showUploadModal());
+		}
 
-			if (generateBtn) {
-				generateBtn.addEventListener('click', () => this.generateKaraoke());
-			}
+		if (generateBtn) {
+			generateBtn.addEventListener('click', () => this.generateKaraoke());
+		}
 
-			if (playBtn) {
-				playBtn.addEventListener('click', () => this.togglePlayback());
-			}
+		if (playBtn) {
+			playBtn.addEventListener('click', () => this.togglePlayback());
+		}
 
-			if (confirmUploadBtn) {
-				confirmUploadBtn.addEventListener('click', () => this.confirmUpload());
-			}
+		if (confirmUploadBtn) {
+			confirmUploadBtn.addEventListener('click', () => this.confirmUpload());
+		}
 
-			if (cancelUploadBtn) {
-				cancelUploadBtn.addEventListener('click', () => this.hideUploadModal());
-			}
+		if (cancelUploadBtn) {
+			cancelUploadBtn.addEventListener('click', () => this.hideUploadModal());
+		}
 
-			if (modalCloseBtn) {
-				modalCloseBtn.addEventListener('click', () => this.hideUploadModal());
-			}
+		if (modalCloseBtn) {
+			modalCloseBtn.addEventListener('click', () => this.hideUploadModal());
+		}
 
-			// Закрытие модального окна по клику вне его
-			const modal = document.getElementById('upload-modal');
-			if (modal) {
-				modal.addEventListener('click', (e) => {
-					if (e.target === modal) {
-						this.hideUploadModal();
-					}
-				});
-			}
-
-			// Обработка изменения файлов
-			['minus-file', 'plus-file', 'lyrics-text'].forEach(id => {
-				const element = document.getElementById(id);
-				if (element) {
-					element.addEventListener('change', () => this.validateUploadForm());
-					element.addEventListener('input', () => this.validateUploadForm());
+		// Закрытие модального окна по клику вне его
+		const modal = document.getElementById('upload-modal');
+		if (modal) {
+			modal.addEventListener('click', (e) => {
+				if (e.target === modal) {
+					this.hideUploadModal();
 				}
 			});
+		}
+
+		// Обработка изменения файлов
+		['minus-file', 'plus-file', 'lyrics-text'].forEach(id => {
+			const element = document.getElementById(id);
+			if (element) {
+				element.addEventListener('change', () => this.validateUploadForm());
+				element.addEventListener('input', () => this.validateUploadForm());
+			}
 		});
 	}
 
@@ -154,9 +152,13 @@ export class KaraokePlayer
 		try {
 			this.showLoading(true);
 
-			const response = await fetch('generate_karaoke.php', {
+			const response = await Ajax.runAction('aikaraoke.Song.upload', {
+				data: {
+					minusFile,
+					plusFile,
+					lyricsText,
+				},
 				method: 'POST',
-				body: formData
 			});
 
 			// Проверяем статус ответа

@@ -33,5 +33,17 @@ return static function (RoutingConfigurator $routes) {
 					includeFooter();
 				}
 			);
+			$routes->any(
+				'settings',
+				static function () {
+					includeHeader();
+
+					app()->IncludeComponent('bitrix:aikaraoke.settings', [
+						'settings' => true,
+					]);
+
+					includeFooter();
+				},
+			);
 		});
 };
