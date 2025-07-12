@@ -28,7 +28,7 @@ return static function (RoutingConfigurator $routes) {
 				static function () {
 					includeHeader();
 
-					app()->IncludeComponent('bitrix:aikaraoke.hub', []);
+					app()->IncludeComponent('bitrix:aikaraoke.hub', '');
 
 					includeFooter();
 				}
