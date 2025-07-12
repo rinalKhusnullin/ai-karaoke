@@ -1,11 +1,5 @@
 <?php
 
-use Bitrix\Main\Result;
-use Bitrix\Sign\Item\Member;
-use Bitrix\Sign\Item\MemberCollection;
-use Bitrix\Sign\Service\Container;
-use Bitrix\Sign\Type\Member\Role;
-
 require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
 
 \Bitrix\Main\Loader::requireModule('sign');
@@ -21,7 +15,7 @@ $APPLICATION->AddHeadString('<script src="js/karaoke.js" defer></script>');
 		<div class="sign-ai-karaoke__subtitle">Создавайте караоке с синхронизированными слайдами</div>
 		<div class="sign-ai-karaoke__description">
 			Загрузите минусовку, плюсовку и текст песни. Наш ИИ автоматически создаст
-			синхронизированные слайды для идеального караоке
+			синхронизированные слайды с уникальными изображениями для идеального караоке
 		</div>
 
 		<div class="sign-ai-karaoke__controls">
@@ -104,9 +98,9 @@ $APPLICATION->AddHeadString('<script src="js/karaoke.js" defer></script>');
 	<div class="loading-overlay" id="loading-overlay">
 		<div class="loading-content">
 			<div class="loading-spinner"></div>
-			<div class="loading-text">Генерация караоке...</div>
+			<div class="loading-text">Генерация караоке с ИИ-изображениями...</div>
 			<div class="loading-description">
-				ИИ анализирует аудио и создает синхронизированные слайды
+				ИИ анализирует аудио, создает синхронизированные слайды и генерирует уникальные изображения для каждой строки
 			</div>
 		</div>
 	</div>
