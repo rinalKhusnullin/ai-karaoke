@@ -11,7 +11,7 @@ $APPLICATION->AddHeadString('<script src="js/karaoke.js" defer></script>');
 
 ?>
 	<div class="sign-ai-karaoke">
-		<div class="sign-ai-karaoke__title">ИИ Караоке Генератор</div>
+		<div class="sign-ai-karaoke__title">Караоке Генератор</div>
 		<div class="sign-ai-karaoke__subtitle">Создавайте караоке с синхронизированными слайдами</div>
 		<div class="sign-ai-karaoke__description">
 			Загрузите минусовку, плюсовку и текст песни. Наш ИИ автоматически создаст
@@ -109,3 +109,5 @@ $APPLICATION->AddHeadString('<script src="js/karaoke.js" defer></script>');
 
 require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php");
 ?>
+
+

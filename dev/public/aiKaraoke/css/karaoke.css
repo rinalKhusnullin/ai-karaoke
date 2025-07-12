@@ -136,7 +136,7 @@
     justify-content: flex-end;
 }
 
-/* Контейнер для слайдов */
+/* Контейнер для слайдов - теперь показывает один большой слайд */
 .karaoke-player {
     background: #f8f9fa;
     border-radius: 10px;
@@ -157,102 +157,199 @@
     color: #333;
 }
 
+/* Основной контейнер для большого слайда */
 .slides-container {
-    max-height: 600px;
-    overflow-y: auto;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    background: white;
-    padding: 15px;
-    display: grid;
-    gap: 15px;
-}
-
-.karaoke-slide {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    min-height: 500px;
+    border-radius: 15px;
+    overflow: hidden;
+    background: #000;
     display: flex;
     align-items: center;
-    gap: 20px;
-    padding: 15px;
-    border-radius: 12px;
-    background: #f8f9fa;
-    border: 2px solid transparent;
-    transition: all 0.3s ease;
-    cursor: pointer;
-    min-height: 120px;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background-image 0.5s ease;
 }
 
-.karaoke-slide:hover {
-    background: #e9ecef;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+/* Основной слайд */
+.karaoke-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: all 0.5s ease;
 }
 
 .karaoke-slide.active {
-    background: linear-gradient(135deg, #007bff, #0056b3);
-    color: white;
-    border-color: #0056b3;
-    transform: scale(1.02);
-    box-shadow: 0 8px 25px rgba(0, 123, 255, 0.4);
-}
-
-.slide-image {
-    width: 100px;
-    height: 100px;
-    border-radius: 8px;
-    object-fit: cover;
-    flex-shrink: 0;
-    border: 2px solid rgba(255, 255, 255, 0.2);
-    transition: all 0.3s ease;
-}
-
-.karaoke-slide.active .slide-image {
-    border-color: rgba(255, 255, 255, 0.5);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-.slide-content {
-    flex: 1;
     display: flex;
-    flex-direction: column;
-    gap: 8px;
+}
+
+/* Текст слайда с подложкой */
+.slide-content {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 40px 50px;
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    max-width: 80%;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
 }
 
 .slide-text {
-    font-size: 1.1rem;
-    font-weight: 500;
-    line-height: 1.4;
-    margin: 0;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    line-height: 1.3;
+    margin: 0 0 15px 0;
 }
 
 .slide-timing {
-    font-size: 0.85rem;
-    opacity: 0.7;
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.8);
     margin: 0;
+    font-weight: 300;
 }
 
-.karaoke-slide.active .slide-timing {
-    opacity: 0.9;
+/* Скрываем элементы изображений, так как используем background */
+.slide-image {
+    display: none;
 }
 
 .slide-placeholder {
-    width: 100px;
-    height: 100px;
+    display: none;
+}
+
+/* Навигация между слайдами */
+.slides-navigation {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+}
+
+.slide-nav-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.slide-nav-dot.active {
+    background: white;
+    transform: scale(1.2);
+}
+
+.slide-nav-dot:hover {
+    background: rgba(255, 255, 255, 0.7);
+}
+
+/* Контролы слайдов */
+.slides-controls {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+}
+
+.slide-control-btn {
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    padding: 10px 15px;
     border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.slide-control-btn:hover {
+    background: rgba(0, 0, 0, 0.8);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Миниатюры слайдов внизу */
+.slides-thumbnails {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    padding: 15px 0;
+}
+
+.slide-thumbnail {
+    flex-shrink: 0;
+    width: 120px;
+    height: 80px;
+    border-radius: 8px;
+    background: #f8f9fa;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.slide-thumbnail:hover {
+    transform: scale(1.05);
+    border-color: #007bff;
+}
+
+.slide-thumbnail.active {
+    border-color: #007bff;
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.4);
+}
+
+.slide-thumbnail-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    color: white;
+    font-size: 0.7rem;
+    padding: 5px;
+    text-align: center;
+    line-height: 1.2;
+}
+
+.slide-thumbnail-placeholder {
+    width: 100%;
+    height: 100%;
     background: linear-gradient(45deg, #e9ecef, #dee2e6);
     display: flex;
     align-items: center;
     justify-content: center;
     color: #6c757d;
     font-size: 0.8rem;
-    text-align: center;
-    flex-shrink: 0;
-    border: 2px solid rgba(108, 117, 125, 0.2);
-}
-
-.karaoke-slide.active .slide-placeholder {
-    background: linear-gradient(45deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
-    color: rgba(255, 255, 255, 0.8);
-    border-color: rgba(255, 255, 255, 0.3);
 }
 
 /* Полноэкранный режим слайдов */
@@ -268,49 +365,70 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .fullscreen-slide {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    color: white;
-    max-width: 90%;
 }
 
 .fullscreen-slide-image {
-    max-width: 80%;
-    max-height: 60%;
-    border-radius: 12px;
-    margin-bottom: 30px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    display: none; /* Скрываем элемент img, так как используем background */
 }
 
 .fullscreen-slide-text {
-    font-size: 2.5rem;
+    font-size: 3rem;
     font-weight: bold;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-    margin-bottom: 20px;
+    color: white;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.6);
+    padding: 30px 40px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    max-width: 80%;
+    line-height: 1.2;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
 }
 
 .fullscreen-controls {
     position: absolute;
-    top: 20px;
-    right: 20px;
+    top: 30px;
+    right: 30px;
     display: flex;
-    gap: 10px;
+    gap: 15px;
+    z-index: 10;
 }
 
 .fullscreen-btn {
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.7);
     color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    padding: 12px 20px;
+    border-radius: 8px;
     cursor: pointer;
-    font-size: 0.9rem;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
 }
 
 .fullscreen-btn:hover {
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.9);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 /* Загрузочный оверлей */
@@ -428,4 +546,29 @@
         order: -1;
         width: 100%;
     }
+
+    .fullscreen-slide-text {
+        font-size: 2rem;
+        padding: 20px 25px;
+        max-width: 90%;
+    }
+
+    .fullscreen-controls {
+        top: 20px;
+        right: 20px;
+    }
+
+    .fullscreen-btn {
+        padding: 10px 15px;
+        font-size: 0.9rem;
+    }
 }
+
+@media (max-width: 480px) {
+    .fullscreen-slide-text {
+        font-size: 1.5rem;
+        padding: 15px 20px;
+        max-width: 95%;
+    }
+}
+

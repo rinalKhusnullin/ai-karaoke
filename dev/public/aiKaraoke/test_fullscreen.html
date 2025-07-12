@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест полноэкранного режима</title>
+    <link rel="stylesheet" href="css/karaoke.css">
+</head>
+<body>
+    <div style="max-width: 800px; margin: 20px auto; padding: 20px;">
+        <h1>Тест полноэкранного режима караоке</h1>
+
+        <div class="slides-container">
+            <!-- Слайд с изображением -->
+            <div class="karaoke-slide" id="slide-0">
+                <img src="images/slide_0_1752324308.png" alt="Slide 1" class="slide-image" loading="lazy">
+                <div class="slide-content">
+                    <div class="slide-text">Первая строка песни<br>Вторая строка песни<br>Третья строка песни</div>
+                    <div class="slide-timing">0:00 - 0:15</div>
+                </div>
+            </div>
+
+            <!-- Слайд без изображения (плейсхолдер) -->
+            <div class="karaoke-slide" id="slide-1">
+                <div class="slide-placeholder">🎵<br>Изображение<br>не найдено</div>
+                <div class="slide-content">
+                    <div class="slide-text">Четвертая строка песни<br>Пятая строка песни<br>Шестая строка песни</div>
+                    <div class="slide-timing">0:15 - 0:30</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Тестовые данные слайдов
+        const testSlides = [
+            {
+                text: "Первая строка песни\nВторая строка песни\nТретья строка песни",
+                image: "images/slide_0_1752324308.png",
+                start: 0,
+                end: 15
+            },
+            {
+                text: "Четвертая строка песни\nПятая строка песни\nШестая строка песни",
+                image: null,
+                start: 15,
+                end: 30
+            }
+        ];
+
+        // Функция для показа полноэкранного слайда
+        function showFullscreenSlide(slide, index) {
+            // Создаем полноэкранный контейнер если его нет
+            let fullscreenContainer = document.getElementById('slides-fullscreen');
+            if (!fullscreenContainer) {
+                fullscreenContainer = document.createElement('div');
+                fullscreenContainer.id = 'slides-fullscreen';
+                fullscreenContainer.className = 'slides-fullscreen';
+                document.body.appendChild(fullscreenContainer);
+            }
+
+            // Устанавливаем изображение как фон
+            if (slide.image) {
+                fullscreenContainer.style.backgroundImage = `url(${slide.image})`;
+            } else {
+                fullscreenContainer.style.backgroundImage = 'none';
+                fullscreenContainer.style.background = 'linear-gradient(135deg, #1a1a2e, #16213e)';
+            }
+
+            // Преобразуем переносы строк в HTML <br> теги для полноэкранного режима
+            const formattedText = slide.text.replace(/\n/g, '<br>');
+
+            // Заполняем контент
+            fullscreenContainer.innerHTML = `
+                <div class="fullscreen-controls">
+                    <button class="fullscreen-btn" onclick="this.parentElement.parentElement.style.display='none'">
+                        Закрыть (ESC)
+                    </button>
+                </div>
+                <div class="fullscreen-slide">
+                    <div class="fullscreen-slide-text">${formattedText}</div>
+                </div>
+            `;
+
+            // Показываем полноэкранный режим
+            fullscreenContainer.style.display = 'flex';
+
+            // Добавляем обработчик ESC
+            const escHandler = (e) => {
+                if (e.key === 'Escape') {
+                    fullscreenContainer.style.display = 'none';
+                    document.removeEventListener('keydown', escHandler);
+                }
+            };
+            document.addEventListener('keydown', escHandler);
+
+            // Закрытие по клику на фон
+            fullscreenContainer.addEventListener('click', (e) => {
+                if (e.target === fullscreenContainer) {
+                    fullscreenContainer.style.display = 'none';
+                }
+            });
+        }
+
+        // Добавляем обработчики событий
+        document.addEventListener('DOMContentLoaded', () => {
+            // Обработчик для изображения в первом слайде
+            const imageElement = document.querySelector('#slide-0 .slide-image');
+            if (imageElement) {
+                imageElement.addEventListener('dblclick', (e) => {
+                    e.stopPropagation();
+                    showFullscreenSlide(testSlides[0], 0);
+                });
+            }
+
+            // Обработчик для плейсхолдера во втором слайде
+            const placeholderElement = document.querySelector('#slide-1 .slide-placeholder');
+            if (placeholderElement) {
+                placeholderElement.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    showFullscreenSlide(testSlides[1], 1);
+                });
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1090,3 +1090,758 @@ Visual style: Urban, nocturnal, high-contrast with elements of luxury (cars, fas
 [2025-07-12 12:15:24] AI Karaoke Debug: Image saved locally: images/slide_3_1752322524.png
 [2025-07-12 12:15:24] AI Karaoke Debug: Image generated successfully for slide 3: images/slide_3_1752322524.png
 [2025-07-12 12:15:24] AI Karaoke Debug: Image generation completed. Generated: 4 images
+[2025-07-12 12:42:08] AI Karaoke Debug: API Key present: NO
+[2025-07-12 12:42:08] AI Karaoke Debug: API Key length: 0
+[2025-07-12 12:42:08] AI Karaoke Debug: Upload dir: /var/www/public_html/bx/upload/aikaraoke/
+[2025-07-12 12:42:08] AI Karaoke Debug: Images dir: /media/bitrix/modules/aikaraoke/dev/public/aiKaraoke/images/
+[2025-07-12 12:42:08] AI Karaoke Debug: Images dir writable: YES
+[2025-07-12 12:42:08] AI Karaoke Debug: Original lines: 8, Grouped slides: 3
+[2025-07-12 12:42:08] AI Karaoke Debug: Starting image generation for 3 slides
+[2025-07-12 12:42:08] AI Karaoke Debug: No OpenAI API key, skipping image generation
+[2025-07-12 12:43:44] AI Karaoke Debug: API Key present: NO
+[2025-07-12 12:43:44] AI Karaoke Debug: API Key length: 0
+[2025-07-12 12:43:44] AI Karaoke Debug: Upload dir: /var/www/public_html/bx/upload/aikaraoke/
+[2025-07-12 12:43:44] AI Karaoke Debug: Images dir: /media/bitrix/modules/aikaraoke/dev/public/aiKaraoke/images/
+[2025-07-12 12:43:44] AI Karaoke Debug: Images dir writable: YES
+[2025-07-12 12:43:44] AI Karaoke Debug: Original lines: 8, Grouped slides: 3
+[2025-07-12 12:43:44] AI Karaoke Debug: Starting image generation for 3 slides
+[2025-07-12 12:43:44] AI Karaoke Debug: No OpenAI API key, skipping image generation
+[2025-07-12 12:44:40] AI Karaoke Debug: API Key present: YES
+[2025-07-12 12:44:40] AI Karaoke Debug: API Key length: 164
+[2025-07-12 12:44:40] AI Karaoke Debug: Upload dir: /var/www/public_html/bx/upload/aikaraoke/
+[2025-07-12 12:44:40] AI Karaoke Debug: Images dir: /media/bitrix/modules/aikaraoke/dev/public/aiKaraoke/images/
+[2025-07-12 12:44:40] AI Karaoke Debug: Images dir writable: YES
+[2025-07-12 12:44:40] AI Karaoke Debug: Original lines: 8, Grouped slides: 3
+[2025-07-12 12:44:51] AI Karaoke Debug: Starting image generation for 3 slides
+[2025-07-12 12:44:53] AI Karaoke Debug: Full theme response: Theme: Luxury lifestyle, change, autumn
+Mood: Confident, reflective
+Visual Style: Urban, chic, autumnal colors
+[2025-07-12 12:44:53] AI Karaoke Debug: Song theme detected: Theme: Luxury lifestyle, change, autumn
+Mood: Confident, reflective
+Visual Style: Urban, chic, autumnal colors
+[2025-07-12 12:44:53] AI Karaoke Debug: Generating image for slide 0: "Подо мной М5, Asphalt 8,
+У нее Birkin цвета осень.
+Она закурит, но я бросил."
+[2025-07-12 12:44:53] AI Karaoke Debug: Image prompt for slide 0: Create a beautiful, artistic image that represents the concept: "abstract artistic concept, emotional atmosphere, cinematic mood". Overall theme and mood: Theme: Luxury lifestyle, change, autumn
+Mood: Confident, reflective
+Visual Style: Urban, chic, autumnal colors. Style: cinematic, vibrant colors, emotional, abstract art, suitable for music visualization. NO TEXT, NO WORDS, NO LETTERS in the image. Focus on mood, atmosphere, colors and abstract visual metaphors. Professional photography style, high quality, artistic composition.
+[2025-07-12 12:45:06] AI Karaoke Debug: DALL-E API response code: 200
+[2025-07-12 12:45:06] AI Karaoke Debug: Image URL received: https://oaidalleapiprodscus.blob.core.windows.net/private/org-k7pwxxwcQ5PR8XW6ML46F9tp/user-ICgUYBoIZOyKmNX0aG4tt6C2/img-BKMpDVKKtpXHHB0OxhXXx0Z9.png?st=2025-07-12T11%3A45%3A05Z&se=2025-07-12T13%3A45%3A05Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=cc612491-d948-4d2e-9821-2683df3719f5&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-07-12T09%3A53%3A05Z&ske=2025-07-13T09%3A53%3A05Z&sks=b&skv=2024-08-04&sig=1tJXA84BEEdusC6Trf9ZjLh1nLuUE/z8jXWCdu9XG3I%3D
+[2025-07-12 12:45:06] AI Karaoke Debug: Attempting to download image from: https://oaidalleapiprodscus.blob.core.windows.net/private/org-k7pwxxwcQ5PR8XW6ML46F9tp/user-ICgUYBoIZOyKmNX0aG4tt6C2/img-BKMpDVKKtpXHHB0OxhXXx0Z9.png?st=2025-07-12T11%3A45%3A05Z&se=2025-07-12T13%3A45%3A05Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=cc612491-d948-4d2e-9821-2683df3719f5&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-07-12T09%3A53%3A05Z&ske=2025-07-13T09%3A53%3A05Z&sks=b&skv=2024-08-04&sig=1tJXA84BEEdusC6Trf9ZjLh1nLuUE/z8jXWCdu9XG3I%3D
+[2025-07-12 12:45:08] AI Karaoke Debug: Image downloaded, size: 2021985 bytes
+[2025-07-12 12:45:08] AI Karaoke Debug: Saving image to: /media/bitrix/modules/aikaraoke/dev/public/aiKaraoke/images/slide_0_1752324308.png
+[2025-07-12 12:45:08] AI Karaoke Debug: Image saved successfully. Relative URL: images/slide_0_1752324308.png
+[2025-07-12 12:45:08] AI Karaoke Debug: Image saved locally: images/slide_0_1752324308.png
+[2025-07-12 12:45:08] AI Karaoke Debug: Image generated successfully for slide 0: images/slide_0_1752324308.png
+[2025-07-12 12:45:09] AI Karaoke Debug: Generating image for slide 1: "Ice занижает градус в роксе.
+Да, подо мной М5, Asphalt 8,
+У нее Birkin цвета осень."
+[2025-07-12 12:45:09] AI Karaoke Debug: Image prompt for slide 1: Create a beautiful, artistic image that represents the concept: "abstract artistic concept, emotional atmosphere, cinematic mood". Overall theme and mood: Theme: Luxury lifestyle, change, autumn
+Mood: Confident, reflective
+Visual Style: Urban, chic, autumnal colors. Style: cinematic, vibrant colors, emotional, abstract art, suitable for music visualization. NO TEXT, NO WORDS, NO LETTERS in the image. Focus on mood, atmosphere, colors and abstract visual metaphors. Professional photography style, high quality, artistic composition.
+[2025-07-12 12:45:21] AI Karaoke Debug: DALL-E API response code: 200
+[2025-07-12 12:45:21] AI Karaoke Debug: Image URL received: https://oaidalleapiprodscus.blob.core.windows.net/private/org-k7pwxxwcQ5PR8XW6ML46F9tp/user-ICgUYBoIZOyKmNX0aG4tt6C2/img-Rls8Gs1STxBzDp8zrANt4qRY.png?st=2025-07-12T11%3A45%3A21Z&se=2025-07-12T13%3A45%3A21Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=cc612491-d948-4d2e-9821-2683df3719f5&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-07-11T16%3A00%3A07Z&ske=2025-07-12T16%3A00%3A07Z&sks=b&skv=2024-08-04&sig=Q%2BTCdeB5tZSKmWyeQxHNYBnNUXUvHOyLBAOuA8Ntneg%3D
+[2025-07-12 12:45:21] AI Karaoke Debug: Attempting to download image from: https://oaidalleapiprodscus.blob.core.windows.net/private/org-k7pwxxwcQ5PR8XW6ML46F9tp/user-ICgUYBoIZOyKmNX0aG4tt6C2/img-Rls8Gs1STxBzDp8zrANt4qRY.png?st=2025-07-12T11%3A45%3A21Z&se=2025-07-12T13%3A45%3A21Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=cc612491-d948-4d2e-9821-2683df3719f5&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-07-11T16%3A00%3A07Z&ske=2025-07-12T16%3A00%3A07Z&sks=b&skv=2024-08-04&sig=Q%2BTCdeB5tZSKmWyeQxHNYBnNUXUvHOyLBAOuA8Ntneg%3D
+[2025-07-12 12:45:24] AI Karaoke Debug: Image downloaded, size: 1950970 bytes
+[2025-07-12 12:45:24] AI Karaoke Debug: Saving image to: /media/bitrix/modules/aikaraoke/dev/public/aiKaraoke/images/slide_1_1752324324.png
+[2025-07-12 12:45:24] AI Karaoke Debug: Image saved successfully. Relative URL: images/slide_1_1752324324.png
+[2025-07-12 12:45:24] AI Karaoke Debug: Image saved locally: images/slide_1_1752324324.png
+[2025-07-12 12:45:24] AI Karaoke Debug: Image generated successfully for slide 1: images/slide_1_1752324324.png
+[2025-07-12 12:45:24] AI Karaoke Debug: Generating image for slide 2: "Она закурит, но я бросил.
+Ice занижает градус в роксе, а-я."
+[2025-07-12 12:45:24] AI Karaoke Debug: Image prompt for slide 2: Create a beautiful, artistic image that represents the concept: "abstract artistic concept, emotional atmosphere, cinematic mood". Overall theme and mood: Theme: Luxury lifestyle, change, autumn
+Mood: Confident, reflective
+Visual Style: Urban, chic, autumnal colors. Style: cinematic, vibrant colors, emotional, abstract art, suitable for music visualization. NO TEXT, NO WORDS, NO LETTERS in the image. Focus on mood, atmosphere, colors and abstract visual metaphors. Professional photography style, high quality, artistic composition.
+[2025-07-12 12:45:37] AI Karaoke Debug: DALL-E API response code: 200
+[2025-07-12 12:45:37] AI Karaoke Debug: Image URL received: https://oaidalleapiprodscus.blob.core.windows.net/private/org-k7pwxxwcQ5PR8XW6ML46F9tp/user-ICgUYBoIZOyKmNX0aG4tt6C2/img-tV1qveLpT1FIz7a8V7H0ktIe.png?st=2025-07-12T11%3A45%3A37Z&se=2025-07-12T13%3A45%3A37Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=cc612491-d948-4d2e-9821-2683df3719f5&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-07-12T11%3A42%3A37Z&ske=2025-07-13T11%3A42%3A37Z&sks=b&skv=2024-08-04&sig=Rgyn9RIzZacutcP3da7RWXqmIks4L9wS037YdLOdTrQ%3D
+[2025-07-12 12:45:37] AI Karaoke Debug: Attempting to download image from: https://oaidalleapiprodscus.blob.core.windows.net/private/org-k7pwxxwcQ5PR8XW6ML46F9tp/user-ICgUYBoIZOyKmNX0aG4tt6C2/img-tV1qveLpT1FIz7a8V7H0ktIe.png?st=2025-07-12T11%3A45%3A37Z&se=2025-07-12T13%3A45%3A37Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=cc612491-d948-4d2e-9821-2683df3719f5&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-07-12T11%3A42%3A37Z&ske=2025-07-13T11%3A42%3A37Z&sks=b&skv=2024-08-04&sig=Rgyn9RIzZacutcP3da7RWXqmIks4L9wS037YdLOdTrQ%3D
+[2025-07-12 12:45:40] AI Karaoke Debug: Image downloaded, size: 1954278 bytes
+[2025-07-12 12:45:40] AI Karaoke Debug: Saving image to: /media/bitrix/modules/aikaraoke/dev/public/aiKaraoke/images/slide_2_1752324340.png
+[2025-07-12 12:45:40] AI Karaoke Debug: Image saved successfully. Relative URL: images/slide_2_1752324340.png
+[2025-07-12 12:45:40] AI Karaoke Debug: Image saved locally: images/slide_2_1752324340.png
+[2025-07-12 12:45:40] AI Karaoke Debug: Image generated successfully for slide 2: images/slide_2_1752324340.png
+[2025-07-12 12:45:40] AI Karaoke Debug: Image generation completed. Generated: 3 images
+[2025-07-12 12:46:31] AI Karaoke Debug: API Key present: YES
+[2025-07-12 12:46:31] AI Karaoke Debug: API Key length: 164
+[2025-07-12 12:46:31] AI Karaoke Debug: Upload dir: /var/www/public_html/bx/upload/aikaraoke/
+[2025-07-12 12:46:31] AI Karaoke Debug: Images dir: /media/bitrix/modules/aikaraoke/dev/public/aiKaraoke/images/
+[2025-07-12 12:46:31] AI Karaoke Debug: Images dir writable: YES
+[2025-07-12 12:46:31] AI Karaoke Debug: Original lines: 8, Grouped slides: 3
+[2025-07-12 12:46:44] AI Karaoke Debug: Starting image generation for 3 slides
+[2025-07-12 12:46:47] AI Karaoke Debug: Full theme response: Theme: Urban lifestyle, luxury, change.
+Mood: Cool, rebellious, contemplative.
+Visual style: Dark, sleek, autumnal colors.
+[2025-07-12 12:46:47] AI Karaoke Debug: Song theme detected: Theme: Urban lifestyle, luxury, change.
+Mood: Cool, rebellious, contemplative.
+Visual style: Dark, sleek, autumnal colors.
+[2025-07-12 12:46:47] AI Karaoke Debug: Generating image for slide 0: "Подо мной М5, Asphalt 8,
+У нее Birkin цвета осень.
+Она закурит, но я бросил."
+[2025-07-12 12:46:47] AI Karaoke Debug: Image prompt for slide 0: Create a beautiful, artistic image that represents the concept: "abstract artistic concept, emotional atmosphere, cinematic mood". Overall theme and mood: Theme: Urban lifestyle, luxury, change.
+Mood: Cool, rebellious, contemplative.
+Visual style: Dark, sleek, autumnal colors.. Style: cinematic, vibrant colors, emotional, abstract art, suitable for music visualization. NO TEXT, NO WORDS, NO LETTERS in the image. Focus on mood, atmosphere, colors and abstract visual metaphors. Professional photography style, high quality, artistic composition.
+[2025-07-12 12:47:00] AI Karaoke Debug: DALL-E API response code: 200
+[2025-07-12 12:47:00] AI Karaoke Debug: Image URL received: https://oaidalleapiprodscus.blob.core.windows.net/private/org-k7pwxxwcQ5PR8XW6ML46F9tp/user-ICgUYBoIZOyKmNX0aG4tt6C2/img-dM0ejBOfugW5htDqEtvUdiml.png?st=2025-07-12T11%3A47%3A00Z&se=2025-07-12T13%3A47%3A00Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=cc612491-d948-4d2e-9821-2683df3719f5&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-07-12T04%3A05%3A31Z&ske=2025-07-13T04%3A05%3A31Z&sks=b&skv=2024-08-04&sig=0V6jPtsl0zDBDzACKi%2Bu8lHUGI9xYDRQCuVzCecDQ54%3D
+[2025-07-12 12:47:00] AI Karaoke Debug: Attempting to download image from: https://oaidalleapiprodscus.blob.core.windows.net/private/org-k7pwxxwcQ5PR8XW6ML46F9tp/user-ICgUYBoIZOyKmNX0aG4tt6C2/img-dM0ejBOfugW5htDqEtvUdiml.png?st=2025-07-12T11%3A47%3A00Z&se=2025-07-12T13%3A47%3A00Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=cc612491-d948-4d2e-9821-2683df3719f5&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-07-12T04%3A05%3A31Z&ske=2025-07-13T04%3A05%3A31Z&sks=b&skv=2024-08-04&sig=0V6jPtsl0zDBDzACKi%2Bu8lHUGI9xYDRQCuVzCecDQ54%3D
+[2025-07-12 12:47:03] AI Karaoke Debug: Image downloaded, size: 1861567 bytes
+[2025-07-12 12:47:03] AI Karaoke Debug: Saving image to: /media/bitrix/modules/aikaraoke/dev/public/aiKaraoke/images/slide_0_1752324423.png
+[2025-07-12 12:47:03] AI Karaoke Debug: Image saved successfully. Relative URL: images/slide_0_1752324423.png
+[2025-07-12 12:47:03] AI Karaoke Debug: Image saved locally: images/slide_0_1752324423.png
+[2025-07-12 12:47:03] AI Karaoke Debug: Image generated successfully for slide 0: images/slide_0_1752324423.png
+[2025-07-12 12:47:03] AI Karaoke Debug: Generating image for slide 1: "Ice занижает градус в роксе.
+Да, подо мной М5, Asphalt 8,
+У нее Birkin цвета осень."
+[2025-07-12 12:47:03] AI Karaoke Debug: Image prompt for slide 1: Create a beautiful, artistic image that represents the concept: "abstract artistic concept, emotional atmosphere, cinematic mood". Overall theme and mood: Theme: Urban lifestyle, luxury, change.
+Mood: Cool, rebellious, contemplative.
+Visual style: Dark, sleek, autumnal colors.. Style: cinematic, vibrant colors, emotional, abstract art, suitable for music visualization. NO TEXT, NO WORDS, NO LETTERS in the image. Focus on mood, atmosphere, colors and abstract visual metaphors. Professional photography style, high quality, artistic composition.
+[2025-07-12 12:47:16] AI Karaoke Debug: DALL-E API response code: 200
+[2025-07-12 12:47:16] AI Karaoke Debug: Image URL received: https://oaidalleapiprodscus.blob.core.windows.net/private/org-k7pwxxwcQ5PR8XW6ML46F9tp/user-ICgUYBoIZOyKmNX0aG4tt6C2/img-xZat6WktB7O1uxq25oiMYWwo.png?st=2025-07-12T11%3A47%3A16Z&se=2025-07-12T13%3A47%3A16Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=cc612491-d948-4d2e-9821-2683df3719f5&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-07-12T11%3A21%3A01Z&ske=2025-07-13T11%3A21%3A01Z&sks=b&skv=2024-08-04&sig=9VyW1HORLYDW%2BZ5%2BAR%2Bzq2YjNk/gwqFWGe09sIRonK0%3D
+[2025-07-12 12:47:16] AI Karaoke Debug: Attempting to download image from: https://oaidalleapiprodscus.blob.core.windows.net/private/org-k7pwxxwcQ5PR8XW6ML46F9tp/user-ICgUYBoIZOyKmNX0aG4tt6C2/img-xZat6WktB7O1uxq25oiMYWwo.png?st=2025-07-12T11%3A47%3A16Z&se=2025-07-12T13%3A47%3A16Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=cc612491-d948-4d2e-9821-2683df3719f5&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-07-12T11%3A21%3A01Z&ske=2025-07-13T11%3A21%3A01Z&sks=b&skv=2024-08-04&sig=9VyW1HORLYDW%2BZ5%2BAR%2Bzq2YjNk/gwqFWGe09sIRonK0%3D
+[2025-07-12 12:47:19] AI Karaoke Debug: Image downloaded, size: 1565175 bytes
+[2025-07-12 12:47:19] AI Karaoke Debug: Saving image to: /media/bitrix/modules/aikaraoke/dev/public/aiKaraoke/images/slide_1_1752324439.png
+[2025-07-12 12:47:19] AI Karaoke Debug: Image saved successfully. Relative URL: images/slide_1_1752324439.png
+[2025-07-12 12:47:19] AI Karaoke Debug: Image saved locally: images/slide_1_1752324439.png
+[2025-07-12 12:47:19] AI Karaoke Debug: Image generated successfully for slide 1: images/slide_1_1752324439.png
+[2025-07-12 12:47:19] AI Karaoke Debug: Generating image for slide 2: "Она закурит, но я бросил.
+Ice занижает градус в роксе, а-я."
+[2025-07-12 12:47:19] AI Karaoke Debug: Image prompt for slide 2: Create a beautiful, artistic image that represents the concept: "abstract artistic concept, emotional atmosphere, cinematic mood". Overall theme and mood: Theme: Urban lifestyle, luxury, change.
+Mood: Cool, rebellious, contemplative.
+Visual style: Dark, sleek, autumnal colors.. Style: cinematic, vibrant colors, emotional, abstract art, suitable for music visualization. NO TEXT, NO WORDS, NO LETTERS in the image. Focus on mood, atmosphere, colors and abstract visual metaphors. Professional photography style, high quality, artistic composition.
+[2025-07-12 12:47:33] AI Karaoke Debug: DALL-E API response code: 200
+[2025-07-12 12:47:33] AI Karaoke Debug: Image URL received: https://oaidalleapiprodscus.blob.core.windows.net/private/org-k7pwxxwcQ5PR8XW6ML46F9tp/user-ICgUYBoIZOyKmNX0aG4tt6C2/img-BPjx0G4KobLTEz8E2Lg90sPc.png?st=2025-07-12T11%3A47%3A33Z&se=2025-07-12T13%3A47%3A33Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=cc612491-d948-4d2e-9821-2683df3719f5&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-07-12T11%3A01%3A10Z&ske=2025-07-13T11%3A01%3A10Z&sks=b&skv=2024-08-04&sig=74924ZE%2BEaRuoXSvOouvvcuwuh0OTRFJ9Yg/N4nNLnQ%3D
+[2025-07-12 12:47:33] AI Karaoke Debug: Attempting to download image from: https://oaidalleapiprodscus.blob.core.windows.net/private/org-k7pwxxwcQ5PR8XW6ML46F9tp/user-ICgUYBoIZOyKmNX0aG4tt6C2/img-BPjx0G4KobLTEz8E2Lg90sPc.png?st=2025-07-12T11%3A47%3A33Z&se=2025-07-12T13%3A47%3A33Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=cc612491-d948-4d2e-9821-2683df3719f5&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-07-12T11%3A01%3A10Z&ske=2025-07-13T11%3A01%3A10Z&sks=b&skv=2024-08-04&sig=74924ZE%2BEaRuoXSvOouvvcuwuh0OTRFJ9Yg/N4nNLnQ%3D
+[2025-07-12 12:47:35] AI Karaoke Debug: Image downloaded, size: 1533494 bytes
+[2025-07-12 12:47:35] AI Karaoke Debug: Saving image to: /media/bitrix/modules/aikaraoke/dev/public/aiKaraoke/images/slide_2_1752324455.png
+[2025-07-12 12:47:35] AI Karaoke Debug: Image saved successfully. Relative URL: images/slide_2_1752324455.png
+[2025-07-12 12:47:35] AI Karaoke Debug: Image saved locally: images/slide_2_1752324455.png
+[2025-07-12 12:47:35] AI Karaoke Debug: Image generated successfully for slide 2: images/slide_2_1752324455.png
+[2025-07-12 12:47:36] AI Karaoke Debug: Image generation completed. Generated: 3 images
+[2025-07-12 12:51:26] AI Karaoke Debug: API Key present: YES
+[2025-07-12 12:51:26] AI Karaoke Debug: API Key length: 164
+[2025-07-12 12:51:26] AI Karaoke Debug: Upload dir: /var/www/public_html/bx/upload/aikaraoke/
+[2025-07-12 12:51:26] AI Karaoke Debug: Images dir: /media/bitrix/modules/aikaraoke/dev/public/aiKaraoke/images/
+[2025-07-12 12:51:26] AI Karaoke Debug: Images dir writable: YES
+[2025-07-12 12:51:26] AI Karaoke Debug: Original lines: 8, Grouped slides: 3
+[2025-07-12 12:51:26] AI Karaoke Debug: Starting image generation for 3 slides
+[2025-07-12 12:51:26] AI Karaoke Debug: Song theme detected: musical atmosphere, urban lifestyle, luxury, success
+[2025-07-12 12:51:26] AI Karaoke Debug: Generating image for slide 0: "Подо мной М5, Asphalt 8,
+У нее Birkin цвета осень.
+Она закурит, но я бросил."
+[2025-07-12 12:51:26] AI Karaoke Debug: Image prompt for slide 0: Create a beautiful, artistic image that represents the concept: "abstract artistic concept, emotional atmosphere, cinematic mood". Overall theme and mood: musical atmosphere, urban lifestyle, luxury, success. Style: cinematic, vibrant colors, emotional, abstract art, suitable for music visualization. NO TEXT, NO WORDS, NO LETTERS in the image. Focus on mood, atmosphere, colors and abstract visual metaphors. Professional photography style, high quality, artistic composition.
+[2025-07-12 12:51:26] AI Karaoke Debug: DALL-E API response code: 403
+[2025-07-12 12:51:26] AI Karaoke Debug: Image generation failed for line: "Подо мной М5, Asphalt 8,
+У нее Birkin цвета осень.
+Она закурит, но я бросил.". HTTP Code: 403. Response: {"error":{"code":"unsupported_country_region_territory","message":"Country, region, or territory not supported","param":null,"type":"request_forbidden"}}
+[2025-07-12 12:51:26] AI Karaoke Debug: Generating placeholder image for slide 0
+[2025-07-12 12:51:26] AI Karaoke Debug: Placeholder image created: images/placeholder_0_1752324686.png
+[2025-07-12 12:51:26] AI Karaoke Debug: Image generated successfully for slide 0: images/placeholder_0_1752324686.png
+[2025-07-12 12:51:27] AI Karaoke Debug: Generating image for slide 1: "Ice занижает градус в роксе.
+Да, подо мной М5, Asphalt 8,
+У нее Birkin цвета осень."
+[2025-07-12 12:51:27] AI Karaoke Debug: Image prompt for slide 1: Create a beautiful, artistic image that represents the concept: "abstract artistic concept, emotional atmosphere, cinematic mood". Overall theme and mood: musical atmosphere, urban lifestyle, luxury, success. Style: cinematic, vibrant colors, emotional, abstract art, suitable for music visualization. NO TEXT, NO WORDS, NO LETTERS in the image. Focus on mood, atmosphere, colors and abstract visual metaphors. Professional photography style, high quality, artistic composition.
+[2025-07-12 12:51:27] AI Karaoke Debug: DALL-E API response code: 403
+[2025-07-12 12:51:27] AI Karaoke Debug: Image generation failed for line: "Ice занижает градус в роксе.
+Да, подо мной М5, Asphalt 8,
+У нее Birkin цвета осень.". HTTP Code: 403. Response: {"error":{"code":"unsupported_country_region_territory","message":"Country, region, or territory not supported","param":null,"type":"request_forbidden"}}
+[2025-07-12 12:51:27] AI Karaoke Debug: Generating placeholder image for slide 1
+[2025-07-12 12:51:27] AI Karaoke Debug: Placeholder image created: images/placeholder_1_1752324687.png
+[2025-07-12 12:51:27] AI Karaoke Debug: Image generated successfully for slide 1: images/placeholder_1_1752324687.png
+[2025-07-12 12:51:28] AI Karaoke Debug: Generating image for slide 2: "Она закурит, но я бросил.
+Ice занижает градус в роксе, а-я."
+[2025-07-12 12:51:28] AI Karaoke Debug: Image prompt for slide 2: Create a beautiful, artistic image that represents the concept: "abstract artistic concept, emotional atmosphere, cinematic mood". Overall theme and mood: musical atmosphere, urban lifestyle, luxury, success. Style: cinematic, vibrant colors, emotional, abstract art, suitable for music visualization. NO TEXT, NO WORDS, NO LETTERS in the image. Focus on mood, atmosphere, colors and abstract visual metaphors. Professional photography style, high quality, artistic composition.
+[2025-07-12 12:51:28] AI Karaoke Debug: DALL-E API response code: 403
+[2025-07-12 12:51:28] AI Karaoke Debug: Image generation failed for line: "Она закурит, но я бросил.
+Ice занижает градус в роксе, а-я.". HTTP Code: 403. Response: {"error":{"code":"unsupported_country_region_territory","message":"Country, region, or territory not supported","param":null,"type":"request_forbidden"}}
+[2025-07-12 12:51:28] AI Karaoke Debug: Generating placeholder image for slide 2
+[2025-07-12 12:51:28] AI Karaoke Debug: Placeholder image created: images/placeholder_2_1752324688.png
+[2025-07-12 12:51:28] AI Karaoke Debug: Image generated successfully for slide 2: images/placeholder_2_1752324688.png
+[2025-07-12 12:51:28] AI Karaoke Debug: Image generation completed. Generated: 3 images
+[2025-07-12 12:52:59] AI Karaoke Debug: API Key present: YES
+[2025-07-12 12:52:59] AI Karaoke Debug: API Key length: 164
+[2025-07-12 12:52:59] AI Karaoke Debug: Upload dir: /var/www/public_html/bx/upload/aikaraoke/
+[2025-07-12 12:52:59] AI Karaoke Debug: Images dir: /media/bitrix/modules/aikaraoke/dev/public/aiKaraoke/images/
+[2025-07-12 12:52:59] AI Karaoke Debug: Images dir writable: YES
+[2025-07-12 12:52:59] AI Karaoke Debug: Original lines: 8, Grouped slides: 3
+[2025-07-12 12:53:00] AI Karaoke Debug: Starting image generation for 3 slides
+[2025-07-12 12:53:00] AI Karaoke Debug: Song theme detected: musical atmosphere, urban lifestyle, luxury, success
+[2025-07-12 12:53:00] AI Karaoke Debug: Generating image for slide 0: "Подо мной М5, Asphalt 8,
+У нее Birkin цвета осень.
+Она закурит, но я бросил."
+[2025-07-12 12:53:00] AI Karaoke Debug: Image prompt for slide 0: Create a beautiful, artistic image that represents the concept: "abstract artistic concept, emotional atmosphere, cinematic mood". Overall theme and mood: musical atmosphere, urban lifestyle, luxury, success. Style: cinematic, vibrant colors, emotional, abstract art, suitable for music visualization. NO TEXT, NO WORDS, NO LETTERS in the image. Focus on mood, atmosphere, colors and abstract visual metaphors. Professional photography style, high quality, artistic composition.
+[2025-07-12 12:53:00] AI Karaoke Debug: DALL-E API response code: 403
+[2025-07-12 12:53:00] AI Karaoke Debug: Image generation failed for line: "Подо мной М5, Asphalt 8,
+У нее Birkin цвета осень.
+Она закурит, но я бросил.". HTTP Code: 403. Response: {"error":{"code":"unsupported_country_region_territory","message":"Country, region, or territory not supported","param":null,"type":"request_forbidden"}}
+[2025-07-12 12:53:00] AI Karaoke Debug: Generating placeholder image for slide 0
+[2025-07-12 12:53:00] AI Karaoke Debug: Placeholder image created: images/placeholder_0_1752324780.png
+[2025-07-12 12:53:00] AI Karaoke Debug: Image generated successfully for slide 0: images/placeholder_0_1752324780.png
+[2025-07-12 12:53:01] AI Karaoke Debug: Generating image for slide 1: "Ice занижает градус в роксе.
+Да, подо мной М5, Asphalt 8,
+У нее Birkin цвета осень."
+[2025-07-12 12:53:01] AI Karaoke Debug: Image prompt for slide 1: Create a beautiful, artistic image that represents the concept: "abstract artistic concept, emotional atmosphere, cinematic mood". Overall theme and mood: musical atmosphere, urban lifestyle, luxury, success. Style: cinematic, vibrant colors, emotional, abstract art, suitable for music visualization. NO TEXT, NO WORDS, NO LETTERS in the image. Focus on mood, atmosphere, colors and abstract visual metaphors. Professional photography style, high quality, artistic composition.
+[2025-07-12 12:53:01] AI Karaoke Debug: DALL-E API response code: 403
+[2025-07-12 12:53:01] AI Karaoke Debug: Image generation failed for line: "Ice занижает градус в роксе.
+Да, подо мной М5, Asphalt 8,
+У нее Birkin цвета осень.". HTTP Code: 403. Response: {"error":{"code":"unsupported_country_region_territory","message":"Country, region, or territory not supported","param":null,"type":"request_forbidden"}}
+[2025-07-12 12:53:01] AI Karaoke Debug: Generating placeholder image for slide 1
+[2025-07-12 12:53:01] AI Karaoke Debug: Placeholder image created: images/placeholder_1_1752324781.png
+[2025-07-12 12:53:01] AI Karaoke Debug: Image generated successfully for slide 1: images/placeholder_1_1752324781.png
+[2025-07-12 12:53:01] AI Karaoke Debug: Generating image for slide 2: "Она закурит, но я бросил.
+Ice занижает градус в роксе, а-я."
+[2025-07-12 12:53:01] AI Karaoke Debug: Image prompt for slide 2: Create a beautiful, artistic image that represents the concept: "abstract artistic concept, emotional atmosphere, cinematic mood". Overall theme and mood: musical atmosphere, urban lifestyle, luxury, success. Style: cinematic, vibrant colors, emotional, abstract art, suitable for music visualization. NO TEXT, NO WORDS, NO LETTERS in the image. Focus on mood, atmosphere, colors and abstract visual metaphors. Professional photography style, high quality, artistic composition.
+[2025-07-12 12:53:02] AI Karaoke Debug: DALL-E API response code: 403
+[2025-07-12 12:53:02] AI Karaoke Debug: Image generation failed for line: "Она закурит, но я бросил.
+Ice занижает градус в роксе, а-я.". HTTP Code: 403. Response: {"error":{"code":"unsupported_country_region_territory","message":"Country, region, or territory not supported","param":null,"type":"request_forbidden"}}
+[2025-07-12 12:53:02] AI Karaoke Debug: Generating placeholder image for slide 2
+[2025-07-12 12:53:02] AI Karaoke Debug: Placeholder image created: images/placeholder_2_1752324782.png
+[2025-07-12 12:53:02] AI Karaoke Debug: Image generated successfully for slide 2: images/placeholder_2_1752324782.png
+[2025-07-12 12:53:02] AI Karaoke Debug: Image generation completed. Generated: 3 images
+[2025-07-12 12:56:51] AI Karaoke Debug: API Key present: YES
+[2025-07-12 12:56:51] AI Karaoke Debug: API Key length: 164
+[2025-07-12 12:56:51] AI Karaoke Debug: Upload dir: /var/www/public_html/bx/upload/aikaraoke/
+[2025-07-12 12:56:51] AI Karaoke Debug: Images dir: /media/bitrix/modules/aikaraoke/dev/public/aiKaraoke/images/
+[2025-07-12 12:56:51] AI Karaoke Debug: Images dir writable: YES
+[2025-07-12 12:56:51] AI Karaoke Debug: Original lines: 8, Grouped slides: 3
+[2025-07-12 12:56:51] AI Karaoke Debug: Starting image generation for 3 slides
+[2025-07-12 12:56:51] AI Karaoke Debug: Song theme detected: musical atmosphere, urban lifestyle, luxury, success
+[2025-07-12 12:56:51] AI Karaoke Debug: Generating image for slide 0: "Подо мной М5, Asphalt 8,
+У нее Birkin цвета осень.
+Она закурит, но я бросил."
+[2025-07-12 12:56:51] AI Karaoke Debug: Image prompt for slide 0: Create a beautiful, artistic image that represents the concept: "abstract artistic concept, emotional atmosphere, cinematic mood". Overall theme and mood: musical atmosphere, urban lifestyle, luxury, success. Style: cinematic, vibrant colors, emotional, abstract art, suitable for music visualization. NO TEXT, NO WORDS, NO LETTERS in the image. Focus on mood, atmosphere, colors and abstract visual metaphors. Professional photography style, high quality, artistic composition.
+[2025-07-12 12:56:51] AI Karaoke Debug: DALL-E API response code: 403
+[2025-07-12 12:56:51] AI Karaoke Debug: Image generation failed for line: "Подо мной М5, Asphalt 8,
+У нее Birkin цвета осень.
+Она закурит, но я бросил.". HTTP Code: 403. Response: {"error":{"code":"unsupported_country_region_territory","message":"Country, region, or territory not supported","param":null,"type":"request_forbidden"}}
+[2025-07-12 12:56:51] AI Karaoke Debug: Generating placeholder image for slide 0
+[2025-07-12 12:56:51] AI Karaoke Debug: Placeholder image created: images/placeholder_0_1752325011.png
+[2025-07-12 12:56:51] AI Karaoke Debug: Image generated successfully for slide 0: images/placeholder_0_1752325011.png
+[2025-07-12 12:56:52] AI Karaoke Debug: Generating image for slide 1: "Ice занижает градус в роксе.
+Да, подо мной М5, Asphalt 8,
+У нее Birkin цвета осень."
+[2025-07-12 12:56:52] AI Karaoke Debug: Image prompt for slide 1: Create a beautiful, artistic image that represents the concept: "abstract artistic concept, emotional atmosphere, cinematic mood". Overall theme and mood: musical atmosphere, urban lifestyle, luxury, success. Style: cinematic, vibrant colors, emotional, abstract art, suitable for music visualization. NO TEXT, NO WORDS, NO LETTERS in the image. Focus on mood, atmosphere, colors and abstract visual metaphors. Professional photography style, high quality, artistic composition.
+[2025-07-12 12:56:52] AI Karaoke Debug: DALL-E API response code: 403
+[2025-07-12 12:56:52] AI Karaoke Debug: Image generation failed for line: "Ice занижает градус в роксе.
+Да, подо мной М5, Asphalt 8,
+У нее Birkin цвета осень.". HTTP Code: 403. Response: {"error":{"code":"unsupported_country_region_territory","message":"Country, region, or territory not supported","param":null,"type":"request_forbidden"}}
+[2025-07-12 12:56:52] AI Karaoke Debug: Generating placeholder image for slide 1
+[2025-07-12 12:56:52] AI Karaoke Debug: Placeholder image created: images/placeholder_1_1752325012.png
+[2025-07-12 12:56:52] AI Karaoke Debug: Image generated successfully for slide 1: images/placeholder_1_1752325012.png
+[2025-07-12 12:56:52] AI Karaoke Debug: Generating image for slide 2: "Она закурит, но я бросил.
+Ice занижает градус в роксе, а-я."
+[2025-07-12 12:56:52] AI Karaoke Debug: Image prompt for slide 2: Create a beautiful, artistic image that represents the concept: "abstract artistic concept, emotional atmosphere, cinematic mood". Overall theme and mood: musical atmosphere, urban lifestyle, luxury, success. Style: cinematic, vibrant colors, emotional, abstract art, suitable for music visualization. NO TEXT, NO WORDS, NO LETTERS in the image. Focus on mood, atmosphere, colors and abstract visual metaphors. Professional photography style, high quality, artistic composition.
+[2025-07-12 12:56:53] AI Karaoke Debug: DALL-E API response code: 403
+[2025-07-12 12:56:53] AI Karaoke Debug: Image generation failed for line: "Она закурит, но я бросил.
+Ice занижает градус в роксе, а-я.". HTTP Code: 403. Response: {"error":{"code":"unsupported_country_region_territory","message":"Country, region, or territory not supported","param":null,"type":"request_forbidden"}}
+[2025-07-12 12:56:53] AI Karaoke Debug: Generating placeholder image for slide 2
+[2025-07-12 12:56:53] AI Karaoke Debug: Placeholder image created: images/placeholder_2_1752325013.png
+[2025-07-12 12:56:53] AI Karaoke Debug: Image generated successfully for slide 2: images/placeholder_2_1752325013.png
+[2025-07-12 12:56:53] AI Karaoke Debug: Image generation completed. Generated: 3 images
+[2025-07-12 12:57:10] AI Karaoke Debug: API Key present: YES
+[2025-07-12 12:57:10] AI Karaoke Debug: API Key length: 164
+[2025-07-12 12:57:10] AI Karaoke Debug: Upload dir: /var/www/public_html/bx/upload/aikaraoke/
+[2025-07-12 12:57:10] AI Karaoke Debug: Images dir: /media/bitrix/modules/aikaraoke/dev/public/aiKaraoke/images/
+[2025-07-12 12:57:10] AI Karaoke Debug: Images dir writable: YES
+[2025-07-12 12:57:10] AI Karaoke Debug: Original lines: 8, Grouped slides: 3
+[2025-07-12 12:57:10] AI Karaoke Debug: Starting image generation for 3 slides
+[2025-07-12 12:57:10] AI Karaoke Debug: Song theme detected: musical atmosphere, urban lifestyle, luxury, success
+[2025-07-12 12:57:10] AI Karaoke Debug: Generating image for slide 0: "Подо мной М5, Asphalt 8,
+У нее Birkin цвета осень.
+Она закурит, но я бросил."
+[2025-07-12 12:57:10] AI Karaoke Debug: Image prompt for slide 0: Create a beautiful, artistic image that represents the concept: "abstract artistic concept, emotional atmosphere, cinematic mood". Overall theme and mood: musical atmosphere, urban lifestyle, luxury, success. Style: cinematic, vibrant colors, emotional, abstract art, suitable for music visualization. NO TEXT, NO WORDS, NO LETTERS in the image. Focus on mood, atmosphere, colors and abstract visual metaphors. Professional photography style, high quality, artistic composition.
+[2025-07-12 12:57:10] AI Karaoke Debug: DALL-E API response code: 403
+[2025-07-12 12:57:10] AI Karaoke Debug: Image generation failed for line: "Подо мной М5, Asphalt 8,
+У нее Birkin цвета осень.
+Она закурит, но я бросил.". HTTP Code: 403. Response: {"error":{"code":"unsupported_country_region_territory","message":"Country, region, or territory not supported","param":null,"type":"request_forbidden"}}
+[2025-07-12 12:57:10] AI Karaoke Debug: Generating placeholder image for slide 0
+[2025-07-12 12:57:10] AI Karaoke Debug: Placeholder image created: images/placeholder_0_1752325030.png
+[2025-07-12 12:57:10] AI Karaoke Debug: Image generated successfully for slide 0: images/placeholder_0_1752325030.png
+[2025-07-12 12:57:11] AI Karaoke Debug: Generating image for slide 1: "Ice занижает градус в роксе.
+Да, подо мной М5, Asphalt 8,
+У нее Birkin цвета осень."
+[2025-07-12 12:57:11] AI Karaoke Debug: Image prompt for slide 1: Create a beautiful, artistic image that represents the concept: "abstract artistic concept, emotional atmosphere, cinematic mood". Overall theme and mood: musical atmosphere, urban lifestyle, luxury, success. Style: cinematic, vibrant colors, emotional, abstract art, suitable for music visualization. NO TEXT, NO WORDS, NO LETTERS in the image. Focus on mood, atmosphere, colors and abstract visual metaphors. Professional photography style, high quality, artistic composition.
+[2025-07-12 12:57:11] AI Karaoke Debug: DALL-E API response code: 403
+[2025-07-12 12:57:11] AI Karaoke Debug: Image generation failed for line: "Ice занижает градус в роксе.
+Да, подо мной М5, Asphalt 8,
+У нее Birkin цвета осень.". HTTP Code: 403. Response: {"error":{"code":"unsupported_country_region_territory","message":"Country, region, or territory not supported","param":null,"type":"request_forbidden"}}
+[2025-07-12 12:57:11] AI Karaoke Debug: Generating placeholder image for slide 1
+[2025-07-12 12:57:11] AI Karaoke Debug: Placeholder image created: images/placeholder_1_1752325031.png
+[2025-07-12 12:57:11] AI Karaoke Debug: Image generated successfully for slide 1: images/placeholder_1_1752325031.png
+[2025-07-12 12:57:11] AI Karaoke Debug: Generating image for slide 2: "Она закурит, но я бросил.
+Ice занижает градус в роксе, а-я."
+[2025-07-12 12:57:11] AI Karaoke Debug: Image prompt for slide 2: Create a beautiful, artistic image that represents the concept: "abstract artistic concept, emotional atmosphere, cinematic mood". Overall theme and mood: musical atmosphere, urban lifestyle, luxury, success. Style: cinematic, vibrant colors, emotional, abstract art, suitable for music visualization. NO TEXT, NO WORDS, NO LETTERS in the image. Focus on mood, atmosphere, colors and abstract visual metaphors. Professional photography style, high quality, artistic composition.
+[2025-07-12 12:57:12] AI Karaoke Debug: DALL-E API response code: 403
+[2025-07-12 12:57:12] AI Karaoke Debug: Image generation failed for line: "Она закурит, но я бросил.
+Ice занижает градус в роксе, а-я.". HTTP Code: 403. Response: {"error":{"code":"unsupported_country_region_territory","message":"Country, region, or territory not supported","param":null,"type":"request_forbidden"}}
+[2025-07-12 12:57:12] AI Karaoke Debug: Generating placeholder image for slide 2
+[2025-07-12 12:57:12] AI Karaoke Debug: Placeholder image created: images/placeholder_2_1752325032.png
+[2025-07-12 12:57:12] AI Karaoke Debug: Image generated successfully for slide 2: images/placeholder_2_1752325032.png
+[2025-07-12 12:57:12] AI Karaoke Debug: Image generation completed. Generated: 3 images
+[2025-07-12 12:58:17] AI Karaoke Debug: API Key present: YES
+[2025-07-12 12:58:17] AI Karaoke Debug: API Key length: 164
+[2025-07-12 12:58:17] AI Karaoke Debug: Upload dir: /var/www/public_html/bx/upload/aikaraoke/
+[2025-07-12 12:58:17] AI Karaoke Debug: Images dir: /media/bitrix/modules/aikaraoke/dev/public/aiKaraoke/images/
+[2025-07-12 12:58:17] AI Karaoke Debug: Images dir writable: YES
+[2025-07-12 12:58:17] AI Karaoke Debug: Original lines: 8, Grouped slides: 3
+[2025-07-12 12:58:17] AI Karaoke Debug: Starting image generation for 3 slides
+[2025-07-12 12:58:18] AI Karaoke Debug: Song theme detected: musical atmosphere, urban lifestyle, luxury, success
+[2025-07-12 12:58:18] AI Karaoke Debug: Generating image for slide 0: "Подо мной М5, Asphalt 8,
+У нее Birkin цвета осень.
+Она закурит, но я бросил."
+[2025-07-12 12:58:18] AI Karaoke Debug: Image prompt for slide 0: Create a beautiful, artistic image that represents the concept: "abstract artistic concept, emotional atmosphere, cinematic mood". Overall theme and mood: musical atmosphere, urban lifestyle, luxury, success. Style: cinematic, vibrant colors, emotional, abstract art, suitable for music visualization. NO TEXT, NO WORDS, NO LETTERS in the image. Focus on mood, atmosphere, colors and abstract visual metaphors. Professional photography style, high quality, artistic composition.
+[2025-07-12 12:58:18] AI Karaoke Debug: DALL-E API response code: 403
+[2025-07-12 12:58:18] AI Karaoke Debug: Image generation failed for line: "Подо мной М5, Asphalt 8,
+У нее Birkin цвета осень.
+Она закурит, но я бросил.". HTTP Code: 403. Response: {"error":{"code":"unsupported_country_region_territory","message":"Country, region, or territory not supported","param":null,"type":"request_forbidden"}}
+[2025-07-12 12:58:18] AI Karaoke Debug: Generating placeholder image for slide 0
+[2025-07-12 12:58:18] AI Karaoke Debug: Placeholder image created: images/placeholder_0_1752325098.png
+[2025-07-12 12:58:18] AI Karaoke Debug: Image generated successfully for slide 0: images/placeholder_0_1752325098.png
+[2025-07-12 12:58:18] AI Karaoke Debug: Generating image for slide 1: "Ice занижает градус в роксе.
+Да, подо мной М5, Asphalt 8,
+У нее Birkin цвета осень."
+[2025-07-12 12:58:18] AI Karaoke Debug: Image prompt for slide 1: Create a beautiful, artistic image that represents the concept: "abstract artistic concept, emotional atmosphere, cinematic mood". Overall theme and mood: musical atmosphere, urban lifestyle, luxury, success. Style: cinematic, vibrant colors, emotional, abstract art, suitable for music visualization. NO TEXT, NO WORDS, NO LETTERS in the image. Focus on mood, atmosphere, colors and abstract visual metaphors. Professional photography style, high quality, artistic composition.
+[2025-07-12 12:58:19] AI Karaoke Debug: DALL-E API response code: 403
+[2025-07-12 12:58:19] AI Karaoke Debug: Image generation failed for line: "Ice занижает градус в роксе.
+Да, подо мной М5, Asphalt 8,
+У нее Birkin цвета осень.". HTTP Code: 403. Response: {"error":{"code":"unsupported_country_region_territory","message":"Country, region, or territory not supported","param":null,"type":"request_forbidden"}}
+[2025-07-12 12:58:19] AI Karaoke Debug: Generating placeholder image for slide 1
+[2025-07-12 12:58:19] AI Karaoke Debug: Placeholder image created: images/placeholder_1_1752325099.png
+[2025-07-12 12:58:19] AI Karaoke Debug: Image generated successfully for slide 1: images/placeholder_1_1752325099.png
+[2025-07-12 12:58:19] AI Karaoke Debug: Generating image for slide 2: "Она закурит, но я бросил.
+Ice занижает градус в роксе, а-я."
+[2025-07-12 12:58:19] AI Karaoke Debug: Image prompt for slide 2: Create a beautiful, artistic image that represents the concept: "abstract artistic concept, emotional atmosphere, cinematic mood". Overall theme and mood: musical atmosphere, urban lifestyle, luxury, success. Style: cinematic, vibrant colors, emotional, abstract art, suitable for music visualization. NO TEXT, NO WORDS, NO LETTERS in the image. Focus on mood, atmosphere, colors and abstract visual metaphors. Professional photography style, high quality, artistic composition.
+[2025-07-12 12:58:19] AI Karaoke Debug: DALL-E API response code: 403
+[2025-07-12 12:58:19] AI Karaoke Debug: Image generation failed for line: "Она закурит, но я бросил.
+Ice занижает градус в роксе, а-я.". HTTP Code: 403. Response: {"error":{"code":"unsupported_country_region_territory","message":"Country, region, or territory not supported","param":null,"type":"request_forbidden"}}
+[2025-07-12 12:58:19] AI Karaoke Debug: Generating placeholder image for slide 2
+[2025-07-12 12:58:19] AI Karaoke Debug: Placeholder image created: images/placeholder_2_1752325099.png
+[2025-07-12 12:58:19] AI Karaoke Debug: Image generated successfully for slide 2: images/placeholder_2_1752325099.png
+[2025-07-12 12:58:20] AI Karaoke Debug: Image generation completed. Generated: 3 images
+[2025-07-12 13:00:30] AI Karaoke Debug: API Key present: YES
+[2025-07-12 13:00:30] AI Karaoke Debug: API Key length: 164
+[2025-07-12 13:00:30] AI Karaoke Debug: Upload dir: /var/www/public_html/bx/upload/aikaraoke/
+[2025-07-12 13:00:30] AI Karaoke Debug: Images dir: /media/bitrix/modules/aikaraoke/dev/public/aiKaraoke/images/
+[2025-07-12 13:00:30] AI Karaoke Debug: Images dir writable: YES
+[2025-07-12 13:00:30] AI Karaoke Debug: Original lines: 8, Grouped slides: 3
+[2025-07-12 13:00:30] AI Karaoke Debug: Starting image generation for 3 slides
+[2025-07-12 13:00:30] AI Karaoke Debug: Song theme detected: musical atmosphere, urban lifestyle, luxury, success
+[2025-07-12 13:00:30] AI Karaoke Debug: Generating image for slide 0: "Подо мной М5, Asphalt 8,
+У нее Birkin цвета осень.
+Она закурит, но я бросил."
+[2025-07-12 13:00:30] AI Karaoke Debug: Image prompt for slide 0: Create a beautiful, artistic image that represents the concept: "abstract artistic concept, emotional atmosphere, cinematic mood". Overall theme and mood: musical atmosphere, urban lifestyle, luxury, success. Style: cinematic, vibrant colors, emotional, abstract art, suitable for music visualization. NO TEXT, NO WORDS, NO LETTERS in the image. Focus on mood, atmosphere, colors and abstract visual metaphors. Professional photography style, high quality, artistic composition.
+[2025-07-12 13:00:30] AI Karaoke Debug: DALL-E API response code: 403
+[2025-07-12 13:00:30] AI Karaoke Debug: Image generation failed for line: "Подо мной М5, Asphalt 8,
+У нее Birkin цвета осень.
+Она закурит, но я бросил.". HTTP Code: 403. Response: {"error":{"code":"unsupported_country_region_territory","message":"Country, region, or territory not supported","param":null,"type":"request_forbidden"}}
+[2025-07-12 13:00:30] AI Karaoke Debug: Generating placeholder image for slide 0
+[2025-07-12 13:00:30] AI Karaoke Debug: Placeholder image created: images/placeholder_0_1752325230.png
+[2025-07-12 13:00:30] AI Karaoke Debug: Image generated successfully for slide 0: images/placeholder_0_1752325230.png
+[2025-07-12 13:00:31] AI Karaoke Debug: Generating image for slide 1: "Ice занижает градус в роксе.
+Да, подо мной М5, Asphalt 8,
+У нее Birkin цвета осень."
+[2025-07-12 13:00:31] AI Karaoke Debug: Image prompt for slide 1: Create a beautiful, artistic image that represents the concept: "abstract artistic concept, emotional atmosphere, cinematic mood". Overall theme and mood: musical atmosphere, urban lifestyle, luxury, success. Style: cinematic, vibrant colors, emotional, abstract art, suitable for music visualization. NO TEXT, NO WORDS, NO LETTERS in the image. Focus on mood, atmosphere, colors and abstract visual metaphors. Professional photography style, high quality, artistic composition.
+[2025-07-12 13:00:31] AI Karaoke Debug: DALL-E API response code: 403
+[2025-07-12 13:00:31] AI Karaoke Debug: Image generation failed for line: "Ice занижает градус в роксе.
+Да, подо мной М5, Asphalt 8,
+У нее Birkin цвета осень.". HTTP Code: 403. Response: {"error":{"code":"unsupported_country_region_territory","message":"Country, region, or territory not supported","param":null,"type":"request_forbidden"}}
+[2025-07-12 13:00:31] AI Karaoke Debug: Generating placeholder image for slide 1
+[2025-07-12 13:00:31] AI Karaoke Debug: Placeholder image created: images/placeholder_1_1752325231.png
+[2025-07-12 13:00:31] AI Karaoke Debug: Image generated successfully for slide 1: images/placeholder_1_1752325231.png
+[2025-07-12 13:00:32] AI Karaoke Debug: Generating image for slide 2: "Она закурит, но я бросил.
+Ice занижает градус в роксе, а-я."
+[2025-07-12 13:00:32] AI Karaoke Debug: Image prompt for slide 2: Create a beautiful, artistic image that represents the concept: "abstract artistic concept, emotional atmosphere, cinematic mood". Overall theme and mood: musical atmosphere, urban lifestyle, luxury, success. Style: cinematic, vibrant colors, emotional, abstract art, suitable for music visualization. NO TEXT, NO WORDS, NO LETTERS in the image. Focus on mood, atmosphere, colors and abstract visual metaphors. Professional photography style, high quality, artistic composition.
+[2025-07-12 13:00:32] AI Karaoke Debug: DALL-E API response code: 403
+[2025-07-12 13:00:32] AI Karaoke Debug: Image generation failed for line: "Она закурит, но я бросил.
+Ice занижает градус в роксе, а-я.". HTTP Code: 403. Response: {"error":{"code":"unsupported_country_region_territory","message":"Country, region, or territory not supported","param":null,"type":"request_forbidden"}}
+[2025-07-12 13:00:32] AI Karaoke Debug: Generating placeholder image for slide 2
+[2025-07-12 13:00:32] AI Karaoke Debug: Placeholder image created: images/placeholder_2_1752325232.png
+[2025-07-12 13:00:32] AI Karaoke Debug: Image generated successfully for slide 2: images/placeholder_2_1752325232.png
+[2025-07-12 13:00:33] AI Karaoke Debug: Image generation completed. Generated: 3 images
+[2025-07-12 13:01:21] AI Karaoke Debug: API Key present: YES
+[2025-07-12 13:01:21] AI Karaoke Debug: API Key length: 164
+[2025-07-12 13:01:21] AI Karaoke Debug: Upload dir: /var/www/public_html/bx/upload/aikaraoke/
+[2025-07-12 13:01:21] AI Karaoke Debug: Images dir: /media/bitrix/modules/aikaraoke/dev/public/aiKaraoke/images/
+[2025-07-12 13:01:21] AI Karaoke Debug: Images dir writable: YES
+[2025-07-12 13:01:21] AI Karaoke Debug: Original lines: 8, Grouped slides: 3
+[2025-07-12 13:01:21] AI Karaoke Debug: Starting image generation for 3 slides
+[2025-07-12 13:01:21] AI Karaoke Debug: Song theme detected: musical atmosphere, urban lifestyle, luxury, success
+[2025-07-12 13:01:21] AI Karaoke Debug: Generating image for slide 0: "Подо мной М5, Asphalt 8,
+У нее Birkin цвета осень.
+Она закурит, но я бросил."
+[2025-07-12 13:01:21] AI Karaoke Debug: Image prompt for slide 0: Create a beautiful, artistic image that represents the concept: "abstract artistic concept, emotional atmosphere, cinematic mood". Overall theme and mood: musical atmosphere, urban lifestyle, luxury, success. Style: cinematic, vibrant colors, emotional, abstract art, suitable for music visualization. NO TEXT, NO WORDS, NO LETTERS in the image. Focus on mood, atmosphere, colors and abstract visual metaphors. Professional photography style, high quality, artistic composition.
+[2025-07-12 13:01:22] AI Karaoke Debug: DALL-E API response code: 403
+[2025-07-12 13:01:22] AI Karaoke Debug: Image generation failed for line: "Подо мной М5, Asphalt 8,
+У нее Birkin цвета осень.
+Она закурит, но я бросил.". HTTP Code: 403. Response: {"error":{"code":"unsupported_country_region_territory","message":"Country, region, or territory not supported","param":null,"type":"request_forbidden"}}
+[2025-07-12 13:01:22] AI Karaoke Debug: Generating placeholder image for slide 0
+[2025-07-12 13:01:22] AI Karaoke Debug: Placeholder image created: images/placeholder_0_1752325282.png
+[2025-07-12 13:01:22] AI Karaoke Debug: Image generated successfully for slide 0: images/placeholder_0_1752325282.png
+[2025-07-12 13:01:22] AI Karaoke Debug: Generating image for slide 1: "Ice занижает градус в роксе.
+Да, подо мной М5, Asphalt 8,
+У нее Birkin цвета осень."
+[2025-07-12 13:01:22] AI Karaoke Debug: Image prompt for slide 1: Create a beautiful, artistic image that represents the concept: "abstract artistic concept, emotional atmosphere, cinematic mood". Overall theme and mood: musical atmosphere, urban lifestyle, luxury, success. Style: cinematic, vibrant colors, emotional, abstract art, suitable for music visualization. NO TEXT, NO WORDS, NO LETTERS in the image. Focus on mood, atmosphere, colors and abstract visual metaphors. Professional photography style, high quality, artistic composition.
+[2025-07-12 13:01:22] AI Karaoke Debug: DALL-E API response code: 403
+[2025-07-12 13:01:22] AI Karaoke Debug: Image generation failed for line: "Ice занижает градус в роксе.
+Да, подо мной М5, Asphalt 8,
+У нее Birkin цвета осень.". HTTP Code: 403. Response: {"error":{"code":"unsupported_country_region_territory","message":"Country, region, or territory not supported","param":null,"type":"request_forbidden"}}
+[2025-07-12 13:01:22] AI Karaoke Debug: Generating placeholder image for slide 1
+[2025-07-12 13:01:22] AI Karaoke Debug: Placeholder image created: images/placeholder_1_1752325282.png
+[2025-07-12 13:01:22] AI Karaoke Debug: Image generated successfully for slide 1: images/placeholder_1_1752325282.png
+[2025-07-12 13:01:23] AI Karaoke Debug: Generating image for slide 2: "Она закурит, но я бросил.
+Ice занижает градус в роксе, а-я."
+[2025-07-12 13:01:23] AI Karaoke Debug: Image prompt for slide 2: Create a beautiful, artistic image that represents the concept: "abstract artistic concept, emotional atmosphere, cinematic mood". Overall theme and mood: musical atmosphere, urban lifestyle, luxury, success. Style: cinematic, vibrant colors, emotional, abstract art, suitable for music visualization. NO TEXT, NO WORDS, NO LETTERS in the image. Focus on mood, atmosphere, colors and abstract visual metaphors. Professional photography style, high quality, artistic composition.
+[2025-07-12 13:01:23] AI Karaoke Debug: DALL-E API response code: 403
+[2025-07-12 13:01:23] AI Karaoke Debug: Image generation failed for line: "Она закурит, но я бросил.
+Ice занижает градус в роксе, а-я.". HTTP Code: 403. Response: {"error":{"code":"unsupported_country_region_territory","message":"Country, region, or territory not supported","param":null,"type":"request_forbidden"}}
+[2025-07-12 13:01:23] AI Karaoke Debug: Generating placeholder image for slide 2
+[2025-07-12 13:01:23] AI Karaoke Debug: Placeholder image created: images/placeholder_2_1752325283.png
+[2025-07-12 13:01:23] AI Karaoke Debug: Image generated successfully for slide 2: images/placeholder_2_1752325283.png
+[2025-07-12 13:01:24] AI Karaoke Debug: Image generation completed. Generated: 3 images
+[2025-07-12 13:04:23] AI Karaoke Debug: API Key present: YES
+[2025-07-12 13:04:23] AI Karaoke Debug: API Key length: 164
+[2025-07-12 13:04:23] AI Karaoke Debug: Upload dir: /var/www/public_html/bx/upload/aikaraoke/
+[2025-07-12 13:04:23] AI Karaoke Debug: Images dir: /media/bitrix/modules/aikaraoke/dev/public/aiKaraoke/images/
+[2025-07-12 13:04:23] AI Karaoke Debug: Images dir writable: YES
+[2025-07-12 13:04:23] AI Karaoke Debug: Original lines: 8, Grouped slides: 3
+[2025-07-12 13:04:23] AI Karaoke Debug: Starting image generation for 3 slides
+[2025-07-12 13:04:23] AI Karaoke Debug: Song theme detected: musical atmosphere, urban lifestyle, luxury, success
+[2025-07-12 13:04:23] AI Karaoke Debug: Generating image for slide 0: "Подо мной М5, Asphalt 8,
+У нее Birkin цвета осень.
+Она закурит, но я бросил."
+[2025-07-12 13:04:23] AI Karaoke Debug: Image prompt for slide 0: Create a beautiful, artistic image that represents the concept: "abstract artistic concept, emotional atmosphere, cinematic mood". Overall theme and mood: musical atmosphere, urban lifestyle, luxury, success. Style: cinematic, vibrant colors, emotional, abstract art, suitable for music visualization. NO TEXT, NO WORDS, NO LETTERS in the image. Focus on mood, atmosphere, colors and abstract visual metaphors. Professional photography style, high quality, artistic composition.
+[2025-07-12 13:04:23] AI Karaoke Debug: DALL-E API response code: 403
+[2025-07-12 13:04:23] AI Karaoke Debug: Image generation failed for line: "Подо мной М5, Asphalt 8,
+У нее Birkin цвета осень.
+Она закурит, но я бросил.". HTTP Code: 403. Response: {"error":{"code":"unsupported_country_region_territory","message":"Country, region, or territory not supported","param":null,"type":"request_forbidden"}}
+[2025-07-12 13:04:23] AI Karaoke Debug: Generating placeholder image for slide 0
+[2025-07-12 13:04:23] AI Karaoke Debug: Placeholder image created: images/placeholder_0_1752325463.png
+[2025-07-12 13:04:23] AI Karaoke Debug: Image generated successfully for slide 0: images/placeholder_0_1752325463.png
+[2025-07-12 13:04:24] AI Karaoke Debug: Generating image for slide 1: "Ice занижает градус в роксе.
+Да, подо мной М5, Asphalt 8,
+У нее Birkin цвета осень."
+[2025-07-12 13:04:24] AI Karaoke Debug: Image prompt for slide 1: Create a beautiful, artistic image that represents the concept: "abstract artistic concept, emotional atmosphere, cinematic mood". Overall theme and mood: musical atmosphere, urban lifestyle, luxury, success. Style: cinematic, vibrant colors, emotional, abstract art, suitable for music visualization. NO TEXT, NO WORDS, NO LETTERS in the image. Focus on mood, atmosphere, colors and abstract visual metaphors. Professional photography style, high quality, artistic composition.
+[2025-07-12 13:04:24] AI Karaoke Debug: DALL-E API response code: 403
+[2025-07-12 13:04:24] AI Karaoke Debug: Image generation failed for line: "Ice занижает градус в роксе.
+Да, подо мной М5, Asphalt 8,
+У нее Birkin цвета осень.". HTTP Code: 403. Response: {"error":{"code":"unsupported_country_region_territory","message":"Country, region, or territory not supported","param":null,"type":"request_forbidden"}}
+[2025-07-12 13:04:24] AI Karaoke Debug: Generating placeholder image for slide 1
+[2025-07-12 13:04:24] AI Karaoke Debug: Placeholder image created: images/placeholder_1_1752325464.png
+[2025-07-12 13:04:24] AI Karaoke Debug: Image generated successfully for slide 1: images/placeholder_1_1752325464.png
+[2025-07-12 13:04:24] AI Karaoke Debug: Generating image for slide 2: "Она закурит, но я бросил.
+Ice занижает градус в роксе, а-я."
+[2025-07-12 13:04:24] AI Karaoke Debug: Image prompt for slide 2: Create a beautiful, artistic image that represents the concept: "abstract artistic concept, emotional atmosphere, cinematic mood". Overall theme and mood: musical atmosphere, urban lifestyle, luxury, success. Style: cinematic, vibrant colors, emotional, abstract art, suitable for music visualization. NO TEXT, NO WORDS, NO LETTERS in the image. Focus on mood, atmosphere, colors and abstract visual metaphors. Professional photography style, high quality, artistic composition.
+[2025-07-12 13:04:25] AI Karaoke Debug: DALL-E API response code: 403
+[2025-07-12 13:04:25] AI Karaoke Debug: Image generation failed for line: "Она закурит, но я бросил.
+Ice занижает градус в роксе, а-я.". HTTP Code: 403. Response: {"error":{"code":"unsupported_country_region_territory","message":"Country, region, or territory not supported","param":null,"type":"request_forbidden"}}
+[2025-07-12 13:04:25] AI Karaoke Debug: Generating placeholder image for slide 2
+[2025-07-12 13:04:25] AI Karaoke Debug: Placeholder image created: images/placeholder_2_1752325465.png
+[2025-07-12 13:04:25] AI Karaoke Debug: Image generated successfully for slide 2: images/placeholder_2_1752325465.png
+[2025-07-12 13:04:25] AI Karaoke Debug: Image generation completed. Generated: 3 images
+[2025-07-12 13:13:52] AI Karaoke: Karaoke Generator initialized | Context: {"api_key_configured":true,"directories":{"upload_dir":"\/var\/www\/public_html\/bx\/upload\/aikaraoke\/","images_dir":"\/media\/bitrix\/modules\/aikaraoke\/dev\/public\/aiKaraoke\/images\/","upload_writable":true,"images_writable":true}}
+[2025-07-12 13:15:13] AI Karaoke: API key updated via settings page | Context: {"key_length":164,"is_configured":true}
+[2025-07-12 13:15:33] AI Karaoke: Image generation test successful | Context: {"filename":"test_1752326133.png","file_size":1414501,"image_url":"https:\/\/oaidalleapiprodscus.blob.core.windows.net\/private\/org-k7pwxxwcQ5PR8XW6ML46F9tp\/user-ICgUYBoIZOyKmNX0aG4tt6C2\/img-jHvgLkzQ8PR1IsrASMl7UNKy.png?st=2025-07-12T12%3A15%3A31Z&se=2025-07-12T14%3A15%3A31Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image\/png&skoid=cc612491-d948-4d2e-9821-2683df3719f5&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-07-11T16%3A40%3A01Z&ske=2025-07-12T16%3A40%3A01Z&sks=b&skv=2024-08-04&sig=1yoml4qG67BA37iMD809YUI9uVerKmVZ3bFJMUdegXU%3D"}
+[2025-07-12 13:15:57] AI Karaoke: Karaoke Generator initialized | Context: {"api_key_configured":true,"directories":{"upload_dir":"\/var\/www\/public_html\/bx\/upload\/aikaraoke\/","images_dir":"\/media\/bitrix\/modules\/aikaraoke\/dev\/public\/aiKaraoke\/images\/","upload_writable":true,"images_writable":true}}
+[2025-07-12 13:16:16] AI Karaoke: Karaoke Generator initialized | Context: {"api_key_configured":true,"directories":{"upload_dir":"\/var\/www\/public_html\/bx\/upload\/aikaraoke\/","images_dir":"\/media\/bitrix\/modules\/aikaraoke\/dev\/public\/aiKaraoke\/images\/","upload_writable":true,"images_writable":true}}
+[2025-07-12 13:16:58] AI Karaoke: Karaoke Generator initialized | Context: {"api_key_configured":true,"directories":{"upload_dir":"\/var\/www\/public_html\/bx\/upload\/aikaraoke\/","images_dir":"\/media\/bitrix\/modules\/aikaraoke\/dev\/public\/aiKaraoke\/images\/","upload_writable":true,"images_writable":true}}
+[2025-07-12 13:19:09] AI Karaoke: Karaoke Generator initialized | Context: {"api_key_configured":true,"directories":{"upload_dir":"\/var\/www\/public_html\/bx\/upload\/aikaraoke\/","images_dir":"\/media\/bitrix\/modules\/aikaraoke\/dev\/public\/aiKaraoke\/images\/","upload_writable":true,"images_writable":true}}
+[2025-07-12 13:19:09] AI Karaoke Debug: Original lines: 8, Grouped slides: 3
+[2025-07-12 13:19:09] AI Karaoke: Starting image generation for 3 slides
+[2025-07-12 13:19:09] AI Karaoke: Song theme detected: musical atmosphere, urban lifestyle, luxury, success
+[2025-07-12 13:19:09] AI Karaoke: Generating image for slide 0: "Подо мной М5, Asphalt 8,
+У нее Birkin цвета осень.
+Она закурит, но я бросил."
+[2025-07-12 13:19:09] AI Karaoke: Image prompt for slide 0: Create a beautiful, artistic image that represents the concept: "abstract artistic concept, emotional atmosphere, cinematic mood". Overall theme and mood: musical atmosphere, urban lifestyle, luxury, success. Style: cinematic, vibrant colors, emotional, abstract art, suitable for music visualization. NO TEXT, NO WORDS, NO LETTERS in the image. Focus on mood, atmosphere, colors and abstract visual metaphors. Professional photography style, high quality, artistic composition.
+[2025-07-12 13:19:09] AI Karaoke: DALL-E API response code: 403
+[2025-07-12 13:19:09] AI Karaoke: Image generation failed for line: "Подо мной М5, Asphalt 8,
+У нее Birkin цвета осень.
+Она закурит, но я бросил.". HTTP Code: 403. Response: {"error":{"code":"unsupported_country_region_territory","message":"Country, region, or territory not supported","param":null,"type":"request_forbidden"}}
+[2025-07-12 13:19:09] AI Karaoke: Generating placeholder image for slide 0
+[2025-07-12 13:19:09] AI Karaoke: Placeholder image created: images/placeholder_0_1752326349.png
+[2025-07-12 13:19:09] AI Karaoke: Image generated successfully for slide 0: images/placeholder_0_1752326349.png
+[2025-07-12 13:19:10] AI Karaoke: Generating image for slide 1: "Ice занижает градус в роксе.
+Да, подо мной М5, Asphalt 8,
+У нее Birkin цвета осень."
+[2025-07-12 13:19:10] AI Karaoke: Image prompt for slide 1: Create a beautiful, artistic image that represents the concept: "abstract artistic concept, emotional atmosphere, cinematic mood". Overall theme and mood: musical atmosphere, urban lifestyle, luxury, success. Style: cinematic, vibrant colors, emotional, abstract art, suitable for music visualization. NO TEXT, NO WORDS, NO LETTERS in the image. Focus on mood, atmosphere, colors and abstract visual metaphors. Professional photography style, high quality, artistic composition.
+[2025-07-12 13:19:10] AI Karaoke: DALL-E API response code: 403
+[2025-07-12 13:19:10] AI Karaoke: Image generation failed for line: "Ice занижает градус в роксе.
+Да, подо мной М5, Asphalt 8,
+У нее Birkin цвета осень.". HTTP Code: 403. Response: {"error":{"code":"unsupported_country_region_territory","message":"Country, region, or territory not supported","param":null,"type":"request_forbidden"}}
+[2025-07-12 13:19:10] AI Karaoke: Generating placeholder image for slide 1
+[2025-07-12 13:19:10] AI Karaoke: Placeholder image created: images/placeholder_1_1752326350.png
+[2025-07-12 13:19:10] AI Karaoke: Image generated successfully for slide 1: images/placeholder_1_1752326350.png
+[2025-07-12 13:19:10] AI Karaoke: Generating image for slide 2: "Она закурит, но я бросил.
+Ice занижает градус в роксе, а-я."
+[2025-07-12 13:19:10] AI Karaoke: Image prompt for slide 2: Create a beautiful, artistic image that represents the concept: "abstract artistic concept, emotional atmosphere, cinematic mood". Overall theme and mood: musical atmosphere, urban lifestyle, luxury, success. Style: cinematic, vibrant colors, emotional, abstract art, suitable for music visualization. NO TEXT, NO WORDS, NO LETTERS in the image. Focus on mood, atmosphere, colors and abstract visual metaphors. Professional photography style, high quality, artistic composition.
+[2025-07-12 13:19:11] AI Karaoke: DALL-E API response code: 403
+[2025-07-12 13:19:11] AI Karaoke: Image generation failed for line: "Она закурит, но я бросил.
+Ice занижает градус в роксе, а-я.". HTTP Code: 403. Response: {"error":{"code":"unsupported_country_region_territory","message":"Country, region, or territory not supported","param":null,"type":"request_forbidden"}}
+[2025-07-12 13:19:11] AI Karaoke: Generating placeholder image for slide 2
+[2025-07-12 13:19:11] AI Karaoke: Placeholder image created: images/placeholder_2_1752326351.png
+[2025-07-12 13:19:11] AI Karaoke: Image generated successfully for slide 2: images/placeholder_2_1752326351.png
+[2025-07-12 13:19:11] AI Karaoke: Image generation completed. Generated: 3 images
+[2025-07-12 13:19:21] AI Karaoke: Karaoke Generator initialized | Context: {"api_key_configured":true,"directories":{"upload_dir":"\/var\/www\/public_html\/bx\/upload\/aikaraoke\/","images_dir":"\/media\/bitrix\/modules\/aikaraoke\/dev\/public\/aiKaraoke\/images\/","upload_writable":true,"images_writable":true}}
+[2025-07-12 13:19:21] AI Karaoke Debug: Original lines: 8, Grouped slides: 3
+[2025-07-12 13:19:32] AI Karaoke: Starting image generation for 3 slides
+[2025-07-12 13:19:35] AI Karaoke: Full theme response: Theme: Urban lifestyle, luxury, change.
+Mood: Confident, reflective.
+Visual Style: Night cityscape, luxury items, autumn colors.
+[2025-07-12 13:19:35] AI Karaoke: Song theme detected: Theme: Urban lifestyle, luxury, change.
+Mood: Confident, reflective.
+Visual Style: Night cityscape, luxury items, autumn colors.
+[2025-07-12 13:19:35] AI Karaoke: Generating image for slide 0: "Подо мной М5, Asphalt 8,
+У нее Birkin цвета осень.
+Она закурит, но я бросил."
+[2025-07-12 13:19:35] AI Karaoke: Image prompt for slide 0: Create a beautiful, artistic image that represents the concept: "abstract artistic concept, emotional atmosphere, cinematic mood". Overall theme and mood: Theme: Urban lifestyle, luxury, change.
+Mood: Confident, reflective.
+Visual Style: Night cityscape, luxury items, autumn colors.. Style: cinematic, vibrant colors, emotional, abstract art, suitable for music visualization. NO TEXT, NO WORDS, NO LETTERS in the image. Focus on mood, atmosphere, colors and abstract visual metaphors. Professional photography style, high quality, artistic composition.
+[2025-07-12 13:19:45] AI Karaoke: DALL-E API response code: 200
+[2025-07-12 13:19:45] AI Karaoke: Image URL received: https://oaidalleapiprodscus.blob.core.windows.net/private/org-k7pwxxwcQ5PR8XW6ML46F9tp/user-ICgUYBoIZOyKmNX0aG4tt6C2/img-IiLOHOlfyfvenPOOF4P9uDqF.png?st=2025-07-12T12%3A19%3A45Z&se=2025-07-12T14%3A19%3A45Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=cc612491-d948-4d2e-9821-2683df3719f5&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-07-12T11%3A25%3A59Z&ske=2025-07-13T11%3A25%3A59Z&sks=b&skv=2024-08-04&sig=DHLQd7e1Y0fBQwDW4TxxuUOm5moe1nfYVRhRriIQ1e4%3D
+[2025-07-12 13:19:45] AI Karaoke: Attempting to download image from: https://oaidalleapiprodscus.blob.core.windows.net/private/org-k7pwxxwcQ5PR8XW6ML46F9tp/user-ICgUYBoIZOyKmNX0aG4tt6C2/img-IiLOHOlfyfvenPOOF4P9uDqF.png?st=2025-07-12T12%3A19%3A45Z&se=2025-07-12T14%3A19%3A45Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=cc612491-d948-4d2e-9821-2683df3719f5&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-07-12T11%3A25%3A59Z&ske=2025-07-13T11%3A25%3A59Z&sks=b&skv=2024-08-04&sig=DHLQd7e1Y0fBQwDW4TxxuUOm5moe1nfYVRhRriIQ1e4%3D
+[2025-07-12 13:19:47] AI Karaoke: Image downloaded, size: 2327568 bytes
+[2025-07-12 13:19:47] AI Karaoke: Saving image to: /media/bitrix/modules/aikaraoke/dev/public/aiKaraoke/images/slide_0_1752326387.png
+[2025-07-12 13:19:47] AI Karaoke: Image saved successfully. Relative URL: images/slide_0_1752326387.png
+[2025-07-12 13:19:47] AI Karaoke: Image saved locally: images/slide_0_1752326387.png
+[2025-07-12 13:19:47] AI Karaoke: Image generated successfully for slide 0: images/slide_0_1752326387.png
+[2025-07-12 13:19:48] AI Karaoke: Generating image for slide 1: "Ice занижает градус в роксе.
+Да, подо мной М5, Asphalt 8,
+У нее Birkin цвета осень."
+[2025-07-12 13:19:48] AI Karaoke: Image prompt for slide 1: Create a beautiful, artistic image that represents the concept: "abstract artistic concept, emotional atmosphere, cinematic mood". Overall theme and mood: Theme: Urban lifestyle, luxury, change.
+Mood: Confident, reflective.
+Visual Style: Night cityscape, luxury items, autumn colors.. Style: cinematic, vibrant colors, emotional, abstract art, suitable for music visualization. NO TEXT, NO WORDS, NO LETTERS in the image. Focus on mood, atmosphere, colors and abstract visual metaphors. Professional photography style, high quality, artistic composition.
+[2025-07-12 13:20:01] AI Karaoke: DALL-E API response code: 200
+[2025-07-12 13:20:01] AI Karaoke: Image URL received: https://oaidalleapiprodscus.blob.core.windows.net/private/org-k7pwxxwcQ5PR8XW6ML46F9tp/user-ICgUYBoIZOyKmNX0aG4tt6C2/img-MqWL6haTjVnS5hZg4fuXhlCj.png?st=2025-07-12T12%3A20%3A00Z&se=2025-07-12T14%3A20%3A00Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=cc612491-d948-4d2e-9821-2683df3719f5&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-07-12T13%3A20%3A00Z&ske=2025-07-13T13%3A20%3A00Z&sks=b&skv=2024-08-04&sig=PT9oWrkOUJt4SKOU8zMo0w0ktE0rcTI0%2BODlGJK7Mdg%3D
+[2025-07-12 13:20:01] AI Karaoke: Attempting to download image from: https://oaidalleapiprodscus.blob.core.windows.net/private/org-k7pwxxwcQ5PR8XW6ML46F9tp/user-ICgUYBoIZOyKmNX0aG4tt6C2/img-MqWL6haTjVnS5hZg4fuXhlCj.png?st=2025-07-12T12%3A20%3A00Z&se=2025-07-12T14%3A20%3A00Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=cc612491-d948-4d2e-9821-2683df3719f5&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-07-12T13%3A20%3A00Z&ske=2025-07-13T13%3A20%3A00Z&sks=b&skv=2024-08-04&sig=PT9oWrkOUJt4SKOU8zMo0w0ktE0rcTI0%2BODlGJK7Mdg%3D
+[2025-07-12 13:20:03] AI Karaoke: Image downloaded, size: 2034215 bytes
+[2025-07-12 13:20:03] AI Karaoke: Saving image to: /media/bitrix/modules/aikaraoke/dev/public/aiKaraoke/images/slide_1_1752326403.png
+[2025-07-12 13:20:03] AI Karaoke: Image saved successfully. Relative URL: images/slide_1_1752326403.png
+[2025-07-12 13:20:03] AI Karaoke: Image saved locally: images/slide_1_1752326403.png
+[2025-07-12 13:20:03] AI Karaoke: Image generated successfully for slide 1: images/slide_1_1752326403.png
+[2025-07-12 13:20:03] AI Karaoke: Generating image for slide 2: "Она закурит, но я бросил.
+Ice занижает градус в роксе, а-я."
+[2025-07-12 13:20:03] AI Karaoke: Image prompt for slide 2: Create a beautiful, artistic image that represents the concept: "abstract artistic concept, emotional atmosphere, cinematic mood". Overall theme and mood: Theme: Urban lifestyle, luxury, change.
+Mood: Confident, reflective.
+Visual Style: Night cityscape, luxury items, autumn colors.. Style: cinematic, vibrant colors, emotional, abstract art, suitable for music visualization. NO TEXT, NO WORDS, NO LETTERS in the image. Focus on mood, atmosphere, colors and abstract visual metaphors. Professional photography style, high quality, artistic composition.
+[2025-07-12 13:20:16] AI Karaoke: DALL-E API response code: 200
+[2025-07-12 13:20:16] AI Karaoke: Image URL received: https://oaidalleapiprodscus.blob.core.windows.net/private/org-k7pwxxwcQ5PR8XW6ML46F9tp/user-ICgUYBoIZOyKmNX0aG4tt6C2/img-y8VlzVo4MHWG7c8uyWIxb8CR.png?st=2025-07-12T12%3A20%3A16Z&se=2025-07-12T14%3A20%3A16Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=cc612491-d948-4d2e-9821-2683df3719f5&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-07-12T06%3A35%3A20Z&ske=2025-07-13T06%3A35%3A20Z&sks=b&skv=2024-08-04&sig=JdO2CGIcuunYc2tKmZokujrhoMbktHkuS74Jb9PSWoU%3D
+[2025-07-12 13:20:16] AI Karaoke: Attempting to download image from: https://oaidalleapiprodscus.blob.core.windows.net/private/org-k7pwxxwcQ5PR8XW6ML46F9tp/user-ICgUYBoIZOyKmNX0aG4tt6C2/img-y8VlzVo4MHWG7c8uyWIxb8CR.png?st=2025-07-12T12%3A20%3A16Z&se=2025-07-12T14%3A20%3A16Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=cc612491-d948-4d2e-9821-2683df3719f5&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-07-12T06%3A35%3A20Z&ske=2025-07-13T06%3A35%3A20Z&sks=b&skv=2024-08-04&sig=JdO2CGIcuunYc2tKmZokujrhoMbktHkuS74Jb9PSWoU%3D
+[2025-07-12 13:20:18] AI Karaoke: Image downloaded, size: 1912831 bytes
+[2025-07-12 13:20:18] AI Karaoke: Saving image to: /media/bitrix/modules/aikaraoke/dev/public/aiKaraoke/images/slide_2_1752326418.png
+[2025-07-12 13:20:18] AI Karaoke: Image saved successfully. Relative URL: images/slide_2_1752326418.png
+[2025-07-12 13:20:18] AI Karaoke: Image saved locally: images/slide_2_1752326418.png
+[2025-07-12 13:20:18] AI Karaoke: Image generated successfully for slide 2: images/slide_2_1752326418.png
+[2025-07-12 13:20:19] AI Karaoke: Image generation completed. Generated: 3 images
+[2025-07-12 13:20:26] AI Karaoke: Karaoke Generator initialized | Context: {"api_key_configured":true,"directories":{"upload_dir":"\/var\/www\/public_html\/bx\/upload\/aikaraoke\/","images_dir":"\/media\/bitrix\/modules\/aikaraoke\/dev\/public\/aiKaraoke\/images\/","upload_writable":true,"images_writable":true}}
+[2025-07-12 13:20:26] AI Karaoke Debug: Original lines: 8, Grouped slides: 3
+[2025-07-12 13:20:34] AI Karaoke: Starting image generation for 3 slides
+[2025-07-12 13:20:36] AI Karaoke: Full theme response: Theme: Fast-paced lifestyle, luxury, change.
+Mood: Energetic, rebellious, reflective.
+Visual style: Urban, nocturnal, luxurious.
+[2025-07-12 13:20:36] AI Karaoke: Song theme detected: Theme: Fast-paced lifestyle, luxury, change.
+Mood: Energetic, rebellious, reflective.
+Visual style: Urban, nocturnal, luxurious.
+[2025-07-12 13:20:36] AI Karaoke: Generating image for slide 0: "Подо мной М5, Asphalt 8,
+У нее Birkin цвета осень.
+Она закурит, но я бросил."
+[2025-07-12 13:20:36] AI Karaoke: Image prompt for slide 0: Create a beautiful, artistic image that represents the concept: "abstract artistic concept, emotional atmosphere, cinematic mood". Overall theme and mood: Theme: Fast-paced lifestyle, luxury, change.
+Mood: Energetic, rebellious, reflective.
+Visual style: Urban, nocturnal, luxurious.. Style: cinematic, vibrant colors, emotional, abstract art, suitable for music visualization. NO TEXT, NO WORDS, NO LETTERS in the image. Focus on mood, atmosphere, colors and abstract visual metaphors. Professional photography style, high quality, artistic composition.
+[2025-07-12 13:20:53] AI Karaoke: DALL-E API response code: 200
+[2025-07-12 13:20:53] AI Karaoke: Image URL received: https://oaidalleapiprodscus.blob.core.windows.net/private/org-k7pwxxwcQ5PR8XW6ML46F9tp/user-ICgUYBoIZOyKmNX0aG4tt6C2/img-jm1bmEEwan2EEzb3CMY12WRy.png?st=2025-07-12T12%3A20%3A52Z&se=2025-07-12T14%3A20%3A52Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=cc612491-d948-4d2e-9821-2683df3719f5&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-07-12T13%3A20%3A52Z&ske=2025-07-13T13%3A20%3A52Z&sks=b&skv=2024-08-04&sig=pHVrcqgS8DDA%2BLlE5SgZaqss5/pUncY8RFO5jlUyoDI%3D
+[2025-07-12 13:20:53] AI Karaoke: Attempting to download image from: https://oaidalleapiprodscus.blob.core.windows.net/private/org-k7pwxxwcQ5PR8XW6ML46F9tp/user-ICgUYBoIZOyKmNX0aG4tt6C2/img-jm1bmEEwan2EEzb3CMY12WRy.png?st=2025-07-12T12%3A20%3A52Z&se=2025-07-12T14%3A20%3A52Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=cc612491-d948-4d2e-9821-2683df3719f5&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-07-12T13%3A20%3A52Z&ske=2025-07-13T13%3A20%3A52Z&sks=b&skv=2024-08-04&sig=pHVrcqgS8DDA%2BLlE5SgZaqss5/pUncY8RFO5jlUyoDI%3D
+[2025-07-12 13:20:55] AI Karaoke: Image downloaded, size: 1964204 bytes
+[2025-07-12 13:20:55] AI Karaoke: Saving image to: /media/bitrix/modules/aikaraoke/dev/public/aiKaraoke/images/slide_0_1752326455.png
+[2025-07-12 13:20:55] AI Karaoke: Image saved successfully. Relative URL: images/slide_0_1752326455.png
+[2025-07-12 13:20:55] AI Karaoke: Image saved locally: images/slide_0_1752326455.png
+[2025-07-12 13:20:55] AI Karaoke: Image generated successfully for slide 0: images/slide_0_1752326455.png
+[2025-07-12 13:20:56] AI Karaoke: Generating image for slide 1: "Ice занижает градус в роксе.
+Да, подо мной М5, Asphalt 8,
+У нее Birkin цвета осень."
+[2025-07-12 13:20:56] AI Karaoke: Image prompt for slide 1: Create a beautiful, artistic image that represents the concept: "abstract artistic concept, emotional atmosphere, cinematic mood". Overall theme and mood: Theme: Fast-paced lifestyle, luxury, change.
+Mood: Energetic, rebellious, reflective.
+Visual style: Urban, nocturnal, luxurious.. Style: cinematic, vibrant colors, emotional, abstract art, suitable for music visualization. NO TEXT, NO WORDS, NO LETTERS in the image. Focus on mood, atmosphere, colors and abstract visual metaphors. Professional photography style, high quality, artistic composition.
+[2025-07-12 13:21:08] AI Karaoke: DALL-E API response code: 200
+[2025-07-12 13:21:08] AI Karaoke: Image URL received: https://oaidalleapiprodscus.blob.core.windows.net/private/org-k7pwxxwcQ5PR8XW6ML46F9tp/user-ICgUYBoIZOyKmNX0aG4tt6C2/img-oLRW3vnhgO7JXxCNFir6pFL9.png?st=2025-07-12T12%3A21%3A08Z&se=2025-07-12T14%3A21%3A08Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=cc612491-d948-4d2e-9821-2683df3719f5&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-07-11T20%3A02%3A49Z&ske=2025-07-12T20%3A02%3A49Z&sks=b&skv=2024-08-04&sig=ullfV9BTLYVQ9sQkST7ygFKBuOJ6kbmlxe/bnv8khFY%3D
+[2025-07-12 13:21:08] AI Karaoke: Attempting to download image from: https://oaidalleapiprodscus.blob.core.windows.net/private/org-k7pwxxwcQ5PR8XW6ML46F9tp/user-ICgUYBoIZOyKmNX0aG4tt6C2/img-oLRW3vnhgO7JXxCNFir6pFL9.png?st=2025-07-12T12%3A21%3A08Z&se=2025-07-12T14%3A21%3A08Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=cc612491-d948-4d2e-9821-2683df3719f5&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-07-11T20%3A02%3A49Z&ske=2025-07-12T20%3A02%3A49Z&sks=b&skv=2024-08-04&sig=ullfV9BTLYVQ9sQkST7ygFKBuOJ6kbmlxe/bnv8khFY%3D
+[2025-07-12 13:21:11] AI Karaoke: Image downloaded, size: 2162352 bytes
+[2025-07-12 13:21:11] AI Karaoke: Saving image to: /media/bitrix/modules/aikaraoke/dev/public/aiKaraoke/images/slide_1_1752326471.png
+[2025-07-12 13:21:11] AI Karaoke: Image saved successfully. Relative URL: images/slide_1_1752326471.png
+[2025-07-12 13:21:11] AI Karaoke: Image saved locally: images/slide_1_1752326471.png
+[2025-07-12 13:21:11] AI Karaoke: Image generated successfully for slide 1: images/slide_1_1752326471.png
+[2025-07-12 13:21:11] AI Karaoke: Generating image for slide 2: "Она закурит, но я бросил.
+Ice занижает градус в роксе, а-я."
+[2025-07-12 13:21:11] AI Karaoke: Image prompt for slide 2: Create a beautiful, artistic image that represents the concept: "abstract artistic concept, emotional atmosphere, cinematic mood". Overall theme and mood: Theme: Fast-paced lifestyle, luxury, change.
+Mood: Energetic, rebellious, reflective.
+Visual style: Urban, nocturnal, luxurious.. Style: cinematic, vibrant colors, emotional, abstract art, suitable for music visualization. NO TEXT, NO WORDS, NO LETTERS in the image. Focus on mood, atmosphere, colors and abstract visual metaphors. Professional photography style, high quality, artistic composition.
+[2025-07-12 13:21:24] AI Karaoke: DALL-E API response code: 200
+[2025-07-12 13:21:24] AI Karaoke: Image URL received: https://oaidalleapiprodscus.blob.core.windows.net/private/org-k7pwxxwcQ5PR8XW6ML46F9tp/user-ICgUYBoIZOyKmNX0aG4tt6C2/img-iWLJBpklsRiAqbF4JIBIOwX2.png?st=2025-07-12T12%3A21%3A24Z&se=2025-07-12T14%3A21%3A24Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=cc612491-d948-4d2e-9821-2683df3719f5&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-07-12T10%3A38%3A47Z&ske=2025-07-13T10%3A38%3A47Z&sks=b&skv=2024-08-04&sig=gvxNGW6md5%2Bd8MYn3C4FaCWPwNPHH%2BFpz%2BVRwmRE19k%3D
+[2025-07-12 13:21:24] AI Karaoke: Attempting to download image from: https://oaidalleapiprodscus.blob.core.windows.net/private/org-k7pwxxwcQ5PR8XW6ML46F9tp/user-ICgUYBoIZOyKmNX0aG4tt6C2/img-iWLJBpklsRiAqbF4JIBIOwX2.png?st=2025-07-12T12%3A21%3A24Z&se=2025-07-12T14%3A21%3A24Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=cc612491-d948-4d2e-9821-2683df3719f5&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-07-12T10%3A38%3A47Z&ske=2025-07-13T10%3A38%3A47Z&sks=b&skv=2024-08-04&sig=gvxNGW6md5%2Bd8MYn3C4FaCWPwNPHH%2BFpz%2BVRwmRE19k%3D
+[2025-07-12 13:21:26] AI Karaoke: Image downloaded, size: 2225890 bytes
+[2025-07-12 13:21:26] AI Karaoke: Saving image to: /media/bitrix/modules/aikaraoke/dev/public/aiKaraoke/images/slide_2_1752326486.png
+[2025-07-12 13:21:26] AI Karaoke: Image saved successfully. Relative URL: images/slide_2_1752326486.png
+[2025-07-12 13:21:26] AI Karaoke: Image saved locally: images/slide_2_1752326486.png
+[2025-07-12 13:21:26] AI Karaoke: Image generated successfully for slide 2: images/slide_2_1752326486.png
+[2025-07-12 13:21:26] AI Karaoke: Image generation completed. Generated: 3 images
+[2025-07-12 13:32:05] AI Karaoke: Karaoke Generator initialized | Context: {"api_key_configured":true,"directories":{"upload_dir":"\/var\/www\/public_html\/bx\/upload\/aikaraoke\/","images_dir":"\/media\/bitrix\/modules\/aikaraoke\/dev\/public\/aiKaraoke\/images\/","upload_writable":true,"images_writable":true}}
+[2025-07-12 13:32:05] AI Karaoke Debug: Original lines: 11, Grouped slides: 4
+[2025-07-12 13:32:25] AI Karaoke: Starting image generation for 4 slides
+[2025-07-12 13:32:28] AI Karaoke: Full theme response: Theme: Relaxation, Technology, Work Efficiency
+Mood: Casual, Optimistic
+Visual Style: Modern, Tech-oriented, Relaxed
+[2025-07-12 13:32:28] AI Karaoke: Song theme detected: Theme: Relaxation, Technology, Work Efficiency
+Mood: Casual, Optimistic
+Visual Style: Modern, Tech-oriented, Relaxed
+[2025-07-12 13:32:28] AI Karaoke: Generating image for slide 0: "Мы чилим. Мы чилим. Мы чилим на зефире.
+Мы чилим в новом Битрикс Битрикс24
+Вход по QR-коду. Всё теперь бесшовно."
+[2025-07-12 13:32:28] AI Karaoke: Image prompt for slide 0: Create a beautiful, artistic image that represents the concept: "abstract artistic concept, emotional atmosphere, cinematic mood". Overall theme and mood: Theme: Relaxation, Technology, Work Efficiency
+Mood: Casual, Optimistic
+Visual Style: Modern, Tech-oriented, Relaxed. Style: cinematic, vibrant colors, emotional, abstract art, suitable for music visualization. NO TEXT, NO WORDS, NO LETTERS in the image. Focus on mood, atmosphere, colors and abstract visual metaphors. Professional photography style, high quality, artistic composition.
+[2025-07-12 13:32:41] AI Karaoke: DALL-E API response code: 200
+[2025-07-12 13:32:41] AI Karaoke: Image URL received: https://oaidalleapiprodscus.blob.core.windows.net/private/org-k7pwxxwcQ5PR8XW6ML46F9tp/user-ICgUYBoIZOyKmNX0aG4tt6C2/img-8KN7wst3RpLrCbtmVlAq6pDQ.png?st=2025-07-12T12%3A32%3A41Z&se=2025-07-12T14%3A32%3A41Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=cc612491-d948-4d2e-9821-2683df3719f5&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-07-12T12%3A20%3A31Z&ske=2025-07-13T12%3A20%3A31Z&sks=b&skv=2024-08-04&sig=/VM%2BwNjK7zXgiQ1xsGFkgee41h%2B0FpPOFHzACgzlDdc%3D
+[2025-07-12 13:32:41] AI Karaoke: Attempting to download image from: https://oaidalleapiprodscus.blob.core.windows.net/private/org-k7pwxxwcQ5PR8XW6ML46F9tp/user-ICgUYBoIZOyKmNX0aG4tt6C2/img-8KN7wst3RpLrCbtmVlAq6pDQ.png?st=2025-07-12T12%3A32%3A41Z&se=2025-07-12T14%3A32%3A41Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=cc612491-d948-4d2e-9821-2683df3719f5&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-07-12T12%3A20%3A31Z&ske=2025-07-13T12%3A20%3A31Z&sks=b&skv=2024-08-04&sig=/VM%2BwNjK7zXgiQ1xsGFkgee41h%2B0FpPOFHzACgzlDdc%3D
+[2025-07-12 13:32:44] AI Karaoke: Image downloaded, size: 1965522 bytes
+[2025-07-12 13:32:44] AI Karaoke: Saving image to: /media/bitrix/modules/aikaraoke/dev/public/aiKaraoke/images/slide_0_1752327164.png
+[2025-07-12 13:32:44] AI Karaoke: Image saved successfully. Relative URL: images/slide_0_1752327164.png
+[2025-07-12 13:32:44] AI Karaoke: Image saved locally: images/slide_0_1752327164.png
+[2025-07-12 13:32:44] AI Karaoke: Image generated successfully for slide 0: images/slide_0_1752327164.png
+[2025-07-12 13:32:44] AI Karaoke: Generating image for slide 1: "Чаты и звонки посмотри.
+Поручил задачи, созвоны всем назначил.
+Настроил CRM. С мартой без проблем."
+[2025-07-12 13:32:44] AI Karaoke: Image prompt for slide 1: Create a beautiful, artistic image that represents the concept: "abstract artistic concept, emotional atmosphere, cinematic mood". Overall theme and mood: Theme: Relaxation, Technology, Work Efficiency
+Mood: Casual, Optimistic
+Visual Style: Modern, Tech-oriented, Relaxed. Style: cinematic, vibrant colors, emotional, abstract art, suitable for music visualization. NO TEXT, NO WORDS, NO LETTERS in the image. Focus on mood, atmosphere, colors and abstract visual metaphors. Professional photography style, high quality, artistic composition.
+[2025-07-12 13:32:56] AI Karaoke: DALL-E API response code: 200
+[2025-07-12 13:32:56] AI Karaoke: Image URL received: https://oaidalleapiprodscus.blob.core.windows.net/private/org-k7pwxxwcQ5PR8XW6ML46F9tp/user-ICgUYBoIZOyKmNX0aG4tt6C2/img-YPApoo1BTAHOehyhZkrX8qPC.png?st=2025-07-12T12%3A32%3A56Z&se=2025-07-12T14%3A32%3A56Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=cc612491-d948-4d2e-9821-2683df3719f5&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-07-12T13%3A32%3A56Z&ske=2025-07-13T13%3A32%3A56Z&sks=b&skv=2024-08-04&sig=vRSfZKuTdN/VwNiEg%2BotivlJE0Kyd5blDJeHSkGIqsw%3D
+[2025-07-12 13:32:56] AI Karaoke: Attempting to download image from: https://oaidalleapiprodscus.blob.core.windows.net/private/org-k7pwxxwcQ5PR8XW6ML46F9tp/user-ICgUYBoIZOyKmNX0aG4tt6C2/img-YPApoo1BTAHOehyhZkrX8qPC.png?st=2025-07-12T12%3A32%3A56Z&se=2025-07-12T14%3A32%3A56Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=cc612491-d948-4d2e-9821-2683df3719f5&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-07-12T13%3A32%3A56Z&ske=2025-07-13T13%3A32%3A56Z&sks=b&skv=2024-08-04&sig=vRSfZKuTdN/VwNiEg%2BotivlJE0Kyd5blDJeHSkGIqsw%3D
+[2025-07-12 13:32:59] AI Karaoke: Image downloaded, size: 1762845 bytes
+[2025-07-12 13:32:59] AI Karaoke: Saving image to: /media/bitrix/modules/aikaraoke/dev/public/aiKaraoke/images/slide_1_1752327179.png
+[2025-07-12 13:32:59] AI Karaoke: Image saved successfully. Relative URL: images/slide_1_1752327179.png
+[2025-07-12 13:32:59] AI Karaoke: Image saved locally: images/slide_1_1752327179.png
+[2025-07-12 13:32:59] AI Karaoke: Image generated successfully for slide 1: images/slide_1_1752327179.png
+[2025-07-12 13:32:59] AI Karaoke: Generating image for slide 2: "Каждый может чилить на десктопе и на
+мобиле в новом Битрикс 24.
+Мы чилим, мы чилим. Мы чилим на Зефире."
+[2025-07-12 13:32:59] AI Karaoke: Image prompt for slide 2: Create a beautiful, artistic image that represents the concept: "abstract artistic concept, emotional atmosphere, cinematic mood". Overall theme and mood: Theme: Relaxation, Technology, Work Efficiency
+Mood: Casual, Optimistic
+Visual Style: Modern, Tech-oriented, Relaxed. Style: cinematic, vibrant colors, emotional, abstract art, suitable for music visualization. NO TEXT, NO WORDS, NO LETTERS in the image. Focus on mood, atmosphere, colors and abstract visual metaphors. Professional photography style, high quality, artistic composition.
+[2025-07-12 13:33:14] AI Karaoke: DALL-E API response code: 200
+[2025-07-12 13:33:14] AI Karaoke: Image URL received: https://oaidalleapiprodscus.blob.core.windows.net/private/org-k7pwxxwcQ5PR8XW6ML46F9tp/user-ICgUYBoIZOyKmNX0aG4tt6C2/img-Y245dqv9GbpdnExwwDjgAK4c.png?st=2025-07-12T12%3A33%3A14Z&se=2025-07-12T14%3A33%3A14Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=cc612491-d948-4d2e-9821-2683df3719f5&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-07-12T13%3A33%3A14Z&ske=2025-07-13T13%3A33%3A14Z&sks=b&skv=2024-08-04&sig=b5c/v1dMzm4q7erRGWY9fJSWgmoDoyMokowJhOXReGQ%3D
+[2025-07-12 13:33:14] AI Karaoke: Attempting to download image from: https://oaidalleapiprodscus.blob.core.windows.net/private/org-k7pwxxwcQ5PR8XW6ML46F9tp/user-ICgUYBoIZOyKmNX0aG4tt6C2/img-Y245dqv9GbpdnExwwDjgAK4c.png?st=2025-07-12T12%3A33%3A14Z&se=2025-07-12T14%3A33%3A14Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=cc612491-d948-4d2e-9821-2683df3719f5&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-07-12T13%3A33%3A14Z&ske=2025-07-13T13%3A33%3A14Z&sks=b&skv=2024-08-04&sig=b5c/v1dMzm4q7erRGWY9fJSWgmoDoyMokowJhOXReGQ%3D
+[2025-07-12 13:33:17] AI Karaoke: Image downloaded, size: 1896408 bytes
+[2025-07-12 13:33:17] AI Karaoke: Saving image to: /media/bitrix/modules/aikaraoke/dev/public/aiKaraoke/images/slide_2_1752327197.png
+[2025-07-12 13:33:17] AI Karaoke: Image saved successfully. Relative URL: images/slide_2_1752327197.png
+[2025-07-12 13:33:17] AI Karaoke: Image saved locally: images/slide_2_1752327197.png
+[2025-07-12 13:33:17] AI Karaoke: Image generated successfully for slide 2: images/slide_2_1752327197.png
+[2025-07-12 13:33:17] AI Karaoke: Generating image for slide 3: "Мы чилим в новом Битрикс, Битрикс 24.
+Мы чилим. Мы чилим."
+[2025-07-12 13:33:17] AI Karaoke: Image prompt for slide 3: Create a beautiful, artistic image that represents the concept: "abstract artistic concept, emotional atmosphere, cinematic mood". Overall theme and mood: Theme: Relaxation, Technology, Work Efficiency
+Mood: Casual, Optimistic
+Visual Style: Modern, Tech-oriented, Relaxed. Style: cinematic, vibrant colors, emotional, abstract art, suitable for music visualization. NO TEXT, NO WORDS, NO LETTERS in the image. Focus on mood, atmosphere, colors and abstract visual metaphors. Professional photography style, high quality, artistic composition.
+[2025-07-12 13:33:32] AI Karaoke: DALL-E API response code: 200
+[2025-07-12 13:33:32] AI Karaoke: Image URL received: https://oaidalleapiprodscus.blob.core.windows.net/private/org-k7pwxxwcQ5PR8XW6ML46F9tp/user-ICgUYBoIZOyKmNX0aG4tt6C2/img-kGDAkyFvwrJMLl6C5ZFBmWhR.png?st=2025-07-12T12%3A33%3A32Z&se=2025-07-12T14%3A33%3A32Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=cc612491-d948-4d2e-9821-2683df3719f5&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-07-11T19%3A21%3A25Z&ske=2025-07-12T19%3A21%3A25Z&sks=b&skv=2024-08-04&sig=7oUkvDwktJYC7bSQY3BOf%2BzZMEEKtKceCjQMuWZ73sk%3D
+[2025-07-12 13:33:32] AI Karaoke: Attempting to download image from: https://oaidalleapiprodscus.blob.core.windows.net/private/org-k7pwxxwcQ5PR8XW6ML46F9tp/user-ICgUYBoIZOyKmNX0aG4tt6C2/img-kGDAkyFvwrJMLl6C5ZFBmWhR.png?st=2025-07-12T12%3A33%3A32Z&se=2025-07-12T14%3A33%3A32Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=cc612491-d948-4d2e-9821-2683df3719f5&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-07-11T19%3A21%3A25Z&ske=2025-07-12T19%3A21%3A25Z&sks=b&skv=2024-08-04&sig=7oUkvDwktJYC7bSQY3BOf%2BzZMEEKtKceCjQMuWZ73sk%3D
+[2025-07-12 13:33:34] AI Karaoke: Image downloaded, size: 1700608 bytes
+[2025-07-12 13:33:34] AI Karaoke: Saving image to: /media/bitrix/modules/aikaraoke/dev/public/aiKaraoke/images/slide_3_1752327214.png
+[2025-07-12 13:33:34] AI Karaoke: Image saved successfully. Relative URL: images/slide_3_1752327214.png
+[2025-07-12 13:33:34] AI Karaoke: Image saved locally: images/slide_3_1752327214.png
+[2025-07-12 13:33:34] AI Karaoke: Image generated successfully for slide 3: images/slide_3_1752327214.png
+[2025-07-12 13:33:35] AI Karaoke: Image generation completed. Generated: 4 images
+[2025-07-12 13:42:26] AI Karaoke: Karaoke Generator initialized | Context: {"api_key_configured":true,"directories":{"upload_dir":"\/var\/www\/public_html\/bx\/upload\/aikaraoke\/","images_dir":"\/media\/bitrix\/modules\/aikaraoke\/dev\/public\/aiKaraoke\/images\/","upload_writable":true,"images_writable":true}}
+[2025-07-12 13:42:26] AI Karaoke Debug: Original lines: 11, Grouped slides: 4
+[2025-07-12 13:42:41] AI Karaoke: Starting image generation for 4 slides
+[2025-07-12 13:42:43] AI Karaoke: Full theme response: Theme: Technology and Relaxation. Mood: Casual and Lighthearted. Visual Style: Modern, Tech-inspired, Casual.
+[2025-07-12 13:42:43] AI Karaoke: Song theme detected: Theme: Technology and Relaxation. Mood: Casual and Lighthearted. Visual Style: Modern, Tech-inspired, Casual.
+[2025-07-12 13:42:43] AI Karaoke: Generating image for slide 0: "Мы чилим. Мы чилим. Мы чилим на зефире.
+Мы чилим в новом Битрикс Битрикс24
+Вход по QR-коду. Всё теперь бесшовно."
+[2025-07-12 13:42:43] AI Karaoke: Image prompt for slide 0: Create a beautiful, artistic image that represents the concept: "abstract artistic concept, emotional atmosphere, cinematic mood". Overall theme and mood: Theme: Technology and Relaxation. Mood: Casual and Lighthearted. Visual Style: Modern, Tech-inspired, Casual.. Style: cinematic, vibrant colors, emotional, abstract art, suitable for music visualization. NO TEXT, NO WORDS, NO LETTERS in the image. Focus on mood, atmosphere, colors and abstract visual metaphors. Professional photography style, high quality, artistic composition.
+[2025-07-12 13:42:56] AI Karaoke: DALL-E API response code: 200
+[2025-07-12 13:42:56] AI Karaoke: Image URL received: https://oaidalleapiprodscus.blob.core.windows.net/private/org-k7pwxxwcQ5PR8XW6ML46F9tp/user-ICgUYBoIZOyKmNX0aG4tt6C2/img-auXXGdD7pouze78KP8AGaqJK.png?st=2025-07-12T12%3A42%3A56Z&se=2025-07-12T14%3A42%3A56Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=cc612491-d948-4d2e-9821-2683df3719f5&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-07-11T19%3A48%3A26Z&ske=2025-07-12T19%3A48%3A26Z&sks=b&skv=2024-08-04&sig=GVU/ZIENckJD8vccHi1aJY9vfxLbdgTGRi6UnDYdqow%3D
+[2025-07-12 13:42:56] AI Karaoke: Attempting to download image from: https://oaidalleapiprodscus.blob.core.windows.net/private/org-k7pwxxwcQ5PR8XW6ML46F9tp/user-ICgUYBoIZOyKmNX0aG4tt6C2/img-auXXGdD7pouze78KP8AGaqJK.png?st=2025-07-12T12%3A42%3A56Z&se=2025-07-12T14%3A42%3A56Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=cc612491-d948-4d2e-9821-2683df3719f5&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-07-11T19%3A48%3A26Z&ske=2025-07-12T19%3A48%3A26Z&sks=b&skv=2024-08-04&sig=GVU/ZIENckJD8vccHi1aJY9vfxLbdgTGRi6UnDYdqow%3D
+[2025-07-12 13:42:58] AI Karaoke: Image downloaded, size: 1828862 bytes
+[2025-07-12 13:42:58] AI Karaoke: Saving image to: /media/bitrix/modules/aikaraoke/dev/public/aiKaraoke/images/slide_0_1752327778.png
+[2025-07-12 13:42:58] AI Karaoke: Image saved successfully. Relative URL: images/slide_0_1752327778.png
+[2025-07-12 13:42:58] AI Karaoke: Image saved locally: images/slide_0_1752327778.png
+[2025-07-12 13:42:58] AI Karaoke: Image generated successfully for slide 0: images/slide_0_1752327778.png
+[2025-07-12 13:42:59] AI Karaoke: Generating image for slide 1: "Чаты и звонки посмотри.
+Поручил задачи, созвоны всем назначил.
+Настроил CRM. С мартой без проблем."
+[2025-07-12 13:42:59] AI Karaoke: Image prompt for slide 1: Create a beautiful, artistic image that represents the concept: "abstract artistic concept, emotional atmosphere, cinematic mood". Overall theme and mood: Theme: Technology and Relaxation. Mood: Casual and Lighthearted. Visual Style: Modern, Tech-inspired, Casual.. Style: cinematic, vibrant colors, emotional, abstract art, suitable for music visualization. NO TEXT, NO WORDS, NO LETTERS in the image. Focus on mood, atmosphere, colors and abstract visual metaphors. Professional photography style, high quality, artistic composition.
+[2025-07-12 13:43:12] AI Karaoke: DALL-E API response code: 200
+[2025-07-12 13:43:12] AI Karaoke: Image URL received: https://oaidalleapiprodscus.blob.core.windows.net/private/org-k7pwxxwcQ5PR8XW6ML46F9tp/user-ICgUYBoIZOyKmNX0aG4tt6C2/img-UpeN4oxjOzKCDKBFQYgWcq8o.png?st=2025-07-12T12%3A43%3A12Z&se=2025-07-12T14%3A43%3A12Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=cc612491-d948-4d2e-9821-2683df3719f5&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-07-12T06%3A59%3A15Z&ske=2025-07-13T06%3A59%3A15Z&sks=b&skv=2024-08-04&sig=XheRsjaNfRgJJFWc6u0MesFnNVshh%2BqdgPW9EVKS0vQ%3D
+[2025-07-12 13:43:12] AI Karaoke: Attempting to download image from: https://oaidalleapiprodscus.blob.core.windows.net/private/org-k7pwxxwcQ5PR8XW6ML46F9tp/user-ICgUYBoIZOyKmNX0aG4tt6C2/img-UpeN4oxjOzKCDKBFQYgWcq8o.png?st=2025-07-12T12%3A43%3A12Z&se=2025-07-12T14%3A43%3A12Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=cc612491-d948-4d2e-9821-2683df3719f5&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-07-12T06%3A59%3A15Z&ske=2025-07-13T06%3A59%3A15Z&sks=b&skv=2024-08-04&sig=XheRsjaNfRgJJFWc6u0MesFnNVshh%2BqdgPW9EVKS0vQ%3D
+[2025-07-12 13:43:15] AI Karaoke: Image downloaded, size: 1764448 bytes
+[2025-07-12 13:43:15] AI Karaoke: Saving image to: /media/bitrix/modules/aikaraoke/dev/public/aiKaraoke/images/slide_1_1752327795.png
+[2025-07-12 13:43:15] AI Karaoke: Image saved successfully. Relative URL: images/slide_1_1752327795.png
+[2025-07-12 13:43:15] AI Karaoke: Image saved locally: images/slide_1_1752327795.png
+[2025-07-12 13:43:15] AI Karaoke: Image generated successfully for slide 1: images/slide_1_1752327795.png
+[2025-07-12 13:43:15] AI Karaoke: Generating image for slide 2: "Каждый может чилить на десктопе и на
+мобиле в новом Битрикс 24.
+Мы чилим, мы чилим. Мы чилим на Зефире."
+[2025-07-12 13:43:15] AI Karaoke: Image prompt for slide 2: Create a beautiful, artistic image that represents the concept: "abstract artistic concept, emotional atmosphere, cinematic mood". Overall theme and mood: Theme: Technology and Relaxation. Mood: Casual and Lighthearted. Visual Style: Modern, Tech-inspired, Casual.. Style: cinematic, vibrant colors, emotional, abstract art, suitable for music visualization. NO TEXT, NO WORDS, NO LETTERS in the image. Focus on mood, atmosphere, colors and abstract visual metaphors. Professional photography style, high quality, artistic composition.
+[2025-07-12 13:43:27] AI Karaoke: DALL-E API response code: 200
+[2025-07-12 13:43:27] AI Karaoke: Image URL received: https://oaidalleapiprodscus.blob.core.windows.net/private/org-k7pwxxwcQ5PR8XW6ML46F9tp/user-ICgUYBoIZOyKmNX0aG4tt6C2/img-OBntC6v7TTtLX0tDWVt5X5rz.png?st=2025-07-12T12%3A43%3A27Z&se=2025-07-12T14%3A43%3A27Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=cc612491-d948-4d2e-9821-2683df3719f5&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-07-12T13%3A43%3A27Z&ske=2025-07-13T13%3A43%3A27Z&sks=b&skv=2024-08-04&sig=nQqYX1M%2BCEYcX44A3ZN8N05/eFa2qV6YjMrmAuc2FPc%3D
+[2025-07-12 13:43:27] AI Karaoke: Attempting to download image from: https://oaidalleapiprodscus.blob.core.windows.net/private/org-k7pwxxwcQ5PR8XW6ML46F9tp/user-ICgUYBoIZOyKmNX0aG4tt6C2/img-OBntC6v7TTtLX0tDWVt5X5rz.png?st=2025-07-12T12%3A43%3A27Z&se=2025-07-12T14%3A43%3A27Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=cc612491-d948-4d2e-9821-2683df3719f5&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-07-12T13%3A43%3A27Z&ske=2025-07-13T13%3A43%3A27Z&sks=b&skv=2024-08-04&sig=nQqYX1M%2BCEYcX44A3ZN8N05/eFa2qV6YjMrmAuc2FPc%3D
+[2025-07-12 13:43:30] AI Karaoke: Image downloaded, size: 1896761 bytes
+[2025-07-12 13:43:30] AI Karaoke: Saving image to: /media/bitrix/modules/aikaraoke/dev/public/aiKaraoke/images/slide_2_1752327810.png
+[2025-07-12 13:43:30] AI Karaoke: Image saved successfully. Relative URL: images/slide_2_1752327810.png
+[2025-07-12 13:43:30] AI Karaoke: Image saved locally: images/slide_2_1752327810.png
+[2025-07-12 13:43:30] AI Karaoke: Image generated successfully for slide 2: images/slide_2_1752327810.png
+[2025-07-12 13:43:31] AI Karaoke: Generating image for slide 3: "Мы чилим в новом Битрикс, Битрикс 24.
+Мы чилим. Мы чилим."
+[2025-07-12 13:43:31] AI Karaoke: Image prompt for slide 3: Create a beautiful, artistic image that represents the concept: "abstract artistic concept, emotional atmosphere, cinematic mood". Overall theme and mood: Theme: Technology and Relaxation. Mood: Casual and Lighthearted. Visual Style: Modern, Tech-inspired, Casual.. Style: cinematic, vibrant colors, emotional, abstract art, suitable for music visualization. NO TEXT, NO WORDS, NO LETTERS in the image. Focus on mood, atmosphere, colors and abstract visual metaphors. Professional photography style, high quality, artistic composition.
+[2025-07-12 13:43:44] AI Karaoke: DALL-E API response code: 200
+[2025-07-12 13:43:44] AI Karaoke: Image URL received: https://oaidalleapiprodscus.blob.core.windows.net/private/org-k7pwxxwcQ5PR8XW6ML46F9tp/user-ICgUYBoIZOyKmNX0aG4tt6C2/img-zPoax70x6dvtwevyIvz3vTTj.png?st=2025-07-12T12%3A43%3A44Z&se=2025-07-12T14%3A43%3A44Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=cc612491-d948-4d2e-9821-2683df3719f5&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-07-12T09%3A18%3A17Z&ske=2025-07-13T09%3A18%3A17Z&sks=b&skv=2024-08-04&sig=OT12YW4KaViG1iu92MkKkgZ2Um457ItVvMJiQD5u0yk%3D
+[2025-07-12 13:43:44] AI Karaoke: Attempting to download image from: https://oaidalleapiprodscus.blob.core.windows.net/private/org-k7pwxxwcQ5PR8XW6ML46F9tp/user-ICgUYBoIZOyKmNX0aG4tt6C2/img-zPoax70x6dvtwevyIvz3vTTj.png?st=2025-07-12T12%3A43%3A44Z&se=2025-07-12T14%3A43%3A44Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=cc612491-d948-4d2e-9821-2683df3719f5&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-07-12T09%3A18%3A17Z&ske=2025-07-13T09%3A18%3A17Z&sks=b&skv=2024-08-04&sig=OT12YW4KaViG1iu92MkKkgZ2Um457ItVvMJiQD5u0yk%3D
+[2025-07-12 13:43:47] AI Karaoke: Image downloaded, size: 1879098 bytes
+[2025-07-12 13:43:47] AI Karaoke: Saving image to: /media/bitrix/modules/aikaraoke/dev/public/aiKaraoke/images/slide_3_1752327827.png
+[2025-07-12 13:43:47] AI Karaoke: Image saved successfully. Relative URL: images/slide_3_1752327827.png
+[2025-07-12 13:43:47] AI Karaoke: Image saved locally: images/slide_3_1752327827.png
+[2025-07-12 13:43:47] AI Karaoke: Image generated successfully for slide 3: images/slide_3_1752327827.png
+[2025-07-12 13:43:47] AI Karaoke: Image generation completed. Generated: 4 images
+[2025-07-12 14:05:45] AI Karaoke: Karaoke Generator initialized | Context: {"api_key_configured":true,"directories":{"upload_dir":"\/var\/www\/public_html\/bx\/upload\/aikaraoke\/","images_dir":"\/media\/bitrix\/modules\/aikaraoke\/dev\/public\/aiKaraoke\/images\/","upload_writable":true,"images_writable":true}}
+[2025-07-12 14:05:45] AI Karaoke Debug: Original lines: 11, Grouped slides: 4
+[2025-07-12 14:05:46] AI Karaoke: Starting image generation for 4 slides
+[2025-07-12 14:05:46] AI Karaoke: Song theme detected: musical atmosphere, urban lifestyle, luxury, success
+[2025-07-12 14:05:46] AI Karaoke: Generating image for slide 0: "Мы чилим. Мы чилим. Мы чилим на зефире.
+Мы чилим в новом Битрикс Битрикс24
+Вход по QR-коду. Всё теперь бесшовно."
+[2025-07-12 14:05:46] AI Karaoke: Image prompt for slide 0: Create a beautiful, artistic image that represents the concept: "abstract artistic concept, emotional atmosphere, cinematic mood". Overall theme and mood: musical atmosphere, urban lifestyle, luxury, success. Style: cinematic, vibrant colors, emotional, abstract art, suitable for music visualization. NO TEXT, NO WORDS, NO LETTERS in the image. Focus on mood, atmosphere, colors and abstract visual metaphors. Professional photography style, high quality, artistic composition.
+[2025-07-12 14:05:46] AI Karaoke: DALL-E API response code: 403
+[2025-07-12 14:05:46] AI Karaoke: Image generation failed for line: "Мы чилим. Мы чилим. Мы чилим на зефире.
+Мы чилим в новом Битрикс Битрикс24
+Вход по QR-коду. Всё теперь бесшовно.". HTTP Code: 403. Response: {"error":{"code":"unsupported_country_region_territory","message":"Country, region, or territory not supported","param":null,"type":"request_forbidden"}}
+[2025-07-12 14:05:46] AI Karaoke: Generating placeholder image for slide 0
+[2025-07-12 14:05:46] AI Karaoke: Placeholder image created: images/placeholder_0_1752329146.png
+[2025-07-12 14:05:46] AI Karaoke: Image generated successfully for slide 0: images/placeholder_0_1752329146.png
+[2025-07-12 14:05:47] AI Karaoke: Generating image for slide 1: "Чаты и звонки посмотри.
+Поручил задачи, созвоны всем назначил.
+Настроил CRM. С мартой без проблем."
+[2025-07-12 14:05:47] AI Karaoke: Image prompt for slide 1: Create a beautiful, artistic image that represents the concept: "abstract artistic concept, emotional atmosphere, cinematic mood". Overall theme and mood: musical atmosphere, urban lifestyle, luxury, success. Style: cinematic, vibrant colors, emotional, abstract art, suitable for music visualization. NO TEXT, NO WORDS, NO LETTERS in the image. Focus on mood, atmosphere, colors and abstract visual metaphors. Professional photography style, high quality, artistic composition.
+[2025-07-12 14:05:47] AI Karaoke: DALL-E API response code: 403
+[2025-07-12 14:05:47] AI Karaoke: Image generation failed for line: "Чаты и звонки посмотри.
+Поручил задачи, созвоны всем назначил.
+Настроил CRM. С мартой без проблем.". HTTP Code: 403. Response: {"error":{"code":"unsupported_country_region_territory","message":"Country, region, or territory not supported","param":null,"type":"request_forbidden"}}
+[2025-07-12 14:05:47] AI Karaoke: Generating placeholder image for slide 1
+[2025-07-12 14:05:47] AI Karaoke: Placeholder image created: images/placeholder_1_1752329147.png
+[2025-07-12 14:05:47] AI Karaoke: Image generated successfully for slide 1: images/placeholder_1_1752329147.png
+[2025-07-12 14:05:47] AI Karaoke: Generating image for slide 2: "Каждый может чилить на десктопе и на
+мобиле в новом Битрикс 24.
+Мы чилим, мы чилим. Мы чилим на Зефире."
+[2025-07-12 14:05:47] AI Karaoke: Image prompt for slide 2: Create a beautiful, artistic image that represents the concept: "abstract artistic concept, emotional atmosphere, cinematic mood". Overall theme and mood: musical atmosphere, urban lifestyle, luxury, success. Style: cinematic, vibrant colors, emotional, abstract art, suitable for music visualization. NO TEXT, NO WORDS, NO LETTERS in the image. Focus on mood, atmosphere, colors and abstract visual metaphors. Professional photography style, high quality, artistic composition.
+[2025-07-12 14:05:48] AI Karaoke: DALL-E API response code: 403
+[2025-07-12 14:05:48] AI Karaoke: Image generation failed for line: "Каждый может чилить на десктопе и на
+мобиле в новом Битрикс 24.
+Мы чилим, мы чилим. Мы чилим на Зефире.". HTTP Code: 403. Response: {"error":{"code":"unsupported_country_region_territory","message":"Country, region, or territory not supported","param":null,"type":"request_forbidden"}}
+[2025-07-12 14:05:48] AI Karaoke: Generating placeholder image for slide 2
+[2025-07-12 14:05:48] AI Karaoke: Placeholder image created: images/placeholder_2_1752329148.png
+[2025-07-12 14:05:48] AI Karaoke: Image generated successfully for slide 2: images/placeholder_2_1752329148.png
+[2025-07-12 14:05:48] AI Karaoke: Generating image for slide 3: "Мы чилим в новом Битрикс, Битрикс 24.
+Мы чилим. Мы чилим."
+[2025-07-12 14:05:48] AI Karaoke: Image prompt for slide 3: Create a beautiful, artistic image that represents the concept: "abstract artistic concept, emotional atmosphere, cinematic mood". Overall theme and mood: musical atmosphere, urban lifestyle, luxury, success. Style: cinematic, vibrant colors, emotional, abstract art, suitable for music visualization. NO TEXT, NO WORDS, NO LETTERS in the image. Focus on mood, atmosphere, colors and abstract visual metaphors. Professional photography style, high quality, artistic composition.
+[2025-07-12 14:05:48] AI Karaoke: DALL-E API response code: 403
+[2025-07-12 14:05:48] AI Karaoke: Image generation failed for line: "Мы чилим в новом Битрикс, Битрикс 24.
+Мы чилим. Мы чилим.". HTTP Code: 403. Response: {"error":{"code":"unsupported_country_region_territory","message":"Country, region, or territory not supported","param":null,"type":"request_forbidden"}}
+[2025-07-12 14:05:48] AI Karaoke: Generating placeholder image for slide 3
+[2025-07-12 14:05:48] AI Karaoke: Placeholder image created: images/placeholder_3_1752329148.png
+[2025-07-12 14:05:48] AI Karaoke: Image generated successfully for slide 3: images/placeholder_3_1752329148.png
+[2025-07-12 14:05:49] AI Karaoke: Image generation completed. Generated: 4 images
