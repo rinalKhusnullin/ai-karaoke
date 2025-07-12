@@ -512,34 +512,115 @@
     text-align: center;
 }
 
-/* Адаптивность */
+/* Индикатор записи */
+.recording-indicator {
+    background: #dc3545;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    display: none;
+    animation: recordingPulse 1.5s ease-in-out infinite;
+    border: 2px solid #fff;
+    box-shadow: 0 2px 8px rgba(220, 53, 69, 0.3);
+}
+
+@keyframes recordingPulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 0.8;
+    }
+}
+
+/* Стили для кнопок управления записью */
+.ui-btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+    color: white;
+}
+
+.ui-btn-danger:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(220, 53, 69, 0.3);
+}
+
+.ui-btn-info {
+    background-color: #17a2b8;
+    border-color: #17a2b8;
+    color: white;
+}
+
+.ui-btn-info:hover {
+    background-color: #138496;
+    border-color: #117a8b;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(23, 162, 184, 0.3);
+}
+
+/* Улучшенные уведомления */
+.karaoke-notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #28a745;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 8px;
+    z-index: 10000;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    font-family: inherit;
+    font-size: 14px;
+    max-width: 350px;
+    border-left: 4px solid #1e7e34;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.karaoke-notification.error {
+    background: #dc3545;
+    border-left-color: #bd2130;
+}
+
+.karaoke-notification.info {
+    background: #17a2b8;
+    border-left-color: #117a8b;
+}
+
+.karaoke-notification.warning {
+    background: #ffc107;
+    color: #212529;
+    border-left-color: #e0a800;
+}
+
+/* Анимация для кнопок */
+.sign-ai-karaoke__button {
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.sign-ai-karaoke__button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.sign-ai-karaoke__button:active {
+    transform: translateY(0);
+}
+
+/* Отзывчивая адаптация для новых элементов */
 @media (max-width: 768px) {
-    .sign-ai-karaoke {
-        padding: 15px;
-    }
-
-    .sign-ai-karaoke__title {
-        font-size: 2rem;
-    }
-
-    .sign-ai-karaoke__controls {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .upload-modal__content {
-        margin: 10% auto;
-        padding: 20px;
-        width: 95%;
-    }
-
-    .upload-form__buttons {
-        flex-direction: column;
-    }
-
     .audio-controls {
         flex-direction: column;
         gap: 10px;
+        text-align: center;
     }
 
     .progress-bar {
@@ -547,28 +628,38 @@
         width: 100%;
     }
 
-    .fullscreen-slide-text {
-        font-size: 2rem;
-        padding: 20px 25px;
-        max-width: 90%;
+    .recording-indicator {
+        order: 1;
+        margin-top: 5px;
     }
 
-    .fullscreen-controls {
-        top: 20px;
-        right: 20px;
+    .sign-ai-karaoke__controls {
+        gap: 10px;
     }
 
-    .fullscreen-btn {
-        padding: 10px 15px;
+    .sign-ai-karaoke__button {
+        min-width: 150px;
         font-size: 0.9rem;
     }
 }
 
 @media (max-width: 480px) {
-    .fullscreen-slide-text {
-        font-size: 1.5rem;
-        padding: 15px 20px;
-        max-width: 95%;
+    .karaoke-notification {
+        top: 10px;
+        right: 10px;
+        left: 10px;
+        max-width: none;
+        text-align: center;
+    }
+
+    .sign-ai-karaoke__button {
+        min-width: 120px;
+        padding: 10px 16px;
+        font-size: 0.85rem;
+    }
+
+    .recording-indicator {
+        font-size: 0.75rem;
+        padding: 4px 10px;
     }
 }
-

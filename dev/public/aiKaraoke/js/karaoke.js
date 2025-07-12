@@ -8,6 +8,13 @@ class KaraokePlayer {
         this.timeline = [];
         this.filesUploaded = false;
 
+        // Добавляем переменные для записи
+        this.mediaRecorder = null;
+        this.recordedChunks = [];
+        this.isRecording = false;
+        this.micStream = null;
+        this.microphoneEnabled = false;
+
         this.init();
     }
 
@@ -24,6 +31,10 @@ class KaraokePlayer {
             const confirmUploadBtn = document.getElementById('confirm-upload');
             const cancelUploadBtn = document.getElementById('cancel-upload');
             const modalCloseBtn = document.getElementById('upload-modal-close');
+
+            // Добавляем кнопки для управления записью
+            const micToggleBtn = document.getElementById('mic-toggle-btn');
+            const downloadRecordingBtn = document.getElementById('download-recording-btn');
 
             if (uploadBtn) {
                 uploadBtn.addEventListener('click', () => this.showUploadModal());
@@ -47,6 +58,14 @@ class KaraokePlayer {
 
             if (modalCloseBtn) {
                 modalCloseBtn.addEventListener('click', () => this.hideUploadModal());
+            }
+
+            if (micToggleBtn) {
+                micToggleBtn.addEventListener('click', () => this.toggleMicrophone());
+            }
+
+            if (downloadRecordingBtn) {
+                downloadRecordingBtn.addEventListener('click', () => this.downloadRecording());
             }
 
             // Закрытие модального окна по клику вне его
@@ -443,6 +462,197 @@ class KaraokePlayer {
         }
     }
 
+    async toggleMicrophone() {
+        if (!this.microphoneEnabled) {
+            try {
+                await this.enableMicrophone();
+            } catch (error) {
+                console.error('Ошибка доступа к микрофону:', error);
+                alert('Не удалось получить доступ к микрофону. Проверьте разрешения браузера.');
+            }
+        } else {
+            this.disableMicrophone();
+        }
+    }
+
+    async enableMicrophone() {
+        try {
+            // Запрашиваем доступ к микрофону
+            this.micStream = await navigator.mediaDevices.getUserMedia({
+                audio: {
+                    echoCancellation: true,
+                    noiseSuppression: true,
+                    autoGainControl: true
+                }
+            });
+
+            // Создаем MediaRecorder
+            this.mediaRecorder = new MediaRecorder(this.micStream, {
+                mimeType: this.getSupportedMimeType()
+            });
+
+            this.mediaRecorder.ondataavailable = (event) => {
+                if (event.data.size > 0) {
+                    this.recordedChunks.push(event.data);
+                }
+            };
+
+            this.mediaRecorder.onstop = () => {
+                console.log('Запись остановлена');
+                this.processRecording();
+            };
+
+            this.microphoneEnabled = true;
+            this.updateMicrophoneButton();
+            this.showNotification('🎤 Микрофон включен! Теперь при воспроизведении караоке начнется запись.');
+
+        } catch (error) {
+            console.error('Ошибка при включении микрофона:', error);
+            throw error;
+        }
+    }
+
+    disableMicrophone() {
+        if (this.micStream) {
+            this.micStream.getTracks().forEach(track => track.stop());
+            this.micStream = null;
+        }
+
+        if (this.isRecording) {
+            this.stopRecording();
+        }
+
+        this.microphoneEnabled = false;
+        this.updateMicrophoneButton();
+        this.showNotification('🔇 Микрофон выключен');
+    }
+
+    getSupportedMimeType() {
+        const types = [
+            'audio/webm;codecs=opus',
+            'audio/webm',
+            'audio/mp4',
+            'audio/wav'
+        ];
+
+        for (const type of types) {
+            if (MediaRecorder.isTypeSupported(type)) {
+                return type;
+            }
+        }
+
+        return 'audio/webm'; // fallback
+    }
+
+    startRecording() {
+        if (!this.mediaRecorder || !this.microphoneEnabled) {
+            console.warn('Микрофон не включен');
+            return;
+        }
+
+        if (this.isRecording) {
+            console.warn('Запись уже идет');
+            return;
+        }
+
+        try {
+            this.recordedChunks = [];
+            this.mediaRecorder.start(100); // записываем данные каждые 100мс
+            this.isRecording = true;
+            this.updateRecordingStatus();
+            console.log('Запись началась');
+
+        } catch (error) {
+            console.error('Ошибка при начале записи:', error);
+        }
+    }
+
+    stopRecording() {
+        if (!this.isRecording || !this.mediaRecorder) {
+            return;
+        }
+
+        try {
+            this.mediaRecorder.stop();
+            this.isRecording = false;
+            this.updateRecordingStatus();
+            console.log('Запись остановлена');
+
+        } catch (error) {
+            console.error('Ошибка при остановке записи:', error);
+        }
+    }
+
+    processRecording() {
+        if (this.recordedChunks.length === 0) {
+            console.warn('Нет данных для обработки');
+            return;
+        }
+
+        const blob = new Blob(this.recordedChunks, { type: this.getSupportedMimeType() });
+        const url = URL.createObjectURL(blob);
+
+        // Показываем кнопку скачивания
+        const downloadBtn = document.getElementById('download-recording-btn');
+        if (downloadBtn) {
+            downloadBtn.style.display = 'inline-block';
+            downloadBtn.disabled = false;
+        }
+
+        // Сохраняем ссылку для скачивания
+        this.recordingUrl = url;
+        this.recordingBlob = blob;
+
+        this.showNotification('✅ Запись завершена! Теперь вы можете скачать свою запись.');
+    }
+
+    downloadRecording() {
+        if (!this.recordingUrl) {
+            alert('Нет записи для скачивания');
+            return;
+        }
+
+        const a = document.createElement('a');
+        a.href = this.recordingUrl;
+        a.download = `karaoke-recording-${new Date().toISOString().slice(0,19)}.webm`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+
+        this.showNotification('📥 Запись скачивается...');
+    }
+
+    updateMicrophoneButton() {
+        const micBtn = document.getElementById('mic-toggle-btn');
+        if (micBtn) {
+            if (this.microphoneEnabled) {
+                micBtn.textContent = '🔇 Выключить микрофон';
+                micBtn.className = 'ui-btn ui-btn-danger sign-ai-karaoke__button';
+            } else {
+                micBtn.textContent = '🎤 Включить микрофон';
+                micBtn.className = 'ui-btn ui-btn-secondary sign-ai-karaoke__button';
+            }
+        }
+    }
+
+    updateRecordingStatus() {
+        const playBtn = document.getElementById('play-karaoke-btn');
+        const recordingIndicator = document.getElementById('recording-indicator');
+
+        if (this.isRecording) {
+            // Показываем индикатор записи
+            if (recordingIndicator) {
+                recordingIndicator.style.display = 'inline-block';
+                recordingIndicator.textContent = '🔴 ЗАПИСЬ';
+            }
+        } else {
+            // Скрываем индикатор записи
+            if (recordingIndicator) {
+                recordingIndicator.style.display = 'none';
+            }
+        }
+    }
+
     togglePlayback() {
         if (!this.audioElement) {
             alert('Сначала сгенерируйте караоке');
@@ -453,10 +663,20 @@ class KaraokePlayer {
             this.audioElement.pause();
             this.isPlaying = false;
             document.getElementById('play-karaoke-btn').textContent = 'Воспроизвести';
+
+            // Останавливаем запись при паузе
+            if (this.isRecording) {
+                this.stopRecording();
+            }
         } else {
             this.audioElement.play();
             this.isPlaying = true;
             document.getElementById('play-karaoke-btn').textContent = 'Пауза';
+
+            // Начинаем запись при воспроизведении, если микрофон включен
+            if (this.microphoneEnabled && !this.isRecording) {
+                this.startRecording();
+            }
         }
     }
 
@@ -464,6 +684,11 @@ class KaraokePlayer {
         this.isPlaying = false;
         this.showSlide(0); // Показываем первый слайд
         document.getElementById('play-karaoke-btn').textContent = 'Воспроизвести';
+
+        // Останавливаем запись при окончании песни
+        if (this.isRecording) {
+            this.stopRecording();
+        }
     }
 
     showLoading(show) {

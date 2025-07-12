@@ -26,8 +26,14 @@ $APPLICATION->SetTitle('Караоке генератор');
 			<button class="ui-btn ui-btn-secondary sign-ai-karaoke__button" id="generate-karaoke-btn" disabled>
 				Генерировать караоке
 			</button>
+			<button class="ui-btn ui-btn-secondary sign-ai-karaoke__button" id="mic-toggle-btn">
+				🎤 Включить микрофон
+			</button>
 			<button class="ui-btn ui-btn-success sign-ai-karaoke__button" id="play-karaoke-btn" disabled>
 				Воспроизвести
+			</button>
+			<button class="ui-btn ui-btn-info sign-ai-karaoke__button" id="download-recording-btn" style="display: none;" disabled>
+				📥 Скачать запись
 			</button>
 		</div>
 
@@ -42,6 +48,9 @@ $APPLICATION->SetTitle('Караоке генератор');
 					<div class="progress-fill" id="progress-fill"></div>
 				</div>
 				<div class="time-display" id="time-display">0:00 / 0:00</div>
+				<div class="recording-indicator" id="recording-indicator" style="display: none;">
+					🔴 ЗАПИСЬ
+				</div>
 			</div>
 
 			<div class="slides-container" id="slides-container">
