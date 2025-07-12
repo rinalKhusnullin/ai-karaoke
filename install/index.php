@@ -83,6 +83,9 @@ class AIKaraoke extends CModule
 		}
 		elseif ($step === 2)
 		{
+			global $DB;
+			$DB->RunSQLBatch($_SERVER['DOCUMENT_ROOT'].'/bitrix/modules/aikaraoke/install/db/mysql/uninstall.sql');
+
 			unregisterModule('aikaraoke');
 			$APPLICATION->includeAdminFile(
 				'Удалить aikaraoke',
