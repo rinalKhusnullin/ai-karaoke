@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="9975baa4-c445-4b2c-877a-bafda4dd5623" name="Changes" comment="" />
+    <list default="true" id="9975baa4-c445-4b2c-877a-bafda4dd5623" name="Changes" comment="оценка результата">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/public/aiKaraoke/debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/dev/public/aiKaraoke/debug.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/public/aiKaraoke/js/karaoke.js" beforeDir="false" afterPath="$PROJECT_DIR$/dev/public/aiKaraoke/js/karaoke.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/controller/song.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/controller/song.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,12 +18,165 @@
   <component name="ComposerSettings">
     <execution />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "nascela"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/rinalKhusnullin/ai-karaoke",
+    "accountId": "ced13d34-e99d-4d37-b5e2-781e59fe3015"
+  }
+}]]></component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="/opt/homebrew/Cellar/php/8.3.13/bin/php" />
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="2zlrYCj8qLj7wSfJLgqtCc5zhM1" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{}</component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-b26f3e71634d-JavaScript-PS-251.26094.133" />
+        <option value="bundled-php-predefined-a98d8de5180a-c5828cf854d9-com.jetbrains.php.sharedIndexes-PS-251.26094.133" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9975baa4-c445-4b2c-877a-bafda4dd5623" name="Changes" comment="" />
+      <created>1752316546581</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1752316546581</updated>
+      <workItem from="1752316548076" duration="21025000" />
+      <workItem from="1753166188606" duration="20000" />
+    </task>
+    <task id="LOCAL-00001" summary="dev страничка с караоке">
+      <option name="closed" value="true" />
+      <created>1752316615295</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1752316615295</updated>
+    </task>
+    <task id="LOCAL-00002" summary="dev страничка с караоке">
+      <option name="closed" value="true" />
+      <created>1752316794480</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1752316794480</updated>
+    </task>
+    <task id="LOCAL-00003" summary="dev страничка с караоке">
+      <option name="closed" value="true" />
+      <created>1752316995956</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1752316995956</updated>
+    </task>
+    <task id="LOCAL-00004" summary="генерация картинок">
+      <option name="closed" value="true" />
+      <created>1752322609291</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1752322609291</updated>
+    </task>
+    <task id="LOCAL-00005" summary="генерация картинок">
+      <option name="closed" value="true" />
+      <created>1752322700336</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1752322700336</updated>
+    </task>
+    <task id="LOCAL-00006" summary="генерация картинок">
+      <option name="closed" value="true" />
+      <created>1752322793150</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1752322793150</updated>
+    </task>
+    <task id="LOCAL-00007" summary="картинки во весь экран">
+      <option name="closed" value="true" />
+      <created>1752329343089</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1752329343089</updated>
+    </task>
+    <task id="LOCAL-00008" summary="прикрутили аи парс плюса в минус и текст">
+      <option name="closed" value="true" />
+      <created>1752332917027</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1752332917027</updated>
+    </task>
+    <task id="LOCAL-00009" summary="прикрутили аи парс плюса в минус и текст">
+      <option name="closed" value="true" />
+      <created>1752333696785</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1752333696785</updated>
+    </task>
+    <task id="LOCAL-00010" summary="микро">
+      <option name="closed" value="true" />
+      <created>1752334065372</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1752334065372</updated>
+    </task>
+    <task id="LOCAL-00011" summary="оценка результата">
+      <option name="closed" value="true" />
+      <created>1752334959562</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1752334959562</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="dev страничка с караоке" />
+    <MESSAGE value="генерация картинок" />
+    <MESSAGE value="картинки во весь экран" />
+    <MESSAGE value="прикрутили аи парс плюса в минус и текст" />
+    <MESSAGE value="микро" />
+    <MESSAGE value="оценка результата" />
+    <option name="LAST_COMMIT_MESSAGE" value="оценка результата" />
   </component>
 </project>

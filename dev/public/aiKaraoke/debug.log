@@ -1,0 +1,634 @@
+[2025-07-12 15:56:29] AI Karaoke: Karaoke Generator initialized | Context: {"api_key_configured":true,"audio_api":"http:\/\/212.113.116.182:8080\/api\/process","directories":{"upload_dir":"\/var\/www\/public_html\/bx\/upload\/aikaraoke\/","images_dir":"\/media\/bitrix\/modules\/aikaraoke\/dev\/public\/aiKaraoke\/images\/","upload_writable":true,"images_writable":true}}
+[2025-07-12 15:56:29] AI Karaoke: File uploaded successfully: /var/www/public_html/bx/upload/aikaraoke/audio_1752335789_9385.mp3
+[2025-07-12 15:56:29] AI Karaoke: Audio file saved: /var/www/public_html/bx/upload/aikaraoke/audio_1752335789_9385.mp3
+[2025-07-12 15:56:29] AI Karaoke: Sending audio to API: http://212.113.116.182:8080/api/process
+[2025-07-12 15:57:29] AI Karaoke: API response code: 200
+[2025-07-12 15:57:29] AI Karaoke: API response parsed successfully
+[2025-07-12 15:57:29] AI Karaoke: API response received | Context: {"accompaniment_url":"http:\/\/212.113.116.182:8080\/api\/download\/16cd6de1-0197-4270-8b2e-1cc5a756068a\/accompaniment","processing_info":{"audio_format_sent_to_whisper":"mp3","chunks_count":50,"file_size_mb":3.13,"original_filename":"audio_1752335789_9385.mp3"},"success":true,"track_id":"16cd6de1-0197-4270-8b2e-1cc5a756068a","transcript":"Падаем на М5, асфальт в ощи, у неё пиркин, цвета ощи. Она закурит, но я просил, ай, занижает градус роксидов. Падаем на М5, асфальт в ощи, у неё пиркин, цвета ощи. Она закурит, но я просил, ай, занижает градус роксидов. А я... У нас нет пути назад, у нас перегреты тормоза. У нас одна карта на руках, бруто, в магме только делак. Да мы деловые на делах, взяли разгон, взяли размах. Но я видел, как толпами едут назад, те, кто поехали на деньгах. Падаем на М5, асфальт в ощи, у неё пиркин, цвета ощи. Она закурит, но я просил, ай, занижает градус роксидов. Падаем на М5, асфальт в ощи, у неё пиркин, цвета ощи. Она закурит, но я просил, ай, занижает градус роксидов. А я... Меняют уши на пачки лавэ, пацаны меняют кузовы чёрных БМВ. Наши везде, наш ВЛА. Сложно убить тех, кто выжил на дне. Я взрываю за всех, кого нет с нами, за, за, за всех, кто нанас вставил. Половину закроют, или завалят. Мама улица, папа спальный. Падаем на М5, асфальт в ощи, у неё пиркин, цвета ощи. Она закурит, но я просил, ай, занижает градус роксидов. Падаем на М5, асфальт в ощи, у неё пиркин, цвета ощи. Она закурит, но я просил, ай, занижает градус роксидов. Падаем на М5, асфальт в ощи, у неё пиркин, цвета ощи. Она закурит, но я просил, ай, занимает градус роксидов. Падаем на М5, асфальт в ощи, у неё пиркин, цвета ощи. Она закурит, но я просил, ай, занимает градус роксидов.","transcript_chunks":[{"end":8.58,"start":0,"text":"Падаем на М5, асфальт в","word_count":5},{"end":17.16,"start":8.58,"text":"ощи, у неё пиркин, цвета","word_count":5},{"end":20.64,"start":17.16,"text":"ощи. Она закурит, но я","word_count":5},{"end":22.84,"start":20.64,"text":"просил, ай, занижает градус роксидов.","word_count":5},{"end":24.57,"start":22.84,"text":"Падаем на М5, асфальт в","word_count":5},{"end":26.29,"start":24.57,"text":"ощи, у неё пиркин, цвета","word_count":5},{"end":28.35,"start":26.29,"text":"ощи. Она закурит, но я","word_count":5},{"end":30.48,"start":28.35,"text":"просил, ай, занижает градус роксидов.","word_count":5},{"end":32.61,"start":30.48,"text":"А я... У нас нет","word_count":5},{"end":34.5,"start":32.61,"text":"пути назад, у нас перегреты","word_count":5},{"end":36.19,"start":34.5,"text":"тормоза. У нас одна карта","word_count":5},{"end":37.83,"start":36.19,"text":"на руках, бруто, в магме","word_count":5},{"end":39.61,"start":37.83,"text":"только делак. Да мы деловые","word_count":5},{"end":41.5,"start":39.61,"text":"на делах, взяли разгон, взяли","word_count":5},{"end":43.08,"start":41.5,"text":"размах. Но я видел, как","word_count":5},{"end":44.58,"start":43.08,"text":"толпами едут назад, те, кто","word_count":5},{"end":46.61,"start":44.58,"text":"поехали на деньгах. Падаем на","word_count":5},{"end":48.43,"start":46.61,"text":"М5, асфальт в ощи, у","word_count":5},{"end":50.32,"start":48.43,"text":"неё пиркин, цвета ощи. Она","word_count":5},{"end":52.55,"start":50.32,"text":"закурит, но я просил, ай,","word_count":5},{"end":54.67,"start":52.55,"text":"занижает градус роксидов. Падаем на","word_count":5},{"end":56.03,"start":54.67,"text":"М5, асфальт в ощи, у","word_count":5},{"end":57.56,"start":56.03,"text":"неё пиркин, цвета ощи. Она","word_count":5},{"end":59.79,"start":57.56,"text":"закурит, но я просил, ай,","word_count":5},{"end":62.12,"start":59.79,"text":"занижает градус роксидов. А я...","word_count":5},{"end":78.79,"start":77.12,"text":"Меняют уши на пачки лавэ,","word_count":5},{"end":81.12,"start":78.79,"text":"пацаны меняют кузовы чёрных БМВ.","word_count":5},{"end":82.65,"start":81.12,"text":"Наши везде, наш ВЛА. Сложно","word_count":5},{"end":84.07,"start":82.65,"text":"убить тех, кто выжил на","word_count":5},{"end":85.36,"start":84.07,"text":"дне. Я взрываю за всех,","word_count":5},{"end":86.61,"start":85.36,"text":"кого нет с нами, за,","word_count":5},{"end":88.03,"start":86.61,"text":"за, за всех, кто нанас","word_count":5},{"end":90.36,"start":88.03,"text":"вставил. Половину закроют, или завалят.","word_count":5},{"end":92.72,"start":90.36,"text":"Мама улица, папа спальный. Падаем","word_count":5},{"end":94.54,"start":92.72,"text":"на М5, асфальт в ощи,","word_count":5},{"end":96.36,"start":94.54,"text":"у неё пиркин, цвета ощи.","word_count":5},{"end":98.58,"start":96.36,"text":"Она закурит, но я просил,","word_count":5},{"end":100.68,"start":98.58,"text":"ай, занижает градус роксидов. Падаем","word_count":5},{"end":102.27,"start":100.68,"text":"на М5, асфальт в ощи,","word_count":5},{"end":103.86,"start":102.27,"text":"у неё пиркин, цвета ощи.","word_count":5},{"end":106.3,"start":104.36,"text":"Она закурит, но я просил,","word_count":5},{"end":108.37,"start":106.3,"text":"ай, занижает градус роксидов. Падаем","word_count":5},{"end":109.74,"start":108.37,"text":"на М5, асфальт в ощи,","word_count":5},{"end":111.1,"start":109.74,"text":"у неё пиркин, цвета ощи.","word_count":5},{"end":113.91,"start":111.8,"text":"Она закурит, но я просил,","word_count":5},{"end":115.96,"start":113.91,"text":"ай, занимает градус роксидов. Падаем","word_count":5},{"end":117.78,"start":115.96,"text":"на М5, асфальт в ощи,","word_count":5},{"end":119.6,"start":117.78,"text":"у неё пиркин, цвета ощи.","word_count":5},{"end":121.82,"start":119.6,"text":"Она закурит, но я просил,","word_count":5},{"end":123.6,"start":121.82,"text":"ай, занимает градус роксидов.","word_count":4}],"vocals_url":"http:\/\/212.113.116.182:8080\/api\/download\/16cd6de1-0197-4270-8b2e-1cc5a756068a\/vocals"}
+[2025-07-12 15:57:29] AI Karaoke: Generating karaoke from API response
+[2025-07-12 15:57:29] AI Karaoke: Processing transcript chunks | Context: {"count":50}
+[2025-07-12 15:57:29] AI Karaoke: Saving minus audio
+[2025-07-12 15:57:38] AI Karaoke: Minus audio saved: /upload/aikaraoke/minus_1752335858_6262.mp3
+[2025-07-12 15:57:38] AI Karaoke: Creating slides from transcript chunks
+[2025-07-12 15:57:38] AI Karaoke: Slides created | Context: {"count":17}
+[2025-07-12 15:57:38] AI Karaoke: Starting image generation for 17 slides
+[2025-07-12 15:57:39] AI Karaoke: Song theme detected: musical atmosphere, urban lifestyle, luxury, success
+[2025-07-12 15:57:39] AI Karaoke: Generating image for slide 0: "Падаем на М5, асфальт в
+ощи, у неё пиркин, цвета
+ощи. Она закурит, но я"
+[2025-07-12 15:57:39] AI Karaoke: Image prompt for slide 0: Create a beautiful, artistic image that represents the concept: "abstract artistic concept, emotional atmosphere, cinematic mood". Overall theme and mood: musical atmosphere, urban lifestyle, luxury, success. Style: cinematic, vibrant colors, emotional, abstract art, suitable for music visualization. NO TEXT, NO WORDS, NO LETTERS in the image. Focus on mood, atmosphere, colors and abstract visual metaphors. Professional photography style, high quality, artistic composition.
+[2025-07-12 15:57:39] AI Karaoke: DALL-E API response code: 403
+[2025-07-12 15:57:39] AI Karaoke: Image generation failed for line: "Падаем на М5, асфальт в
+ощи, у неё пиркин, цвета
+ощи. Она закурит, но я". HTTP Code: 403. Response: {"error":{"code":"unsupported_country_region_territory","message":"Country, region, or territory not supported","param":null,"type":"request_forbidden"}}
+[2025-07-12 15:57:39] AI Karaoke: Generating placeholder image for slide 0
+[2025-07-12 15:57:39] AI Karaoke: Placeholder image created: images/placeholder_0_1752335859.png
+[2025-07-12 15:57:39] AI Karaoke: Image generated successfully for slide 0: images/placeholder_0_1752335859.png
+[2025-07-12 15:57:39] AI Karaoke: Generating image for slide 1: "просил, ай, занижает градус роксидов.
+Падаем на М5, асфальт в
+ощи, у неё пиркин, цвета"
+[2025-07-12 15:57:39] AI Karaoke: Image prompt for slide 1: Create a beautiful, artistic image that represents the concept: "abstract artistic concept, emotional atmosphere, cinematic mood". Overall theme and mood: musical atmosphere, urban lifestyle, luxury, success. Style: cinematic, vibrant colors, emotional, abstract art, suitable for music visualization. NO TEXT, NO WORDS, NO LETTERS in the image. Focus on mood, atmosphere, colors and abstract visual metaphors. Professional photography style, high quality, artistic composition.
+[2025-07-12 15:57:40] AI Karaoke: DALL-E API response code: 403
+[2025-07-12 15:57:40] AI Karaoke: Image generation failed for line: "просил, ай, занижает градус роксидов.
+Падаем на М5, асфальт в
+ощи, у неё пиркин, цвета". HTTP Code: 403. Response: {"error":{"code":"unsupported_country_region_territory","message":"Country, region, or territory not supported","param":null,"type":"request_forbidden"}}
+[2025-07-12 15:57:40] AI Karaoke: Generating placeholder image for slide 1
+[2025-07-12 15:57:40] AI Karaoke: Placeholder image created: images/placeholder_1_1752335860.png
+[2025-07-12 15:57:40] AI Karaoke: Image generated successfully for slide 1: images/placeholder_1_1752335860.png
+[2025-07-12 15:57:40] AI Karaoke: Generating image for slide 2: "ощи. Она закурит, но я
+просил, ай, занижает градус роксидов.
+А я... У нас нет"
+[2025-07-12 15:57:40] AI Karaoke: Image prompt for slide 2: Create a beautiful, artistic image that represents the concept: "abstract artistic concept, emotional atmosphere, cinematic mood". Overall theme and mood: musical atmosphere, urban lifestyle, luxury, success. Style: cinematic, vibrant colors, emotional, abstract art, suitable for music visualization. NO TEXT, NO WORDS, NO LETTERS in the image. Focus on mood, atmosphere, colors and abstract visual metaphors. Professional photography style, high quality, artistic composition.
+[2025-07-12 15:57:40] AI Karaoke: DALL-E API response code: 403
+[2025-07-12 15:57:40] AI Karaoke: Image generation failed for line: "ощи. Она закурит, но я
+просил, ай, занижает градус роксидов.
+А я... У нас нет". HTTP Code: 403. Response: {"error":{"code":"unsupported_country_region_territory","message":"Country, region, or territory not supported","param":null,"type":"request_forbidden"}}
+[2025-07-12 15:57:40] AI Karaoke: Generating placeholder image for slide 2
+[2025-07-12 15:57:40] AI Karaoke: Placeholder image created: images/placeholder_2_1752335860.png
+[2025-07-12 15:57:40] AI Karaoke: Image generated successfully for slide 2: images/placeholder_2_1752335860.png
+[2025-07-12 15:57:41] AI Karaoke: Generating image for slide 3: "пути назад, у нас перегреты
+тормоза. У нас одна карта
+на руках, бруто, в магме"
+[2025-07-12 15:57:41] AI Karaoke: Image prompt for slide 3: Create a beautiful, artistic image that represents the concept: "abstract artistic concept, emotional atmosphere, cinematic mood". Overall theme and mood: musical atmosphere, urban lifestyle, luxury, success. Style: cinematic, vibrant colors, emotional, abstract art, suitable for music visualization. NO TEXT, NO WORDS, NO LETTERS in the image. Focus on mood, atmosphere, colors and abstract visual metaphors. Professional photography style, high quality, artistic composition.
+[2025-07-12 15:57:41] AI Karaoke: DALL-E API response code: 403
+[2025-07-12 15:57:41] AI Karaoke: Image generation failed for line: "пути назад, у нас перегреты
+тормоза. У нас одна карта
+на руках, бруто, в магме". HTTP Code: 403. Response: {"error":{"code":"unsupported_country_region_territory","message":"Country, region, or territory not supported","param":null,"type":"request_forbidden"}}
+[2025-07-12 15:57:41] AI Karaoke: Generating placeholder image for slide 3
+[2025-07-12 15:57:41] AI Karaoke: Placeholder image created: images/placeholder_3_1752335861.png
+[2025-07-12 15:57:41] AI Karaoke: Image generated successfully for slide 3: images/placeholder_3_1752335861.png
+[2025-07-12 15:57:42] AI Karaoke: Generating image for slide 4: "только делак. Да мы деловые
+на делах, взяли разгон, взяли
+размах. Но я видел, как"
+[2025-07-12 15:57:42] AI Karaoke: Image prompt for slide 4: Create a beautiful, artistic image that represents the concept: "abstract artistic concept, emotional atmosphere, cinematic mood". Overall theme and mood: musical atmosphere, urban lifestyle, luxury, success. Style: cinematic, vibrant colors, emotional, abstract art, suitable for music visualization. NO TEXT, NO WORDS, NO LETTERS in the image. Focus on mood, atmosphere, colors and abstract visual metaphors. Professional photography style, high quality, artistic composition.
+[2025-07-12 15:57:42] AI Karaoke: DALL-E API response code: 403
+[2025-07-12 15:57:42] AI Karaoke: Image generation failed for line: "только делак. Да мы деловые
+на делах, взяли разгон, взяли
+размах. Но я видел, как". HTTP Code: 403. Response: {"error":{"code":"unsupported_country_region_territory","message":"Country, region, or territory not supported","param":null,"type":"request_forbidden"}}
+[2025-07-12 15:57:42] AI Karaoke: Generating placeholder image for slide 4
+[2025-07-12 15:57:42] AI Karaoke: Placeholder image created: images/placeholder_4_1752335862.png
+[2025-07-12 15:57:42] AI Karaoke: Image generated successfully for slide 4: images/placeholder_4_1752335862.png
+[2025-07-12 15:57:42] AI Karaoke: Generating image for slide 5: "толпами едут назад, те, кто
+поехали на деньгах. Падаем на
+М5, асфальт в ощи, у"
+[2025-07-12 15:57:42] AI Karaoke: Image prompt for slide 5: Create a beautiful, artistic image that represents the concept: "abstract artistic concept, emotional atmosphere, cinematic mood". Overall theme and mood: musical atmosphere, urban lifestyle, luxury, success. Style: cinematic, vibrant colors, emotional, abstract art, suitable for music visualization. NO TEXT, NO WORDS, NO LETTERS in the image. Focus on mood, atmosphere, colors and abstract visual metaphors. Professional photography style, high quality, artistic composition.
+[2025-07-12 15:57:42] AI Karaoke: DALL-E API response code: 403
+[2025-07-12 15:57:42] AI Karaoke: Image generation failed for line: "толпами едут назад, те, кто
+поехали на деньгах. Падаем на
+М5, асфальт в ощи, у". HTTP Code: 403. Response: {"error":{"code":"unsupported_country_region_territory","message":"Country, region, or territory not supported","param":null,"type":"request_forbidden"}}
+[2025-07-12 15:57:42] AI Karaoke: Generating placeholder image for slide 5
+[2025-07-12 15:57:42] AI Karaoke: Placeholder image created: images/placeholder_5_1752335862.png
+[2025-07-12 15:57:42] AI Karaoke: Image generated successfully for slide 5: images/placeholder_5_1752335862.png
+[2025-07-12 15:57:43] AI Karaoke: Generating image for slide 6: "неё пиркин, цвета ощи. Она
+закурит, но я просил, ай,
+занижает градус роксидов. Падаем на"
+[2025-07-12 15:57:43] AI Karaoke: Image prompt for slide 6: Create a beautiful, artistic image that represents the concept: "abstract artistic concept, emotional atmosphere, cinematic mood". Overall theme and mood: musical atmosphere, urban lifestyle, luxury, success. Style: cinematic, vibrant colors, emotional, abstract art, suitable for music visualization. NO TEXT, NO WORDS, NO LETTERS in the image. Focus on mood, atmosphere, colors and abstract visual metaphors. Professional photography style, high quality, artistic composition.
+[2025-07-12 15:57:43] AI Karaoke: DALL-E API response code: 403
+[2025-07-12 15:57:43] AI Karaoke: Image generation failed for line: "неё пиркин, цвета ощи. Она
+закурит, но я просил, ай,
+занижает градус роксидов. Падаем на". HTTP Code: 403. Response: {"error":{"code":"unsupported_country_region_territory","message":"Country, region, or territory not supported","param":null,"type":"request_forbidden"}}
+[2025-07-12 15:57:43] AI Karaoke: Generating placeholder image for slide 6
+[2025-07-12 15:57:43] AI Karaoke: Placeholder image created: images/placeholder_6_1752335863.png
+[2025-07-12 15:57:43] AI Karaoke: Image generated successfully for slide 6: images/placeholder_6_1752335863.png
+[2025-07-12 15:57:44] AI Karaoke: Generating image for slide 7: "М5, асфальт в ощи, у
+неё пиркин, цвета ощи. Она
+закурит, но я просил, ай,"
+[2025-07-12 15:57:44] AI Karaoke: Image prompt for slide 7: Create a beautiful, artistic image that represents the concept: "abstract artistic concept, emotional atmosphere, cinematic mood". Overall theme and mood: musical atmosphere, urban lifestyle, luxury, success. Style: cinematic, vibrant colors, emotional, abstract art, suitable for music visualization. NO TEXT, NO WORDS, NO LETTERS in the image. Focus on mood, atmosphere, colors and abstract visual metaphors. Professional photography style, high quality, artistic composition.
+[2025-07-12 15:57:44] AI Karaoke: DALL-E API response code: 403
+[2025-07-12 15:57:44] AI Karaoke: Image generation failed for line: "М5, асфальт в ощи, у
+неё пиркин, цвета ощи. Она
+закурит, но я просил, ай,". HTTP Code: 403. Response: {"error":{"code":"unsupported_country_region_territory","message":"Country, region, or territory not supported","param":null,"type":"request_forbidden"}}
+[2025-07-12 15:57:44] AI Karaoke: Generating placeholder image for slide 7
+[2025-07-12 15:57:44] AI Karaoke: Placeholder image created: images/placeholder_7_1752335864.png
+[2025-07-12 15:57:44] AI Karaoke: Image generated successfully for slide 7: images/placeholder_7_1752335864.png
+[2025-07-12 15:57:44] AI Karaoke: Generating image for slide 8: "занижает градус роксидов. А я...
+Меняют уши на пачки лавэ,
+пацаны меняют кузовы чёрных БМВ."
+[2025-07-12 15:57:44] AI Karaoke: Image prompt for slide 8: Create a beautiful, artistic image that represents the concept: "abstract artistic concept, emotional atmosphere, cinematic mood". Overall theme and mood: musical atmosphere, urban lifestyle, luxury, success. Style: cinematic, vibrant colors, emotional, abstract art, suitable for music visualization. NO TEXT, NO WORDS, NO LETTERS in the image. Focus on mood, atmosphere, colors and abstract visual metaphors. Professional photography style, high quality, artistic composition.
+[2025-07-12 15:57:44] AI Karaoke: DALL-E API response code: 403
+[2025-07-12 15:57:44] AI Karaoke: Image generation failed for line: "занижает градус роксидов. А я...
+Меняют уши на пачки лавэ,
+пацаны меняют кузовы чёрных БМВ.". HTTP Code: 403. Response: {"error":{"code":"unsupported_country_region_territory","message":"Country, region, or territory not supported","param":null,"type":"request_forbidden"}}
+[2025-07-12 15:57:44] AI Karaoke: Generating placeholder image for slide 8
+[2025-07-12 15:57:44] AI Karaoke: Placeholder image created: images/placeholder_8_1752335864.png
+[2025-07-12 15:57:44] AI Karaoke: Image generated successfully for slide 8: images/placeholder_8_1752335864.png
+[2025-07-12 15:57:45] AI Karaoke: Generating image for slide 9: "Наши везде, наш ВЛА. Сложно
+убить тех, кто выжил на
+дне. Я взрываю за всех,"
+[2025-07-12 15:57:45] AI Karaoke: Image prompt for slide 9: Create a beautiful, artistic image that represents the concept: "abstract artistic concept, emotional atmosphere, cinematic mood". Overall theme and mood: musical atmosphere, urban lifestyle, luxury, success. Style: cinematic, vibrant colors, emotional, abstract art, suitable for music visualization. NO TEXT, NO WORDS, NO LETTERS in the image. Focus on mood, atmosphere, colors and abstract visual metaphors. Professional photography style, high quality, artistic composition.
+[2025-07-12 15:57:45] AI Karaoke: DALL-E API response code: 403
+[2025-07-12 15:57:45] AI Karaoke: Image generation failed for line: "Наши везде, наш ВЛА. Сложно
+убить тех, кто выжил на
+дне. Я взрываю за всех,". HTTP Code: 403. Response: {"error":{"code":"unsupported_country_region_territory","message":"Country, region, or territory not supported","param":null,"type":"request_forbidden"}}
+[2025-07-12 15:57:45] AI Karaoke: Generating placeholder image for slide 9
+[2025-07-12 15:57:45] AI Karaoke: Placeholder image created: images/placeholder_9_1752335865.png
+[2025-07-12 15:57:45] AI Karaoke: Image generated successfully for slide 9: images/placeholder_9_1752335865.png
+[2025-07-12 15:57:46] AI Karaoke: Generating image for slide 10: "кого нет с нами, за,
+за, за всех, кто нанас
+вставил. Половину закроют, или завалят."
+[2025-07-12 15:57:46] AI Karaoke: Image prompt for slide 10: Create a beautiful, artistic image that represents the concept: "abstract artistic concept, emotional atmosphere, cinematic mood". Overall theme and mood: musical atmosphere, urban lifestyle, luxury, success. Style: cinematic, vibrant colors, emotional, abstract art, suitable for music visualization. NO TEXT, NO WORDS, NO LETTERS in the image. Focus on mood, atmosphere, colors and abstract visual metaphors. Professional photography style, high quality, artistic composition.
+[2025-07-12 15:57:46] AI Karaoke: DALL-E API response code: 403
+[2025-07-12 15:57:46] AI Karaoke: Image generation failed for line: "кого нет с нами, за,
+за, за всех, кто нанас
+вставил. Половину закроют, или завалят.". HTTP Code: 403. Response: {"error":{"code":"unsupported_country_region_territory","message":"Country, region, or territory not supported","param":null,"type":"request_forbidden"}}
+[2025-07-12 15:57:46] AI Karaoke: Generating placeholder image for slide 10
+[2025-07-12 15:57:46] AI Karaoke: Placeholder image created: images/placeholder_10_1752335866.png
+[2025-07-12 15:57:46] AI Karaoke: Image generated successfully for slide 10: images/placeholder_10_1752335866.png
+[2025-07-12 15:57:46] AI Karaoke: Generating image for slide 11: "Мама улица, папа спальный. Падаем
+на М5, асфальт в ощи,
+у неё пиркин, цвета ощи."
+[2025-07-12 15:57:46] AI Karaoke: Image prompt for slide 11: Create a beautiful, artistic image that represents the concept: "abstract artistic concept, emotional atmosphere, cinematic mood". Overall theme and mood: musical atmosphere, urban lifestyle, luxury, success. Style: cinematic, vibrant colors, emotional, abstract art, suitable for music visualization. NO TEXT, NO WORDS, NO LETTERS in the image. Focus on mood, atmosphere, colors and abstract visual metaphors. Professional photography style, high quality, artistic composition.
+[2025-07-12 15:57:47] AI Karaoke: DALL-E API response code: 403
+[2025-07-12 15:57:47] AI Karaoke: Image generation failed for line: "Мама улица, папа спальный. Падаем
+на М5, асфальт в ощи,
+у неё пиркин, цвета ощи.". HTTP Code: 403. Response: {"error":{"code":"unsupported_country_region_territory","message":"Country, region, or territory not supported","param":null,"type":"request_forbidden"}}
+[2025-07-12 15:57:47] AI Karaoke: Generating placeholder image for slide 11
+[2025-07-12 15:57:47] AI Karaoke: Placeholder image created: images/placeholder_11_1752335867.png
+[2025-07-12 15:57:47] AI Karaoke: Image generated successfully for slide 11: images/placeholder_11_1752335867.png
+[2025-07-12 15:57:47] AI Karaoke: Generating image for slide 12: "Она закурит, но я просил,
+ай, занижает градус роксидов. Падаем
+на М5, асфальт в ощи,"
+[2025-07-12 15:57:47] AI Karaoke: Image prompt for slide 12: Create a beautiful, artistic image that represents the concept: "abstract artistic concept, emotional atmosphere, cinematic mood". Overall theme and mood: musical atmosphere, urban lifestyle, luxury, success. Style: cinematic, vibrant colors, emotional, abstract art, suitable for music visualization. NO TEXT, NO WORDS, NO LETTERS in the image. Focus on mood, atmosphere, colors and abstract visual metaphors. Professional photography style, high quality, artistic composition.
+[2025-07-12 15:57:47] AI Karaoke: DALL-E API response code: 403
+[2025-07-12 15:57:47] AI Karaoke: Image generation failed for line: "Она закурит, но я просил,
+ай, занижает градус роксидов. Падаем
+на М5, асфальт в ощи,". HTTP Code: 403. Response: {"error":{"code":"unsupported_country_region_territory","message":"Country, region, or territory not supported","param":null,"type":"request_forbidden"}}
+[2025-07-12 15:57:47] AI Karaoke: Generating placeholder image for slide 12
+[2025-07-12 15:57:47] AI Karaoke: Placeholder image created: images/placeholder_12_1752335867.png
+[2025-07-12 15:57:47] AI Karaoke: Image generated successfully for slide 12: images/placeholder_12_1752335867.png
+[2025-07-12 15:57:48] AI Karaoke: Generating image for slide 13: "у неё пиркин, цвета ощи.
+Она закурит, но я просил,
+ай, занижает градус роксидов. Падаем"
+[2025-07-12 15:57:48] AI Karaoke: Image prompt for slide 13: Create a beautiful, artistic image that represents the concept: "abstract artistic concept, emotional atmosphere, cinematic mood". Overall theme and mood: musical atmosphere, urban lifestyle, luxury, success. Style: cinematic, vibrant colors, emotional, abstract art, suitable for music visualization. NO TEXT, NO WORDS, NO LETTERS in the image. Focus on mood, atmosphere, colors and abstract visual metaphors. Professional photography style, high quality, artistic composition.
+[2025-07-12 15:57:48] AI Karaoke: DALL-E API response code: 403
+[2025-07-12 15:57:48] AI Karaoke: Image generation failed for line: "у неё пиркин, цвета ощи.
+Она закурит, но я просил,
+ай, занижает градус роксидов. Падаем". HTTP Code: 403. Response: {"error":{"code":"unsupported_country_region_territory","message":"Country, region, or territory not supported","param":null,"type":"request_forbidden"}}
+[2025-07-12 15:57:48] AI Karaoke: Generating placeholder image for slide 13
+[2025-07-12 15:57:48] AI Karaoke: Placeholder image created: images/placeholder_13_1752335868.png
+[2025-07-12 15:57:48] AI Karaoke: Image generated successfully for slide 13: images/placeholder_13_1752335868.png
+[2025-07-12 15:57:49] AI Karaoke: Generating image for slide 14: "на М5, асфальт в ощи,
+у неё пиркин, цвета ощи.
+Она закурит, но я просил,"
+[2025-07-12 15:57:49] AI Karaoke: Image prompt for slide 14: Create a beautiful, artistic image that represents the concept: "abstract artistic concept, emotional atmosphere, cinematic mood". Overall theme and mood: musical atmosphere, urban lifestyle, luxury, success. Style: cinematic, vibrant colors, emotional, abstract art, suitable for music visualization. NO TEXT, NO WORDS, NO LETTERS in the image. Focus on mood, atmosphere, colors and abstract visual metaphors. Professional photography style, high quality, artistic composition.
+[2025-07-12 15:57:49] AI Karaoke: DALL-E API response code: 403
+[2025-07-12 15:57:49] AI Karaoke: Image generation failed for line: "на М5, асфальт в ощи,
+у неё пиркин, цвета ощи.
+Она закурит, но я просил,". HTTP Code: 403. Response: {"error":{"code":"unsupported_country_region_territory","message":"Country, region, or territory not supported","param":null,"type":"request_forbidden"}}
+[2025-07-12 15:57:49] AI Karaoke: Generating placeholder image for slide 14
+[2025-07-12 15:57:49] AI Karaoke: Placeholder image created: images/placeholder_14_1752335869.png
+[2025-07-12 15:57:49] AI Karaoke: Image generated successfully for slide 14: images/placeholder_14_1752335869.png
+[2025-07-12 15:57:49] AI Karaoke: Generating image for slide 15: "ай, занимает градус роксидов. Падаем
+на М5, асфальт в ощи,
+у неё пиркин, цвета ощи."
+[2025-07-12 15:57:49] AI Karaoke: Image prompt for slide 15: Create a beautiful, artistic image that represents the concept: "abstract artistic concept, emotional atmosphere, cinematic mood". Overall theme and mood: musical atmosphere, urban lifestyle, luxury, success. Style: cinematic, vibrant colors, emotional, abstract art, suitable for music visualization. NO TEXT, NO WORDS, NO LETTERS in the image. Focus on mood, atmosphere, colors and abstract visual metaphors. Professional photography style, high quality, artistic composition.
+[2025-07-12 15:57:50] AI Karaoke: DALL-E API response code: 403
+[2025-07-12 15:57:50] AI Karaoke: Image generation failed for line: "ай, занимает градус роксидов. Падаем
+на М5, асфальт в ощи,
+у неё пиркин, цвета ощи.". HTTP Code: 403. Response: {"error":{"code":"unsupported_country_region_territory","message":"Country, region, or territory not supported","param":null,"type":"request_forbidden"}}
+[2025-07-12 15:57:50] AI Karaoke: Generating placeholder image for slide 15
+[2025-07-12 15:57:50] AI Karaoke: Placeholder image created: images/placeholder_15_1752335870.png
+[2025-07-12 15:57:50] AI Karaoke: Image generated successfully for slide 15: images/placeholder_15_1752335870.png
+[2025-07-12 15:57:50] AI Karaoke: Generating image for slide 16: "Она закурит, но я просил,
+ай, занимает градус роксидов."
+[2025-07-12 15:57:50] AI Karaoke: Image prompt for slide 16: Create a beautiful, artistic image that represents the concept: "abstract artistic concept, emotional atmosphere, cinematic mood". Overall theme and mood: musical atmosphere, urban lifestyle, luxury, success. Style: cinematic, vibrant colors, emotional, abstract art, suitable for music visualization. NO TEXT, NO WORDS, NO LETTERS in the image. Focus on mood, atmosphere, colors and abstract visual metaphors. Professional photography style, high quality, artistic composition.
+[2025-07-12 15:57:50] AI Karaoke: DALL-E API response code: 403
+[2025-07-12 15:57:50] AI Karaoke: Image generation failed for line: "Она закурит, но я просил,
+ай, занимает градус роксидов.". HTTP Code: 403. Response: {"error":{"code":"unsupported_country_region_territory","message":"Country, region, or territory not supported","param":null,"type":"request_forbidden"}}
+[2025-07-12 15:57:50] AI Karaoke: Generating placeholder image for slide 16
+[2025-07-12 15:57:50] AI Karaoke: Placeholder image created: images/placeholder_16_1752335870.png
+[2025-07-12 15:57:50] AI Karaoke: Image generated successfully for slide 16: images/placeholder_16_1752335870.png
+[2025-07-12 15:57:51] AI Karaoke: Image generation completed. Generated images for slides.
+[2025-07-12 15:57:51] AI Karaoke: Karaoke generation completed | Context: {"slides_count":17,"duration":123.6}
+[2025-07-12 16:01:43] AI Karaoke: Karaoke Generator initialized | Context: {"api_key_configured":true,"audio_api":"http:\/\/212.113.116.182:8080\/api\/process","directories":{"upload_dir":"\/var\/www\/public_html\/bx\/upload\/aikaraoke\/","images_dir":"\/media\/bitrix\/modules\/aikaraoke\/dev\/public\/aiKaraoke\/images\/","upload_writable":true,"images_writable":true}}
+[2025-07-12 16:01:43] AI Karaoke: File uploaded successfully: /var/www/public_html/bx/upload/aikaraoke/audio_1752336103_5623.mp3
+[2025-07-12 16:01:43] AI Karaoke: Audio file saved: /var/www/public_html/bx/upload/aikaraoke/audio_1752336103_5623.mp3
+[2025-07-12 16:01:43] AI Karaoke: Sending audio to API: http://212.113.116.182:8080/api/process
+[2025-07-12 16:02:03] AI Karaoke: API response code: 200
+[2025-07-12 16:02:03] AI Karaoke: API response parsed successfully
+[2025-07-12 16:02:03] AI Karaoke: API response received | Context: {"accompaniment_url":"http:\/\/212.113.116.182:8080\/api\/download\/c156bf05-2b1b-40fc-aac9-b77adc66adee\/accompaniment","processing_info":{"audio_format_sent_to_whisper":"mp3","chunks_count":3,"file_size_mb":0.73,"original_filename":"audio_1752336103_5623.mp3"},"success":true,"track_id":"c156bf05-2b1b-40fc-aac9-b77adc66adee","transcript":"Добавляйте 1 чайную ложку сахара и 1 чайную ложку сахара и перемешайте все хорошо","transcript_chunks":[{"end":9.64,"start":0,"text":"Добавляйте 1 чайную ложку сахара","word_count":5},{"end":19.29,"start":9.64,"text":"и 1 чайную ложку сахара","word_count":5},{"end":27,"start":19.29,"text":"и перемешайте все хорошо","word_count":4}],"vocals_url":"http:\/\/212.113.116.182:8080\/api\/download\/c156bf05-2b1b-40fc-aac9-b77adc66adee\/vocals"}
+[2025-07-12 16:02:03] AI Karaoke: Generating karaoke from API response
+[2025-07-12 16:02:03] AI Karaoke: Processing transcript chunks | Context: {"count":3}
+[2025-07-12 16:02:03] AI Karaoke: Saving minus audio
+[2025-07-12 16:02:05] AI Karaoke: Minus audio saved: /upload/aikaraoke/minus_1752336125_2922.mp3
+[2025-07-12 16:02:05] AI Karaoke: Creating slides from transcript chunks
+[2025-07-12 16:02:05] AI Karaoke: Slides created | Context: {"count":1}
+[2025-07-12 16:02:05] AI Karaoke: Starting image generation for 1 slides
+[2025-07-12 16:02:12] AI Karaoke: Full theme response: Theme: Preparation, Routine
+Mood: Calm, Methodical
+Visual Style: Minimalistic, Monotone
+[2025-07-12 16:02:12] AI Karaoke: Song theme detected: Theme: Preparation, Routine
+Mood: Calm, Methodical
+Visual Style: Minimalistic, Monotone
+[2025-07-12 16:02:12] AI Karaoke: Generating image for slide 0: "Добавляйте 1 чайную ложку сахара
+и 1 чайную ложку сахара
+и перемешайте все хорошо"
+[2025-07-12 16:02:12] AI Karaoke: Image prompt for slide 0: Create a beautiful, artistic image that represents the concept: "abstract artistic concept, emotional atmosphere, cinematic mood". Overall theme and mood: Theme: Preparation, Routine
+Mood: Calm, Methodical
+Visual Style: Minimalistic, Monotone. Style: cinematic, vibrant colors, emotional, abstract art, suitable for music visualization. NO TEXT, NO WORDS, NO LETTERS in the image. Focus on mood, atmosphere, colors and abstract visual metaphors. Professional photography style, high quality, artistic composition.
+[2025-07-12 16:02:25] AI Karaoke: DALL-E API response code: 200
+[2025-07-12 16:02:25] AI Karaoke: Image URL received: https://oaidalleapiprodscus.blob.core.windows.net/private/org-k7pwxxwcQ5PR8XW6ML46F9tp/user-ICgUYBoIZOyKmNX0aG4tt6C2/img-7x7Q0qNExjdIfNJsvXZHvqeh.png?st=2025-07-12T15%3A02%3A25Z&se=2025-07-12T17%3A02%3A25Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=cc612491-d948-4d2e-9821-2683df3719f5&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-07-12T16%3A02%3A25Z&ske=2025-07-13T16%3A02%3A25Z&sks=b&skv=2024-08-04&sig=Sde%2BMbuhyvdFiCtO7/0aOezYG6HK4gW/9Y54oldCIh8%3D
+[2025-07-12 16:02:25] AI Karaoke: Attempting to download image from: https://oaidalleapiprodscus.blob.core.windows.net/private/org-k7pwxxwcQ5PR8XW6ML46F9tp/user-ICgUYBoIZOyKmNX0aG4tt6C2/img-7x7Q0qNExjdIfNJsvXZHvqeh.png?st=2025-07-12T15%3A02%3A25Z&se=2025-07-12T17%3A02%3A25Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=cc612491-d948-4d2e-9821-2683df3719f5&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-07-12T16%3A02%3A25Z&ske=2025-07-13T16%3A02%3A25Z&sks=b&skv=2024-08-04&sig=Sde%2BMbuhyvdFiCtO7/0aOezYG6HK4gW/9Y54oldCIh8%3D
+[2025-07-12 16:02:28] AI Karaoke: Image downloaded, size: 1803880 bytes
+[2025-07-12 16:02:28] AI Karaoke: Saving image to: /media/bitrix/modules/aikaraoke/dev/public/aiKaraoke/images/slide_0_1752336148.png
+[2025-07-12 16:02:28] AI Karaoke: Image saved successfully. Relative URL: images/slide_0_1752336148.png
+[2025-07-12 16:02:28] AI Karaoke: Image saved locally: images/slide_0_1752336148.png
+[2025-07-12 16:02:28] AI Karaoke: Image generated successfully for slide 0: images/slide_0_1752336148.png
+[2025-07-12 16:02:28] AI Karaoke: Image generation completed. Generated images for slides.
+[2025-07-12 16:02:28] AI Karaoke: Karaoke generation completed | Context: {"slides_count":1,"duration":27}
+[2025-07-12 16:07:16] AI Karaoke: Karaoke Generator initialized | Context: {"api_key_configured":true,"audio_api":"http:\/\/212.113.116.182:8080\/api\/process","directories":{"upload_dir":"\/var\/www\/public_html\/bx\/upload\/aikaraoke\/","images_dir":"\/media\/bitrix\/modules\/aikaraoke\/dev\/public\/aiKaraoke\/images\/","upload_writable":true,"images_writable":true}}
+[2025-07-12 16:07:16] AI Karaoke: File uploaded successfully: /var/www/public_html/bx/upload/aikaraoke/audio_1752336436_4483.mp3
+[2025-07-12 16:07:16] AI Karaoke: Audio file saved: /var/www/public_html/bx/upload/aikaraoke/audio_1752336436_4483.mp3
+[2025-07-12 16:07:16] AI Karaoke: Sending audio to API: http://212.113.116.182:8080/api/process
+[2025-07-12 16:07:28] AI Karaoke: API response code: 200
+[2025-07-12 16:07:28] AI Karaoke: API response parsed successfully
+[2025-07-12 16:07:28] AI Karaoke: API response received | Context: {"accompaniment_url":"http:\/\/212.113.116.182:8080\/api\/download\/0c57398e-0020-45d8-be74-3f266bc02841\/accompaniment","processing_info":{"audio_format_sent_to_whisper":"mp3","chunks_count":3,"file_size_mb":0.73,"original_filename":"audio_1752336436_4483.mp3"},"success":true,"track_id":"0c57398e-0020-45d8-be74-3f266bc02841","transcript":"Добавляйте 1 чайную ложку сахара и 1 чайную ложку сахара и перемешайте все хорошо","transcript_chunks":[{"end":9.64,"start":0,"text":"Добавляйте 1 чайную ложку сахара","word_count":5},{"end":19.29,"start":9.64,"text":"и 1 чайную ложку сахара","word_count":5},{"end":27,"start":19.29,"text":"и перемешайте все хорошо","word_count":4}],"vocals_url":"http:\/\/212.113.116.182:8080\/api\/download\/0c57398e-0020-45d8-be74-3f266bc02841\/vocals"}
+[2025-07-12 16:07:28] AI Karaoke: Generating karaoke from API response
+[2025-07-12 16:07:28] AI Karaoke: Processing transcript chunks | Context: {"count":3}
+[2025-07-12 16:07:28] AI Karaoke: Saving minus audio
+[2025-07-12 16:07:30] AI Karaoke: Minus audio saved: /upload/aikaraoke/minus_1752336450_7082.mp3
+[2025-07-12 16:07:30] AI Karaoke: Creating slides from transcript chunks
+[2025-07-12 16:07:30] AI Karaoke: Slides created | Context: {"count":1}
+[2025-07-12 16:07:30] AI Karaoke: Starting image generation for 1 slides
+[2025-07-12 16:07:30] AI Karaoke: Song theme detected: musical atmosphere, urban lifestyle, luxury, success
+[2025-07-12 16:07:30] AI Karaoke: Generating image for slide 0: "Добавляйте 1 чайную ложку сахара
+и 1 чайную ложку сахара
+и перемешайте все хорошо"
+[2025-07-12 16:07:30] AI Karaoke: Image prompt for slide 0: Create a beautiful, artistic image that represents the concept: "abstract artistic concept, emotional atmosphere, cinematic mood". Overall theme and mood: musical atmosphere, urban lifestyle, luxury, success. Style: cinematic, vibrant colors, emotional, abstract art, suitable for music visualization. NO TEXT, NO WORDS, NO LETTERS in the image. Focus on mood, atmosphere, colors and abstract visual metaphors. Professional photography style, high quality, artistic composition.
+[2025-07-12 16:07:30] AI Karaoke: DALL-E API response code: 403
+[2025-07-12 16:07:30] AI Karaoke: Image generation failed for line: "Добавляйте 1 чайную ложку сахара
+и 1 чайную ложку сахара
+и перемешайте все хорошо". HTTP Code: 403. Response: {"error":{"code":"unsupported_country_region_territory","message":"Country, region, or territory not supported","param":null,"type":"request_forbidden"}}
+[2025-07-12 16:07:30] AI Karaoke: Generating placeholder image for slide 0
+[2025-07-12 16:07:30] AI Karaoke: Placeholder image created: images/placeholder_0_1752336450.png
+[2025-07-12 16:07:30] AI Karaoke: Image generated successfully for slide 0: images/placeholder_0_1752336450.png
+[2025-07-12 16:07:31] AI Karaoke: Image generation completed. Generated images for slides.
+[2025-07-12 16:07:31] AI Karaoke: Karaoke generation completed | Context: {"slides_count":1,"duration":27}
+[2025-07-12 16:08:40] AI Karaoke: Karaoke Generator initialized | Context: {"api_key_configured":true,"audio_api":"http:\/\/212.113.116.182:8080\/api\/process","directories":{"upload_dir":"\/var\/www\/public_html\/bx\/upload\/aikaraoke\/","images_dir":"\/media\/bitrix\/modules\/aikaraoke\/dev\/public\/aiKaraoke\/images\/","upload_writable":true,"images_writable":true}}
+[2025-07-12 16:08:40] AI Karaoke: File uploaded successfully: /var/www/public_html/bx/upload/aikaraoke/audio_1752336520_9601.mp3
+[2025-07-12 16:08:40] AI Karaoke: Audio file saved: /var/www/public_html/bx/upload/aikaraoke/audio_1752336520_9601.mp3
+[2025-07-12 16:08:40] AI Karaoke: Sending audio to API: http://212.113.116.182:8080/api/process
+[2025-07-12 16:08:50] AI Karaoke: API response code: 200
+[2025-07-12 16:08:50] AI Karaoke: API response parsed successfully
+[2025-07-12 16:08:50] AI Karaoke: API response received | Context: {"accompaniment_url":"http:\/\/212.113.116.182:8080\/api\/download\/8c341390-e149-4e16-b84f-db114a491bf9\/accompaniment","processing_info":{"audio_format_sent_to_whisper":"mp3","chunks_count":3,"file_size_mb":0.73,"original_filename":"audio_1752336520_9601.mp3"},"success":true,"track_id":"8c341390-e149-4e16-b84f-db114a491bf9","transcript":"Добавляйте 1 чайную ложку сахара и 1 чайную ложку сахара и перемешайте все хорошо","transcript_chunks":[{"end":9.64,"start":0,"text":"Добавляйте 1 чайную ложку сахара","word_count":5},{"end":19.29,"start":9.64,"text":"и 1 чайную ложку сахара","word_count":5},{"end":27,"start":19.29,"text":"и перемешайте все хорошо","word_count":4}],"vocals_url":"http:\/\/212.113.116.182:8080\/api\/download\/8c341390-e149-4e16-b84f-db114a491bf9\/vocals"}
+[2025-07-12 16:08:50] AI Karaoke: Generating karaoke from API response
+[2025-07-12 16:08:50] AI Karaoke: Processing transcript chunks | Context: {"count":3}
+[2025-07-12 16:08:50] AI Karaoke: Saving minus audio
+[2025-07-12 16:08:51] AI Karaoke: Minus audio saved: /upload/aikaraoke/minus_1752336531_4762.mp3
+[2025-07-12 16:08:51] AI Karaoke: Creating slides from transcript chunks
+[2025-07-12 16:08:51] AI Karaoke: Slides created | Context: {"count":1}
+[2025-07-12 16:08:51] AI Karaoke: Starting image generation for 1 slides
+[2025-07-12 16:08:51] AI Karaoke: Song theme detected: musical atmosphere, urban lifestyle, luxury, success
+[2025-07-12 16:08:51] AI Karaoke: Generating image for slide 0: "Добавляйте 1 чайную ложку сахара
+и 1 чайную ложку сахара
+и перемешайте все хорошо"
+[2025-07-12 16:08:51] AI Karaoke: Image prompt for slide 0: Create a beautiful, artistic image that represents the concept: "abstract artistic concept, emotional atmosphere, cinematic mood". Overall theme and mood: musical atmosphere, urban lifestyle, luxury, success. Style: cinematic, vibrant colors, emotional, abstract art, suitable for music visualization. NO TEXT, NO WORDS, NO LETTERS in the image. Focus on mood, atmosphere, colors and abstract visual metaphors. Professional photography style, high quality, artistic composition.
+[2025-07-12 16:08:51] AI Karaoke: DALL-E API response code: 403
+[2025-07-12 16:08:51] AI Karaoke: Image generation failed for line: "Добавляйте 1 чайную ложку сахара
+и 1 чайную ложку сахара
+и перемешайте все хорошо". HTTP Code: 403. Response: {"error":{"code":"unsupported_country_region_territory","message":"Country, region, or territory not supported","param":null,"type":"request_forbidden"}}
+[2025-07-12 16:08:51] AI Karaoke: Generating placeholder image for slide 0
+[2025-07-12 16:08:51] AI Karaoke: Placeholder image created: images/placeholder_0_1752336531.png
+[2025-07-12 16:08:51] AI Karaoke: Image generated successfully for slide 0: images/placeholder_0_1752336531.png
+[2025-07-12 16:08:52] AI Karaoke: Image generation completed. Generated images for slides.
+[2025-07-12 16:08:52] AI Karaoke: Karaoke generation completed | Context: {"slides_count":1,"duration":27}
+[2025-07-12 16:09:11] AI Karaoke: Recording Analyzer initialized | Context: {"analyze_api":"http:\/\/212.113.116.182:8080\/api\/compare_vocals"}
+[2025-07-12 16:09:11] AI Karaoke: Starting vocal analysis | Context: {"track_id":"8c341390-e149-4e16-b84f-db114a491bf9","file_size":131537,"file_type":"audio\/webm"}
+[2025-07-12 16:09:11] AI Karaoke: Sending vocal to analysis API: http://212.113.116.182:8080/api/compare_vocals
+[2025-07-12 16:09:16] AI Karaoke: Analysis API response code: 200
+[2025-07-12 16:09:16] AI Karaoke: Analysis API response parsed successfully
+[2025-07-12 16:09:16] AI Karaoke: Analysis completed successfully | Context: {"comparison_analysis":{"duration_analysis":{"duration_difference_seconds":0,"duration_match_percentage":100,"new_track_duration_seconds":27.19,"original_duration_seconds":27.19},"overall_similarity_score":75.08,"volume_analysis":{"new_track_rms":2817,"original_rms":4819,"volume_match_percentage":58.46,"volume_ratio":0.58}},"mixed_track_url":"http:\/\/212.113.116.182:8080\/api\/download\/8c341390-e149-4e16-b84f-db114a491bf9\/mixed_new_version","new_vocal_transcript":"clap два плеча назад хватай в конец уже","new_vocal_transcript_chunks":[{"end":6.14,"start":0.08,"text":"clap два плеча назад хватай","word_count":5},{"end":7.02,"start":6.14,"text":"в конец уже","word_count":3}],"new_vocal_url":"http:\/\/212.113.116.182:8080\/api\/download\/8c341390-e149-4e16-b84f-db114a491bf9\/new_vocal","processing_info":{"mixed_successfully":true,"new_vocal_file_size_mb":0.13,"original_filename":"vocal_performance.webm"},"success":true,"track_id":"8c341390-e149-4e16-b84f-db114a491bf9"}
+[2025-07-12 16:17:22] AI Karaoke: Karaoke Generator initialized | Context: {"api_key_configured":true,"audio_api":"http:\/\/212.113.116.182:8080\/api\/process","directories":{"upload_dir":"\/var\/www\/public_html\/bx\/upload\/aikaraoke\/","images_dir":"\/media\/bitrix\/modules\/aikaraoke\/dev\/public\/aiKaraoke\/images\/","upload_writable":true,"images_writable":true}}
+[2025-07-12 16:17:22] AI Karaoke: File uploaded successfully: /var/www/public_html/bx/upload/aikaraoke/audio_1752337042_5665.mp3
+[2025-07-12 16:17:22] AI Karaoke: Audio file saved: /var/www/public_html/bx/upload/aikaraoke/audio_1752337042_5665.mp3
+[2025-07-12 16:17:22] AI Karaoke: Sending audio to API: http://212.113.116.182:8080/api/process
+[2025-07-12 16:17:27] AI Karaoke: API response code: 200
+[2025-07-12 16:17:27] AI Karaoke: API response parsed successfully
+[2025-07-12 16:17:27] AI Karaoke: API response received | Context: {"accompaniment_url":"http:\/\/212.113.116.182:8080\/api\/download\/62015177-6dc5-4200-bd3c-6c3d7f78645b\/accompaniment","processing_info":{"audio_format_sent_to_whisper":"mp3","chunks_count":3,"file_size_mb":0.73,"original_filename":"audio_1752337042_5665.mp3"},"success":true,"track_id":"62015177-6dc5-4200-bd3c-6c3d7f78645b","transcript":"Добавляйте 1 чайную ложку сахара и 1 чайную ложку сахара и перемешайте все хорошо","transcript_chunks":[{"end":9.64,"start":0,"text":"Добавляйте 1 чайную ложку сахара","word_count":5},{"end":19.29,"start":9.64,"text":"и 1 чайную ложку сахара","word_count":5},{"end":27,"start":19.29,"text":"и перемешайте все хорошо","word_count":4}],"vocals_url":"http:\/\/212.113.116.182:8080\/api\/download\/62015177-6dc5-4200-bd3c-6c3d7f78645b\/vocals"}
+[2025-07-12 16:17:27] AI Karaoke: Generating karaoke from API response
+[2025-07-12 16:17:27] AI Karaoke: Processing transcript chunks | Context: {"count":3}
+[2025-07-12 16:17:27] AI Karaoke: Saving minus audio
+[2025-07-12 16:17:29] AI Karaoke: Minus audio saved: /upload/aikaraoke/minus_1752337049_7652.mp3
+[2025-07-12 16:17:29] AI Karaoke: Creating slides from transcript chunks
+[2025-07-12 16:17:29] AI Karaoke: Slides created | Context: {"count":1}
+[2025-07-12 16:17:29] AI Karaoke: Starting image generation for 1 slides
+[2025-07-12 16:17:29] AI Karaoke: Song theme detected: musical atmosphere, urban lifestyle, luxury, success
+[2025-07-12 16:17:29] AI Karaoke: Generating image for slide 0: "Добавляйте 1 чайную ложку сахара
+и 1 чайную ложку сахара
+и перемешайте все хорошо"
+[2025-07-12 16:17:29] AI Karaoke: Image prompt for slide 0: Create a beautiful, artistic image that represents the concept: "abstract artistic concept, emotional atmosphere, cinematic mood". Overall theme and mood: musical atmosphere, urban lifestyle, luxury, success. Style: cinematic, vibrant colors, emotional, abstract art, suitable for music visualization. NO TEXT, NO WORDS, NO LETTERS in the image. Focus on mood, atmosphere, colors and abstract visual metaphors. Professional photography style, high quality, artistic composition.
+[2025-07-12 16:17:29] AI Karaoke: DALL-E API response code: 403
+[2025-07-12 16:17:29] AI Karaoke: Image generation failed for line: "Добавляйте 1 чайную ложку сахара
+и 1 чайную ложку сахара
+и перемешайте все хорошо". HTTP Code: 403. Response: {"error":{"code":"unsupported_country_region_territory","message":"Country, region, or territory not supported","param":null,"type":"request_forbidden"}}
+[2025-07-12 16:17:29] AI Karaoke: Generating placeholder image for slide 0
+[2025-07-12 16:17:29] AI Karaoke: Placeholder image created: images/placeholder_0_1752337049.png
+[2025-07-12 16:17:29] AI Karaoke: Image generated successfully for slide 0: images/placeholder_0_1752337049.png
+[2025-07-12 16:17:30] AI Karaoke: Image generation completed. Generated images for slides.
+[2025-07-12 16:17:30] AI Karaoke: Karaoke generation completed | Context: {"slides_count":1,"duration":27}
+[2025-07-12 16:17:53] AI Karaoke: Recording Analyzer initialized | Context: {"analyze_api":"http:\/\/212.113.116.182:8080\/api\/compare_vocals"}
+[2025-07-12 16:17:53] AI Karaoke: Starting vocal analysis | Context: {"track_id":"62015177-6dc5-4200-bd3c-6c3d7f78645b","file_size":216545,"file_type":"audio\/webm"}
+[2025-07-12 16:17:53] AI Karaoke: Sending vocal to analysis API: http://212.113.116.182:8080/api/compare_vocals
+[2025-07-12 16:17:58] AI Karaoke: Analysis API response code: 200
+[2025-07-12 16:17:58] AI Karaoke: Analysis API response parsed successfully
+[2025-07-12 16:17:58] AI Karaoke: Analysis completed successfully | Context: {"comparison_analysis":{"duration_analysis":{"duration_difference_seconds":0,"duration_match_percentage":100,"new_track_duration_seconds":27.19,"original_duration_seconds":27.19},"overall_similarity_score":79.78,"volume_analysis":{"new_track_rms":3195,"original_rms":4819,"volume_match_percentage":66.3,"volume_ratio":0.66}},"mixed_track_url":"http:\/\/212.113.116.182:8080\/api\/download\/62015177-6dc5-4200-bd3c-6c3d7f78645b\/mixed_new_version","new_vocal_transcript":"Добавляйте. Одну чайную ложку сахара и... Одну чайную ложку сахара и...","new_vocal_transcript_chunks":[{"end":5.91,"start":0,"text":"Добавляйте. Одну чайную ложку сахара","word_count":5},{"end":11.82,"start":5.91,"text":"и... Одну чайную ложку сахара","word_count":5},{"end":13,"start":11.82,"text":"и...","word_count":1}],"new_vocal_url":"http:\/\/212.113.116.182:8080\/api\/download\/62015177-6dc5-4200-bd3c-6c3d7f78645b\/new_vocal","processing_info":{"mixed_successfully":true,"new_vocal_file_size_mb":0.21,"original_filename":"vocal_performance.webm"},"success":true,"track_id":"62015177-6dc5-4200-bd3c-6c3d7f78645b"}
+[2025-07-12 16:21:24] AI Karaoke: Karaoke Generator initialized | Context: {"api_key_configured":true,"audio_api":"http:\/\/212.113.116.182:8080\/api\/process","directories":{"upload_dir":"\/var\/www\/public_html\/bx\/upload\/aikaraoke\/","images_dir":"\/media\/bitrix\/modules\/aikaraoke\/dev\/public\/aiKaraoke\/images\/","upload_writable":true,"images_writable":true}}
+[2025-07-12 16:21:24] AI Karaoke: File uploaded successfully: /var/www/public_html/bx/upload/aikaraoke/audio_1752337284_9503.mp3
+[2025-07-12 16:21:24] AI Karaoke: Audio file saved: /var/www/public_html/bx/upload/aikaraoke/audio_1752337284_9503.mp3
+[2025-07-12 16:21:24] AI Karaoke: Sending audio to API: http://212.113.116.182:8080/api/process
+[2025-07-12 16:21:40] AI Karaoke: API response code: 200
+[2025-07-12 16:21:40] AI Karaoke: API response parsed successfully
+[2025-07-12 16:21:40] AI Karaoke: API response received | Context: {"accompaniment_url":"http:\/\/212.113.116.182:8080\/api\/download\/0a445da3-3960-4ae8-8d16-a200e5e4e621\/accompaniment","processing_info":{"audio_format_sent_to_whisper":"mp3","chunks_count":8,"file_size_mb":0.73,"original_filename":"audio_1752337284_9503.mp3"},"success":true,"track_id":"0a445da3-3960-4ae8-8d16-a200e5e4e621","transcript":"Apply a layer of UV resin to all surfaces that are non-slip and place it directly over the sanding role. These snails are organic, but those withigan my throwback. Thank you for watching and don't forget to like and subscribe!","transcript_chunks":[{"end":2.69,"start":0,"text":"Apply a layer of UV","word_count":5},{"end":5.39,"start":2.69,"text":"resin to all surfaces that","word_count":5},{"end":8.08,"start":5.39,"text":"are non-slip and place it","word_count":5},{"end":10.78,"start":8.08,"text":"directly over the sanding role.","word_count":5},{"end":16.24,"start":11.92,"text":"These snails are organic, but","word_count":5},{"end":20.35,"start":16.24,"text":"those withigan my throwback. Thank","word_count":5},{"end":23.57,"start":20.35,"text":"you for watching and don't","word_count":5},{"end":26.8,"start":23.57,"text":"forget to like and subscribe!","word_count":5}],"vocals_url":"http:\/\/212.113.116.182:8080\/api\/download\/0a445da3-3960-4ae8-8d16-a200e5e4e621\/vocals"}
+[2025-07-12 16:21:40] AI Karaoke: Generating karaoke from API response
+[2025-07-12 16:21:40] AI Karaoke: Processing transcript chunks | Context: {"count":8}
+[2025-07-12 16:21:40] AI Karaoke: Saving minus audio
+[2025-07-12 16:21:41] AI Karaoke: Minus audio saved: /upload/aikaraoke/minus_1752337301_4169.mp3
+[2025-07-12 16:21:41] AI Karaoke: Creating slides from transcript chunks
+[2025-07-12 16:21:41] AI Karaoke: Slides created | Context: {"count":3}
+[2025-07-12 16:21:41] AI Karaoke: Starting image generation for 3 slides
+[2025-07-12 16:21:41] AI Karaoke: Song theme detected: musical atmosphere, urban lifestyle, luxury, success
+[2025-07-12 16:21:41] AI Karaoke: Generating image for slide 0: "Apply a layer of UV
+resin to all surfaces that
+are non-slip and place it"
+[2025-07-12 16:21:41] AI Karaoke: Image prompt for slide 0: Create a beautiful, artistic image that represents the concept: "Apply a layer of UV
+resin to all surfaces that
+are nonslip and place it". Overall theme and mood: musical atmosphere, urban lifestyle, luxury, success. Style: cinematic, vibrant colors, emotional, abstract art, suitable for music visualization. NO TEXT, NO WORDS, NO LETTERS in the image. Focus on mood, atmosphere, colors and abstract visual metaphors. Professional photography style, high quality, artistic composition.
+[2025-07-12 16:21:42] AI Karaoke: DALL-E API response code: 403
+[2025-07-12 16:21:42] AI Karaoke: Image generation failed for line: "Apply a layer of UV
+resin to all surfaces that
+are non-slip and place it". HTTP Code: 403. Response: {"error":{"code":"unsupported_country_region_territory","message":"Country, region, or territory not supported","param":null,"type":"request_forbidden"}}
+[2025-07-12 16:21:42] AI Karaoke: Generating placeholder image for slide 0
+[2025-07-12 16:21:42] AI Karaoke: Placeholder image created: images/placeholder_0_1752337302.png
+[2025-07-12 16:21:42] AI Karaoke: Image generated successfully for slide 0: images/placeholder_0_1752337302.png
+[2025-07-12 16:21:42] AI Karaoke: Generating image for slide 1: "directly over the sanding role.
+These snails are organic, but
+those withigan my throwback. Thank"
+[2025-07-12 16:21:42] AI Karaoke: Image prompt for slide 1: Create a beautiful, artistic image that represents the concept: "directly over the sanding role
+These snails are organic but
+those withigan my throwback Thank". Overall theme and mood: musical atmosphere, urban lifestyle, luxury, success. Style: cinematic, vibrant colors, emotional, abstract art, suitable for music visualization. NO TEXT, NO WORDS, NO LETTERS in the image. Focus on mood, atmosphere, colors and abstract visual metaphors. Professional photography style, high quality, artistic composition.
+[2025-07-12 16:21:42] AI Karaoke: DALL-E API response code: 403
+[2025-07-12 16:21:42] AI Karaoke: Image generation failed for line: "directly over the sanding role.
+These snails are organic, but
+those withigan my throwback. Thank". HTTP Code: 403. Response: {"error":{"code":"unsupported_country_region_territory","message":"Country, region, or territory not supported","param":null,"type":"request_forbidden"}}
+[2025-07-12 16:21:42] AI Karaoke: Generating placeholder image for slide 1
+[2025-07-12 16:21:43] AI Karaoke: Placeholder image created: images/placeholder_1_1752337302.png
+[2025-07-12 16:21:43] AI Karaoke: Image generated successfully for slide 1: images/placeholder_1_1752337302.png
+[2025-07-12 16:21:43] AI Karaoke: Generating image for slide 2: "you for watching and don't
+forget to like and subscribe!"
+[2025-07-12 16:21:43] AI Karaoke: Image prompt for slide 2: Create a beautiful, artistic image that represents the concept: "you for watching and dont
+forget to like and subscribe". Overall theme and mood: musical atmosphere, urban lifestyle, luxury, success. Style: cinematic, vibrant colors, emotional, abstract art, suitable for music visualization. NO TEXT, NO WORDS, NO LETTERS in the image. Focus on mood, atmosphere, colors and abstract visual metaphors. Professional photography style, high quality, artistic composition.
+[2025-07-12 16:21:43] AI Karaoke: DALL-E API response code: 403
+[2025-07-12 16:21:43] AI Karaoke: Image generation failed for line: "you for watching and don't
+forget to like and subscribe!". HTTP Code: 403. Response: {"error":{"code":"unsupported_country_region_territory","message":"Country, region, or territory not supported","param":null,"type":"request_forbidden"}}
+[2025-07-12 16:21:43] AI Karaoke: Generating placeholder image for slide 2
+[2025-07-12 16:21:43] AI Karaoke: Placeholder image created: images/placeholder_2_1752337303.png
+[2025-07-12 16:21:43] AI Karaoke: Image generated successfully for slide 2: images/placeholder_2_1752337303.png
+[2025-07-12 16:21:44] AI Karaoke: Image generation completed. Generated images for slides.
+[2025-07-12 16:21:44] AI Karaoke: Karaoke generation completed | Context: {"slides_count":3,"duration":26.8}
+[2025-07-12 16:22:08] AI Karaoke: Recording Analyzer initialized | Context: {"analyze_api":"http:\/\/212.113.116.182:8080\/api\/compare_vocals"}
+[2025-07-12 16:22:08] AI Karaoke: Starting vocal analysis | Context: {"track_id":"0a445da3-3960-4ae8-8d16-a200e5e4e621","file_size":167279,"file_type":"audio\/webm"}
+[2025-07-12 16:22:08] AI Karaoke: Sending vocal to analysis API: http://212.113.116.182:8080/api/compare_vocals
+[2025-07-12 16:22:11] AI Karaoke: Analysis API response code: 200
+[2025-07-12 16:22:11] AI Karaoke: Analysis API response parsed successfully
+[2025-07-12 16:22:11] AI Karaoke: Analysis completed successfully | Context: {"comparison_analysis":{"duration_analysis":{"duration_difference_seconds":0,"duration_match_percentage":100,"new_track_duration_seconds":27.19,"original_duration_seconds":27.19},"overall_similarity_score":76.64,"volume_analysis":{"new_track_rms":2943,"original_rms":4819,"volume_match_percentage":61.07,"volume_ratio":0.61}},"mixed_track_url":"http:\/\/212.113.116.182:8080\/api\/download\/0a445da3-3960-4ae8-8d16-a200e5e4e621\/mixed_new_version","new_vocal_transcript":"Thank you for watching and","new_vocal_transcript_chunks":[{"end":10.4,"start":0,"text":"Thank you for watching and","word_count":5}],"new_vocal_url":"http:\/\/212.113.116.182:8080\/api\/download\/0a445da3-3960-4ae8-8d16-a200e5e4e621\/new_vocal","processing_info":{"mixed_successfully":true,"new_vocal_file_size_mb":0.16,"original_filename":"vocal_performance.webm"},"success":true,"track_id":"0a445da3-3960-4ae8-8d16-a200e5e4e621"}
+[2025-07-12 16:23:33] AI Karaoke: Karaoke Generator initialized | Context: {"api_key_configured":true,"audio_api":"http:\/\/212.113.116.182:8080\/api\/process","directories":{"upload_dir":"\/var\/www\/public_html\/bx\/upload\/aikaraoke\/","images_dir":"\/media\/bitrix\/modules\/aikaraoke\/dev\/public\/aiKaraoke\/images\/","upload_writable":true,"images_writable":true}}
+[2025-07-12 16:23:33] AI Karaoke: File uploaded successfully: /var/www/public_html/bx/upload/aikaraoke/audio_1752337413_3159.mp3
+[2025-07-12 16:23:33] AI Karaoke: Audio file saved: /var/www/public_html/bx/upload/aikaraoke/audio_1752337413_3159.mp3
+[2025-07-12 16:23:33] AI Karaoke: Sending audio to API: http://212.113.116.182:8080/api/process
+[2025-07-12 16:23:47] AI Karaoke: API response code: 200
+[2025-07-12 16:23:47] AI Karaoke: API response parsed successfully
+[2025-07-12 16:23:47] AI Karaoke: API response received | Context: {"accompaniment_url":"http:\/\/212.113.116.182:8080\/api\/download\/305bb41c-0fe9-4fce-b697-de7e74665bf1\/accompaniment","processing_info":{"audio_format_sent_to_whisper":"mp3","chunks_count":5,"file_size_mb":0.73,"original_filename":"audio_1752337413_3159.mp3"},"success":true,"track_id":"305bb41c-0fe9-4fce-b697-de7e74665bf1","transcript":"Article 8 of the Linux Mint stored version didn't return to exist. Linux Mint 18.1 installation is complete. Press Enter to Continue.","transcript_chunks":[{"end":2.92,"start":0,"text":"Article 8 of the Linux","word_count":5},{"end":5.83,"start":2.92,"text":"Mint stored version didn't return","word_count":5},{"end":9,"start":5.83,"text":"to exist. Linux Mint 18.1","word_count":5},{"end":14,"start":9,"text":"installation is complete. Press Enter","word_count":5},{"end":16,"start":14,"text":"to Continue.","word_count":2}],"vocals_url":"http:\/\/212.113.116.182:8080\/api\/download\/305bb41c-0fe9-4fce-b697-de7e74665bf1\/vocals"}
+[2025-07-12 16:23:47] AI Karaoke: Generating karaoke from API response
+[2025-07-12 16:23:47] AI Karaoke: Processing transcript chunks | Context: {"count":5}
+[2025-07-12 16:23:47] AI Karaoke: Saving minus audio
+[2025-07-12 16:23:49] AI Karaoke: Minus audio saved: /upload/aikaraoke/minus_1752337429_5253.mp3
+[2025-07-12 16:23:49] AI Karaoke: Creating slides from transcript chunks
+[2025-07-12 16:23:49] AI Karaoke: Slides created | Context: {"count":2}
+[2025-07-12 16:23:49] AI Karaoke: Starting image generation for 2 slides
+[2025-07-12 16:23:49] AI Karaoke: Song theme detected: musical atmosphere, urban lifestyle, luxury, success
+[2025-07-12 16:23:49] AI Karaoke: Generating image for slide 0: "Article 8 of the Linux
+Mint stored version didn't return
+to exist. Linux Mint 18.1"
+[2025-07-12 16:23:49] AI Karaoke: Image prompt for slide 0: Create a beautiful, artistic image that represents the concept: "Article 8 of the Linux
+Mint stored version didnt return
+to exist Linux Mint 181". Overall theme and mood: musical atmosphere, urban lifestyle, luxury, success. Style: cinematic, vibrant colors, emotional, abstract art, suitable for music visualization. NO TEXT, NO WORDS, NO LETTERS in the image. Focus on mood, atmosphere, colors and abstract visual metaphors. Professional photography style, high quality, artistic composition.
+[2025-07-12 16:23:49] AI Karaoke: DALL-E API response code: 403
+[2025-07-12 16:23:49] AI Karaoke: Image generation failed for line: "Article 8 of the Linux
+Mint stored version didn't return
+to exist. Linux Mint 18.1". HTTP Code: 403. Response: {"error":{"code":"unsupported_country_region_territory","message":"Country, region, or territory not supported","param":null,"type":"request_forbidden"}}
+[2025-07-12 16:23:49] AI Karaoke: Generating placeholder image for slide 0
+[2025-07-12 16:23:49] AI Karaoke: Placeholder image created: images/placeholder_0_1752337429.png
+[2025-07-12 16:23:49] AI Karaoke: Image generated successfully for slide 0: images/placeholder_0_1752337429.png
+[2025-07-12 16:23:49] AI Karaoke: Generating image for slide 1: "installation is complete. Press Enter
+to Continue."
+[2025-07-12 16:23:49] AI Karaoke: Image prompt for slide 1: Create a beautiful, artistic image that represents the concept: "installation is complete Press Enter
+to Continue". Overall theme and mood: musical atmosphere, urban lifestyle, luxury, success. Style: cinematic, vibrant colors, emotional, abstract art, suitable for music visualization. NO TEXT, NO WORDS, NO LETTERS in the image. Focus on mood, atmosphere, colors and abstract visual metaphors. Professional photography style, high quality, artistic composition.
+[2025-07-12 16:23:50] AI Karaoke: DALL-E API response code: 403
+[2025-07-12 16:23:50] AI Karaoke: Image generation failed for line: "installation is complete. Press Enter
+to Continue.". HTTP Code: 403. Response: {"error":{"code":"unsupported_country_region_territory","message":"Country, region, or territory not supported","param":null,"type":"request_forbidden"}}
+[2025-07-12 16:23:50] AI Karaoke: Generating placeholder image for slide 1
+[2025-07-12 16:23:50] AI Karaoke: Placeholder image created: images/placeholder_1_1752337430.png
+[2025-07-12 16:23:50] AI Karaoke: Image generated successfully for slide 1: images/placeholder_1_1752337430.png
+[2025-07-12 16:23:50] AI Karaoke: Image generation completed. Generated images for slides.
+[2025-07-12 16:23:50] AI Karaoke: Karaoke generation completed | Context: {"slides_count":2,"duration":16}
+[2025-07-12 16:24:06] AI Karaoke: Recording Analyzer initialized | Context: {"analyze_api":"http:\/\/212.113.116.182:8080\/api\/compare_vocals"}
+[2025-07-12 16:24:06] AI Karaoke: Starting vocal analysis | Context: {"track_id":"305bb41c-0fe9-4fce-b697-de7e74665bf1","file_size":91931,"file_type":"audio\/webm"}
+[2025-07-12 16:24:06] AI Karaoke: Sending vocal to analysis API: http://212.113.116.182:8080/api/compare_vocals
+[2025-07-12 16:24:10] AI Karaoke: Analysis API response code: 200
+[2025-07-12 16:24:10] AI Karaoke: Analysis API response parsed successfully
+[2025-07-12 16:24:10] AI Karaoke: Analysis completed successfully | Context: {"comparison_analysis":{"duration_analysis":{"duration_difference_seconds":0,"duration_match_percentage":100,"new_track_duration_seconds":27.19,"original_duration_seconds":27.19},"overall_similarity_score":74.96,"volume_analysis":{"new_track_rms":2808,"original_rms":4819,"volume_match_percentage":58.27,"volume_ratio":0.58}},"mixed_track_url":"http:\/\/212.113.116.182:8080\/api\/download\/305bb41c-0fe9-4fce-b697-de7e74665bf1\/mixed_new_version","new_vocal_transcript":"all right","new_vocal_transcript_chunks":[{"end":6,"start":0,"text":"all right","word_count":2}],"new_vocal_url":"http:\/\/212.113.116.182:8080\/api\/download\/305bb41c-0fe9-4fce-b697-de7e74665bf1\/new_vocal","processing_info":{"mixed_successfully":true,"new_vocal_file_size_mb":0.09,"original_filename":"vocal_performance.webm"},"success":true,"track_id":"305bb41c-0fe9-4fce-b697-de7e74665bf1"}
+[2025-07-12 16:25:46] AI Karaoke: Karaoke Generator initialized | Context: {"api_key_configured":true,"audio_api":"http:\/\/212.113.116.182:8080\/api\/process","directories":{"upload_dir":"\/var\/www\/public_html\/bx\/upload\/aikaraoke\/","images_dir":"\/media\/bitrix\/modules\/aikaraoke\/dev\/public\/aiKaraoke\/images\/","upload_writable":true,"images_writable":true}}
+[2025-07-12 16:25:46] AI Karaoke: File uploaded successfully: /var/www/public_html/bx/upload/aikaraoke/audio_1752337546_8383.mp3
+[2025-07-12 16:25:46] AI Karaoke: Audio file saved: /var/www/public_html/bx/upload/aikaraoke/audio_1752337546_8383.mp3
+[2025-07-12 16:25:46] AI Karaoke: Sending audio to API: http://212.113.116.182:8080/api/process
+[2025-07-12 16:25:54] AI Karaoke: API response code: 0
+[2025-07-12 16:25:54] AI Karaoke: CURL error: Empty reply from server
+[2025-07-12 16:26:14] AI Karaoke: Karaoke Generator initialized | Context: {"api_key_configured":true,"audio_api":"http:\/\/212.113.116.182:8080\/api\/process","directories":{"upload_dir":"\/var\/www\/public_html\/bx\/upload\/aikaraoke\/","images_dir":"\/media\/bitrix\/modules\/aikaraoke\/dev\/public\/aiKaraoke\/images\/","upload_writable":true,"images_writable":true}}
+[2025-07-12 16:26:14] AI Karaoke: File uploaded successfully: /var/www/public_html/bx/upload/aikaraoke/audio_1752337574_2879.mp3
+[2025-07-12 16:26:14] AI Karaoke: Audio file saved: /var/www/public_html/bx/upload/aikaraoke/audio_1752337574_2879.mp3
+[2025-07-12 16:26:14] AI Karaoke: Sending audio to API: http://212.113.116.182:8080/api/process
+[2025-07-12 16:26:19] AI Karaoke: API response code: 200
+[2025-07-12 16:26:19] AI Karaoke: API response parsed successfully
+[2025-07-12 16:26:19] AI Karaoke: API response received | Context: {"accompaniment_url":"http:\/\/212.113.116.182:8080\/api\/download\/cf471ebd-c1f0-4711-b85d-53d6cf0467bb\/accompaniment","processing_info":{"audio_format_sent_to_whisper":"mp3","chunks_count":3,"file_size_mb":0.73,"original_filename":"audio_1752337574_2879.mp3"},"success":true,"track_id":"cf471ebd-c1f0-4711-b85d-53d6cf0467bb","transcript":"Добавляйте 1 чайную ложку сахара и 1 чайную ложку сахара и перемешайте все хорошо","transcript_chunks":[{"end":9.64,"start":0,"text":"Добавляйте 1 чайную ложку сахара","word_count":5},{"end":19.29,"start":9.64,"text":"и 1 чайную ложку сахара","word_count":5},{"end":27,"start":19.29,"text":"и перемешайте все хорошо","word_count":4}],"vocals_url":"http:\/\/212.113.116.182:8080\/api\/download\/cf471ebd-c1f0-4711-b85d-53d6cf0467bb\/vocals"}
+[2025-07-12 16:26:19] AI Karaoke: Generating karaoke from API response
+[2025-07-12 16:26:19] AI Karaoke: Processing transcript chunks | Context: {"count":3}
+[2025-07-12 16:26:19] AI Karaoke: Saving minus audio
+[2025-07-12 16:26:20] AI Karaoke: Minus audio saved: /upload/aikaraoke/minus_1752337580_4881.mp3
+[2025-07-12 16:26:20] AI Karaoke: Creating slides from transcript chunks
+[2025-07-12 16:26:20] AI Karaoke: Slides created | Context: {"count":1}
+[2025-07-12 16:26:20] AI Karaoke: Starting image generation for 1 slides
+[2025-07-12 16:26:20] AI Karaoke: Song theme detected: musical atmosphere, urban lifestyle, luxury, success
+[2025-07-12 16:26:20] AI Karaoke: Generating image for slide 0: "Добавляйте 1 чайную ложку сахара
+и 1 чайную ложку сахара
+и перемешайте все хорошо"
+[2025-07-12 16:26:20] AI Karaoke: Image prompt for slide 0: Create a beautiful, artistic image that represents the concept: "abstract artistic concept, emotional atmosphere, cinematic mood". Overall theme and mood: musical atmosphere, urban lifestyle, luxury, success. Style: cinematic, vibrant colors, emotional, abstract art, suitable for music visualization. NO TEXT, NO WORDS, NO LETTERS in the image. Focus on mood, atmosphere, colors and abstract visual metaphors. Professional photography style, high quality, artistic composition.
+[2025-07-12 16:26:20] AI Karaoke: DALL-E API response code: 403
+[2025-07-12 16:26:20] AI Karaoke: Image generation failed for line: "Добавляйте 1 чайную ложку сахара
+и 1 чайную ложку сахара
+и перемешайте все хорошо". HTTP Code: 403. Response: {"error":{"code":"unsupported_country_region_territory","message":"Country, region, or territory not supported","param":null,"type":"request_forbidden"}}
+[2025-07-12 16:26:20] AI Karaoke: Generating placeholder image for slide 0
+[2025-07-12 16:26:20] AI Karaoke: Placeholder image created: images/placeholder_0_1752337580.png
+[2025-07-12 16:26:20] AI Karaoke: Image generated successfully for slide 0: images/placeholder_0_1752337580.png
+[2025-07-12 16:26:21] AI Karaoke: Image generation completed. Generated images for slides.
+[2025-07-12 16:26:21] AI Karaoke: Karaoke generation completed | Context: {"slides_count":1,"duration":27}
+[2025-07-12 16:26:31] AI Karaoke: Recording Analyzer initialized | Context: {"analyze_api":"http:\/\/212.113.116.182:8080\/api\/compare_vocals"}
+[2025-07-12 16:26:31] AI Karaoke: Starting vocal analysis | Context: {"track_id":"cf471ebd-c1f0-4711-b85d-53d6cf0467bb","file_size":60053,"file_type":"audio\/webm"}
+[2025-07-12 16:26:31] AI Karaoke: Sending vocal to analysis API: http://212.113.116.182:8080/api/compare_vocals
+[2025-07-12 16:26:34] AI Karaoke: Analysis API response code: 200
+[2025-07-12 16:26:34] AI Karaoke: Analysis API response parsed successfully
+[2025-07-12 16:26:34] AI Karaoke: Analysis completed successfully | Context: {"comparison_analysis":{"duration_analysis":{"duration_difference_seconds":0,"duration_match_percentage":100,"new_track_duration_seconds":27.19,"original_duration_seconds":27.19},"overall_similarity_score":74.76,"volume_analysis":{"new_track_rms":2792,"original_rms":4819,"volume_match_percentage":57.94,"volume_ratio":0.58}},"mixed_track_url":"http:\/\/212.113.116.182:8080\/api\/download\/cf471ebd-c1f0-4711-b85d-53d6cf0467bb\/mixed_new_version","new_vocal_transcript":"Thank you very much.","new_vocal_transcript_chunks":[{"end":3.2,"start":0,"text":"Thank you very much.","word_count":4}],"new_vocal_url":"http:\/\/212.113.116.182:8080\/api\/download\/cf471ebd-c1f0-4711-b85d-53d6cf0467bb\/new_vocal","performance_joke":"🎶 Great job! You're like the original, but with extra personality! 😄🎤","processing_info":{"mixed_successfully":true,"new_vocal_file_size_mb":0.06,"original_filename":"vocal_performance.webm","processed_at":"2025-07-12 16:26:34","processed_by":"ALaunert"},"success":true,"track_id":"cf471ebd-c1f0-4711-b85d-53d6cf0467bb"}
+[2025-07-12 16:27:13] AI Karaoke: Recording Analyzer initialized | Context: {"analyze_api":"http:\/\/212.113.116.182:8080\/api\/compare_vocals"}
+[2025-07-12 16:27:13] AI Karaoke: Starting vocal analysis | Context: {"track_id":"cf471ebd-c1f0-4711-b85d-53d6cf0467bb","file_size":60053,"file_type":"audio\/webm"}
+[2025-07-12 16:27:13] AI Karaoke: Sending vocal to analysis API: http://212.113.116.182:8080/api/compare_vocals
+[2025-07-12 16:27:13] AI Karaoke: Analysis API response code: 500
+[2025-07-12 16:27:13] AI Karaoke: Analysis API returned non-200 status: 500, Response: {
+  "details": "Command '['ffmpeg', '-i', '/tmp/uploads/cf471ebd-c1f0-4711-b85d-53d6cf0467bb/cf471ebd-c1f0-4711-b85d-53d6cf0467bb_input/new_vocal.webm', '-b:a', '128k', '/tmp/uploads/cf471ebd-c1f0-4711-b85d-53d6cf0467bb/cf471ebd-c1f0-4711-b85d-53d6cf0467bb_input/new_vocal.mp3']' returned non-zero exit status 1.", 
+  "error": "Vocal comparison processing failed", 
+  "track_id": "cf471ebd-c1f0-4711-b85d-53d6cf0467bb"
+}
+
+[2025-07-12 16:27:29] AI Karaoke: Karaoke Generator initialized | Context: {"api_key_configured":true,"audio_api":"http:\/\/212.113.116.182:8080\/api\/process","directories":{"upload_dir":"\/var\/www\/public_html\/bx\/upload\/aikaraoke\/","images_dir":"\/media\/bitrix\/modules\/aikaraoke\/dev\/public\/aiKaraoke\/images\/","upload_writable":true,"images_writable":true}}
+[2025-07-12 16:27:29] AI Karaoke: File uploaded successfully: /var/www/public_html/bx/upload/aikaraoke/audio_1752337649_9457.mp3
+[2025-07-12 16:27:29] AI Karaoke: Audio file saved: /var/www/public_html/bx/upload/aikaraoke/audio_1752337649_9457.mp3
+[2025-07-12 16:27:29] AI Karaoke: Sending audio to API: http://212.113.116.182:8080/api/process
+[2025-07-12 16:27:39] AI Karaoke: API response code: 200
+[2025-07-12 16:27:39] AI Karaoke: API response parsed successfully
+[2025-07-12 16:27:39] AI Karaoke: API response received | Context: {"accompaniment_url":"http:\/\/212.113.116.182:8080\/api\/download\/e7af877c-735d-4ca0-abd3-1bf38f28feb6\/accompaniment","processing_info":{"audio_format_sent_to_whisper":"mp3","chunks_count":3,"file_size_mb":0.73,"original_filename":"audio_1752337649_9457.mp3"},"success":true,"track_id":"e7af877c-735d-4ca0-abd3-1bf38f28feb6","transcript":"Добавляйте 1 чайную ложку сахара и 1 чайную ложку сахара и перемешайте все хорошо","transcript_chunks":[{"end":9.64,"start":0,"text":"Добавляйте 1 чайную ложку сахара","word_count":5},{"end":19.29,"start":9.64,"text":"и 1 чайную ложку сахара","word_count":5},{"end":27,"start":19.29,"text":"и перемешайте все хорошо","word_count":4}],"vocals_url":"http:\/\/212.113.116.182:8080\/api\/download\/e7af877c-735d-4ca0-abd3-1bf38f28feb6\/vocals"}
+[2025-07-12 16:27:39] AI Karaoke: Generating karaoke from API response
+[2025-07-12 16:27:39] AI Karaoke: Processing transcript chunks | Context: {"count":3}
+[2025-07-12 16:27:39] AI Karaoke: Saving minus audio
+[2025-07-12 16:27:40] AI Karaoke: Minus audio saved: /upload/aikaraoke/minus_1752337660_1367.mp3
+[2025-07-12 16:27:40] AI Karaoke: Creating slides from transcript chunks
+[2025-07-12 16:27:40] AI Karaoke: Slides created | Context: {"count":1}
+[2025-07-12 16:27:40] AI Karaoke: Starting image generation for 1 slides
+[2025-07-12 16:27:41] AI Karaoke: Song theme detected: musical atmosphere, urban lifestyle, luxury, success
+[2025-07-12 16:27:41] AI Karaoke: Generating image for slide 0: "Добавляйте 1 чайную ложку сахара
+и 1 чайную ложку сахара
+и перемешайте все хорошо"
+[2025-07-12 16:27:41] AI Karaoke: Image prompt for slide 0: Create a beautiful, artistic image that represents the concept: "abstract artistic concept, emotional atmosphere, cinematic mood". Overall theme and mood: musical atmosphere, urban lifestyle, luxury, success. Style: cinematic, vibrant colors, emotional, abstract art, suitable for music visualization. NO TEXT, NO WORDS, NO LETTERS in the image. Focus on mood, atmosphere, colors and abstract visual metaphors. Professional photography style, high quality, artistic composition.
+[2025-07-12 16:27:41] AI Karaoke: DALL-E API response code: 403
+[2025-07-12 16:27:41] AI Karaoke: Image generation failed for line: "Добавляйте 1 чайную ложку сахара
+и 1 чайную ложку сахара
+и перемешайте все хорошо". HTTP Code: 403. Response: {"error":{"code":"unsupported_country_region_territory","message":"Country, region, or territory not supported","param":null,"type":"request_forbidden"}}
+[2025-07-12 16:27:41] AI Karaoke: Generating placeholder image for slide 0
+[2025-07-12 16:27:41] AI Karaoke: Placeholder image created: images/placeholder_0_1752337661.png
+[2025-07-12 16:27:41] AI Karaoke: Image generated successfully for slide 0: images/placeholder_0_1752337661.png
+[2025-07-12 16:27:42] AI Karaoke: Image generation completed. Generated images for slides.
+[2025-07-12 16:27:42] AI Karaoke: Karaoke generation completed | Context: {"slides_count":1,"duration":27}
+[2025-07-12 16:29:43] AI Karaoke: Recording Analyzer initialized | Context: {"analyze_api":"http:\/\/212.113.116.182:8080\/api\/compare_vocals"}
+[2025-07-12 16:29:43] AI Karaoke: Starting vocal analysis | Context: {"track_id":"e7af877c-735d-4ca0-abd3-1bf38f28feb6","file_size":53291,"file_type":"audio\/webm"}
+[2025-07-12 16:29:43] AI Karaoke: Sending vocal to analysis API: http://212.113.116.182:8080/api/compare_vocals
+[2025-07-12 16:29:43] AI Karaoke: Analysis API response code: 0
+[2025-07-12 16:29:43] AI Karaoke: CURL error: Failed to connect to 212.113.116.182 port 8080 after 0 ms: Couldn't connect to server
+[2025-07-12 16:30:23] AI Karaoke: Karaoke Generator initialized | Context: {"api_key_configured":true,"audio_api":"http:\/\/212.113.116.182:8080\/api\/process","directories":{"upload_dir":"\/var\/www\/public_html\/bx\/upload\/aikaraoke\/","images_dir":"\/media\/bitrix\/modules\/aikaraoke\/dev\/public\/aiKaraoke\/images\/","upload_writable":true,"images_writable":true}}
+[2025-07-12 16:30:23] AI Karaoke: File uploaded successfully: /var/www/public_html/bx/upload/aikaraoke/audio_1752337823_1657.mp3
+[2025-07-12 16:30:23] AI Karaoke: Audio file saved: /var/www/public_html/bx/upload/aikaraoke/audio_1752337823_1657.mp3
+[2025-07-12 16:30:23] AI Karaoke: Sending audio to API: http://212.113.116.182:8080/api/process
+[2025-07-12 16:30:32] AI Karaoke: API response code: 200
+[2025-07-12 16:30:32] AI Karaoke: API response parsed successfully
+[2025-07-12 16:30:32] AI Karaoke: API response received | Context: {"accompaniment_url":"http:\/\/212.113.116.182:8080\/api\/download\/43abeafd-9098-4805-9eb5-56a3277739f2\/accompaniment","processing_info":{"audio_format_sent_to_whisper":"mp3","chunks_count":3,"file_size_mb":0.73,"original_filename":"audio_1752337823_1657.mp3"},"success":true,"track_id":"43abeafd-9098-4805-9eb5-56a3277739f2","transcript":"Добавляйте 1 чайную ложку сахара и 1 чайную ложку сахара и перемешайте все хорошо","transcript_chunks":[{"end":9.64,"start":0,"text":"Добавляйте 1 чайную ложку сахара","word_count":5},{"end":19.29,"start":9.64,"text":"и 1 чайную ложку сахара","word_count":5},{"end":27,"start":19.29,"text":"и перемешайте все хорошо","word_count":4}],"vocals_url":"http:\/\/212.113.116.182:8080\/api\/download\/43abeafd-9098-4805-9eb5-56a3277739f2\/vocals"}
+[2025-07-12 16:30:32] AI Karaoke: Generating karaoke from API response
+[2025-07-12 16:30:32] AI Karaoke: Processing transcript chunks | Context: {"count":3}
+[2025-07-12 16:30:32] AI Karaoke: Saving minus audio
+[2025-07-12 16:30:34] AI Karaoke: Minus audio saved: /upload/aikaraoke/minus_1752337834_1277.mp3
+[2025-07-12 16:30:34] AI Karaoke: Creating slides from transcript chunks
+[2025-07-12 16:30:34] AI Karaoke: Slides created | Context: {"count":1}
+[2025-07-12 16:30:34] AI Karaoke: Starting image generation for 1 slides
+[2025-07-12 16:30:34] AI Karaoke: Song theme detected: musical atmosphere, urban lifestyle, luxury, success
+[2025-07-12 16:30:34] AI Karaoke: Generating image for slide 0: "Добавляйте 1 чайную ложку сахара
+и 1 чайную ложку сахара
+и перемешайте все хорошо"
+[2025-07-12 16:30:34] AI Karaoke: Image prompt for slide 0: Create a beautiful, artistic image that represents the concept: "abstract artistic concept, emotional atmosphere, cinematic mood". Overall theme and mood: musical atmosphere, urban lifestyle, luxury, success. Style: cinematic, vibrant colors, emotional, abstract art, suitable for music visualization. NO TEXT, NO WORDS, NO LETTERS in the image. Focus on mood, atmosphere, colors and abstract visual metaphors. Professional photography style, high quality, artistic composition.
+[2025-07-12 16:30:34] AI Karaoke: DALL-E API response code: 403
+[2025-07-12 16:30:34] AI Karaoke: Image generation failed for line: "Добавляйте 1 чайную ложку сахара
+и 1 чайную ложку сахара
+и перемешайте все хорошо". HTTP Code: 403. Response: {"error":{"code":"unsupported_country_region_territory","message":"Country, region, or territory not supported","param":null,"type":"request_forbidden"}}
+[2025-07-12 16:30:34] AI Karaoke: Generating placeholder image for slide 0
+[2025-07-12 16:30:34] AI Karaoke: Placeholder image created: images/placeholder_0_1752337834.png
+[2025-07-12 16:30:34] AI Karaoke: Image generated successfully for slide 0: images/placeholder_0_1752337834.png
+[2025-07-12 16:30:35] AI Karaoke: Image generation completed. Generated images for slides.
+[2025-07-12 16:30:35] AI Karaoke: Karaoke generation completed | Context: {"slides_count":1,"duration":27}
+[2025-07-12 16:30:49] AI Karaoke: Recording Analyzer initialized | Context: {"analyze_api":"http:\/\/212.113.116.182:8080\/api\/compare_vocals"}
+[2025-07-12 16:30:49] AI Karaoke: Starting vocal analysis | Context: {"track_id":"43abeafd-9098-4805-9eb5-56a3277739f2","file_size":82271,"file_type":"audio\/webm"}
+[2025-07-12 16:30:49] AI Karaoke: Sending vocal to analysis API: http://212.113.116.182:8080/api/compare_vocals
+[2025-07-12 16:30:52] AI Karaoke: Analysis API response code: 200
+[2025-07-12 16:30:52] AI Karaoke: Analysis API response parsed successfully
+[2025-07-12 16:30:52] AI Karaoke: Analysis completed successfully | Context: {"comparison_analysis":{"duration_analysis":{"duration_difference_seconds":0,"duration_match_percentage":100,"new_track_duration_seconds":27.19,"original_duration_seconds":27.19},"overall_similarity_score":75.15,"volume_analysis":{"new_track_rms":2823,"original_rms":4819,"volume_match_percentage":58.58,"volume_ratio":0.59}},"mixed_track_url":"http:\/\/212.113.116.182:8080\/api\/download\/43abeafd-9098-4805-9eb5-56a3277739f2\/mixed_new_version","new_vocal_transcript":"Ладно, я спустился.","new_vocal_transcript_chunks":[{"end":5.12,"start":0,"text":"Ладно, я спустился.","word_count":3}],"new_vocal_url":"http:\/\/212.113.116.182:8080\/api\/download\/43abeafd-9098-4805-9eb5-56a3277739f2\/new_vocal","performance_joke":"🎶 Great job! You're like the original, but with extra personality! 😄🎤","processing_info":{"mixed_successfully":true,"new_vocal_file_size_mb":0.08,"original_filename":"vocal_performance.webm","processed_at":"2025-07-12 16:30:52","processed_by":"ALaunert"},"success":true,"track_id":"43abeafd-9098-4805-9eb5-56a3277739f2"}
+[2025-07-12 16:45:17] AI Karaoke: Karaoke Generator initialized | Context: {"api_key_configured":true,"audio_api":"http:\/\/212.113.116.182:8080\/api\/process","directories":{"upload_dir":"\/var\/www\/public_html\/bx\/upload\/aikaraoke\/","images_dir":"\/media\/bitrix\/modules\/aikaraoke\/dev\/public\/aiKaraoke\/images\/","upload_writable":true,"images_writable":true}}
+[2025-07-12 16:45:17] AI Karaoke: File uploaded successfully: /var/www/public_html/bx/upload/aikaraoke/audio_1752338717_5742.mp3
+[2025-07-12 16:45:17] AI Karaoke: Audio file saved: /var/www/public_html/bx/upload/aikaraoke/audio_1752338717_5742.mp3
+[2025-07-12 16:45:17] AI Karaoke: Sending audio to API: http://212.113.116.182:8080/api/process
+[2025-07-12 16:45:24] AI Karaoke: API response code: 200
+[2025-07-12 16:45:24] AI Karaoke: API response parsed successfully
+[2025-07-12 16:45:24] AI Karaoke: API response received | Context: {"accompaniment_url":"http:\/\/212.113.116.182:8080\/api\/download\/2aeca9fa-c974-4577-b2fd-2d34c9d87e7a\/accompaniment","processing_info":{"audio_format_sent_to_whisper":"mp3","chunks_count":3,"file_size_mb":0.73,"original_filename":"audio_1752338717_5742.mp3"},"success":true,"track_id":"2aeca9fa-c974-4577-b2fd-2d34c9d87e7a","transcript":"Добавляйте 1 чайную ложку сахара и 1 чайную ложку сахара и перемешайте все хорошо","transcript_chunks":[{"end":9.64,"start":0,"text":"Добавляйте 1 чайную ложку сахара","word_count":5},{"end":19.29,"start":9.64,"text":"и 1 чайную ложку сахара","word_count":5},{"end":27,"start":19.29,"text":"и перемешайте все хорошо","word_count":4}],"vocals_url":"http:\/\/212.113.116.182:8080\/api\/download\/2aeca9fa-c974-4577-b2fd-2d34c9d87e7a\/vocals"}
+[2025-07-12 16:45:24] AI Karaoke: Generating karaoke from API response
+[2025-07-12 16:45:24] AI Karaoke: Processing transcript chunks | Context: {"count":3}
+[2025-07-12 16:45:24] AI Karaoke: Saving minus audio
+[2025-07-12 16:45:26] AI Karaoke: Minus audio saved: /upload/aikaraoke/minus_1752338726_7514.mp3
+[2025-07-12 16:45:26] AI Karaoke: Creating slides from transcript chunks
+[2025-07-12 16:45:26] AI Karaoke: Slides created | Context: {"count":1}
+[2025-07-12 16:45:26] AI Karaoke: Starting image generation for 1 slides
+[2025-07-12 16:45:28] AI Karaoke: Full theme response: Theme: Preparation, Routine
+Mood: Calm, Methodical
+Visual Style: Minimalistic, Monotone
+[2025-07-12 16:45:28] AI Karaoke: Song theme detected: Theme: Preparation, Routine
+Mood: Calm, Methodical
+Visual Style: Minimalistic, Monotone
+[2025-07-12 16:45:28] AI Karaoke: Generating image for slide 0: "Добавляйте 1 чайную ложку сахара
+и 1 чайную ложку сахара
+и перемешайте все хорошо"
+[2025-07-12 16:45:28] AI Karaoke: Image prompt for slide 0: Create a beautiful, artistic image that represents the concept: "abstract artistic concept, emotional atmosphere, cinematic mood". Overall theme and mood: Theme: Preparation, Routine
+Mood: Calm, Methodical
+Visual Style: Minimalistic, Monotone. Style: cinematic, vibrant colors, emotional, abstract art, suitable for music visualization. NO TEXT, NO WORDS, NO LETTERS in the image. Focus on mood, atmosphere, colors and abstract visual metaphors. Professional photography style, high quality, artistic composition.
+[2025-07-12 16:45:40] AI Karaoke: DALL-E API response code: 200
+[2025-07-12 16:45:40] AI Karaoke: Image URL received: https://oaidalleapiprodscus.blob.core.windows.net/private/org-k7pwxxwcQ5PR8XW6ML46F9tp/user-ICgUYBoIZOyKmNX0aG4tt6C2/img-tSuRN4XBKWQ7eCUoSoBrAqbZ.png?st=2025-07-12T15%3A45%3A40Z&se=2025-07-12T17%3A45%3A40Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=cc612491-d948-4d2e-9821-2683df3719f5&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-07-11T17%3A29%3A51Z&ske=2025-07-12T17%3A29%3A51Z&sks=b&skv=2024-08-04&sig=CAa8VVTZ8Hzh9a54YnkoDU2LPT/N4o1eW01IVyhOKOQ%3D
+[2025-07-12 16:45:40] AI Karaoke: Attempting to download image from: https://oaidalleapiprodscus.blob.core.windows.net/private/org-k7pwxxwcQ5PR8XW6ML46F9tp/user-ICgUYBoIZOyKmNX0aG4tt6C2/img-tSuRN4XBKWQ7eCUoSoBrAqbZ.png?st=2025-07-12T15%3A45%3A40Z&se=2025-07-12T17%3A45%3A40Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=cc612491-d948-4d2e-9821-2683df3719f5&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-07-11T17%3A29%3A51Z&ske=2025-07-12T17%3A29%3A51Z&sks=b&skv=2024-08-04&sig=CAa8VVTZ8Hzh9a54YnkoDU2LPT/N4o1eW01IVyhOKOQ%3D
+[2025-07-12 16:45:43] AI Karaoke: Image downloaded, size: 2024524 bytes
+[2025-07-12 16:45:43] AI Karaoke: Saving image to: /media/bitrix/modules/aikaraoke/dev/public/aiKaraoke/images/slide_0_1752338743.png
+[2025-07-12 16:45:43] AI Karaoke: Image saved successfully. Relative URL: images/slide_0_1752338743.png
+[2025-07-12 16:45:43] AI Karaoke: Image saved locally: images/slide_0_1752338743.png
+[2025-07-12 16:45:43] AI Karaoke: Image generated successfully for slide 0: images/slide_0_1752338743.png
+[2025-07-12 16:45:43] AI Karaoke: Image generation completed. Generated images for slides.
+[2025-07-12 16:45:43] AI Karaoke: Karaoke generation completed | Context: {"slides_count":1,"duration":27}
+[2025-07-12 16:57:56] AI Karaoke: Karaoke Generator initialized | Context: {"api_key_configured":true,"audio_api":"http:\/\/212.113.116.182:8080\/api\/process","directories":{"upload_dir":"\/var\/www\/public_html\/bx\/upload\/aikaraoke\/","images_dir":"\/media\/bitrix\/modules\/aikaraoke\/dev\/public\/aiKaraoke\/images\/","upload_writable":true,"images_writable":true}}
+[2025-07-12 16:57:56] AI Karaoke: File uploaded successfully: /var/www/public_html/bx/upload/aikaraoke/audio_1752339476_3843.mp3
+[2025-07-12 16:57:56] AI Karaoke: Audio file saved: /var/www/public_html/bx/upload/aikaraoke/audio_1752339476_3843.mp3
+[2025-07-12 16:57:56] AI Karaoke: Sending audio to API: http://212.113.116.182:8080/api/process
+[2025-07-12 16:58:07] AI Karaoke: API response code: 200
+[2025-07-12 16:58:07] AI Karaoke: API response parsed successfully
+[2025-07-12 16:58:07] AI Karaoke: API response received | Context: {"accompaniment_url":"http:\/\/212.113.116.182:8080\/api\/download\/54e9f198-b72a-42a4-b0b1-b8ee2b3545e9\/accompaniment","processing_info":{"audio_format_sent_to_whisper":"mp3","chunks_count":2,"file_size_mb":0.73,"original_filename":"audio_1752339476_3843.mp3"},"success":true,"track_id":"54e9f198-b72a-42a4-b0b1-b8ee2b3545e9","transcript":"wah wah wahhh wah wah wah wah wah","transcript_chunks":[{"end":19.73,"start":0,"text":"wah wah wahhh wah wah","word_count":5},{"end":27.54,"start":19.73,"text":"wah wah wah","word_count":3}],"vocals_url":"http:\/\/212.113.116.182:8080\/api\/download\/54e9f198-b72a-42a4-b0b1-b8ee2b3545e9\/vocals"}
+[2025-07-12 16:58:07] AI Karaoke: Generating karaoke from API response
+[2025-07-12 16:58:07] AI Karaoke: Processing transcript chunks | Context: {"count":2}
+[2025-07-12 16:58:07] AI Karaoke: Saving minus audio
+[2025-07-12 16:58:12] AI Karaoke: Minus audio saved: /upload/aikaraoke/minus_1752339492_1092.mp3
+[2025-07-12 16:58:12] AI Karaoke: Creating slides from transcript chunks
+[2025-07-12 16:58:12] AI Karaoke: Slides created | Context: {"count":1}
+[2025-07-12 16:58:12] AI Karaoke: Starting image generation for 1 slides
+[2025-07-12 16:58:15] AI Karaoke: Full theme response: Theme: Abstract/Non-Verbal Communication
+Mood: Ambiguous/Undefined
+Visual Style: Abstract, Open to interpretation
+[2025-07-12 16:58:15] AI Karaoke: Song theme detected: Theme: Abstract/Non-Verbal Communication
+Mood: Ambiguous/Undefined
+Visual Style: Abstract, Open to interpretation
+[2025-07-12 16:58:15] AI Karaoke: Generating image for slide 0: "wah wah wahhh wah wah
+wah wah wah"
+[2025-07-12 16:58:15] AI Karaoke: Image prompt for slide 0: Create a beautiful, artistic image that represents the concept: "wah wah wahhh wah wah
+wah wah wah". Overall theme and mood: Theme: Abstract/Non-Verbal Communication
+Mood: Ambiguous/Undefined
+Visual Style: Abstract, Open to interpretation. Style: cinematic, vibrant colors, emotional, abstract art, suitable for music visualization. NO TEXT, NO WORDS, NO LETTERS in the image. Focus on mood, atmosphere, colors and abstract visual metaphors. Professional photography style, high quality, artistic composition.
+[2025-07-12 16:58:27] AI Karaoke: DALL-E API response code: 200
+[2025-07-12 16:58:27] AI Karaoke: Image URL received: https://oaidalleapiprodscus.blob.core.windows.net/private/org-k7pwxxwcQ5PR8XW6ML46F9tp/user-ICgUYBoIZOyKmNX0aG4tt6C2/img-5Lhbj4WvZvt2JJrMxE6UeXkd.png?st=2025-07-12T15%3A58%3A27Z&se=2025-07-12T17%3A58%3A27Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=cc612491-d948-4d2e-9821-2683df3719f5&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-07-12T11%3A05%3A40Z&ske=2025-07-13T11%3A05%3A40Z&sks=b&skv=2024-08-04&sig=EnYw0L8ybKL4xCvxzHTGHOghPxAqRQfFiKOeGCCRSqA%3D
+[2025-07-12 16:58:27] AI Karaoke: Attempting to download image from: https://oaidalleapiprodscus.blob.core.windows.net/private/org-k7pwxxwcQ5PR8XW6ML46F9tp/user-ICgUYBoIZOyKmNX0aG4tt6C2/img-5Lhbj4WvZvt2JJrMxE6UeXkd.png?st=2025-07-12T15%3A58%3A27Z&se=2025-07-12T17%3A58%3A27Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=cc612491-d948-4d2e-9821-2683df3719f5&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-07-12T11%3A05%3A40Z&ske=2025-07-13T11%3A05%3A40Z&sks=b&skv=2024-08-04&sig=EnYw0L8ybKL4xCvxzHTGHOghPxAqRQfFiKOeGCCRSqA%3D
+[2025-07-12 16:58:31] AI Karaoke: Image downloaded, size: 1703523 bytes
+[2025-07-12 16:58:31] AI Karaoke: Saving image to: /media/bitrix/modules/aikaraoke/dev/public/aiKaraoke/images/slide_0_1752339511.png
+[2025-07-12 16:58:31] AI Karaoke: Image saved successfully. Relative URL: images/slide_0_1752339511.png
+[2025-07-12 16:58:31] AI Karaoke: Image saved locally: images/slide_0_1752339511.png
+[2025-07-12 16:58:31] AI Karaoke: Image generated successfully for slide 0: images/slide_0_1752339511.png
+[2025-07-12 16:58:31] AI Karaoke: Image generation completed. Generated images for slides.
+[2025-07-12 16:58:31] AI Karaoke: Karaoke generation completed | Context: {"slides_count":1,"duration":27.54}
+[2025-07-12 17:02:12] AI Karaoke: Recording Analyzer initialized | Context: {"analyze_api":"http:\/\/212.113.116.182:8080\/api\/compare_vocals"}
+[2025-07-12 17:02:12] AI Karaoke: Starting vocal analysis | Context: {"track_id":"54e9f198-b72a-42a4-b0b1-b8ee2b3545e9","file_size":191429,"file_type":"audio\/webm"}
+[2025-07-12 17:02:12] AI Karaoke: Sending vocal to analysis API: http://212.113.116.182:8080/api/compare_vocals
+[2025-07-12 17:02:16] AI Karaoke: Analysis API response code: 200
+[2025-07-12 17:02:16] AI Karaoke: Analysis API response parsed successfully
+[2025-07-12 17:02:16] AI Karaoke: Analysis completed successfully | Context: {"comparison_analysis":{"duration_analysis":{"duration_difference_seconds":0,"duration_match_percentage":100,"new_track_duration_seconds":27.19,"original_duration_seconds":27.19},"overall_similarity_score":78.9,"volume_analysis":{"new_track_rms":3124,"original_rms":4819,"volume_match_percentage":64.83,"volume_ratio":0.65}},"mixed_track_url":"http:\/\/212.113.116.182:8080\/api\/download\/54e9f198-b72a-42a4-b0b1-b8ee2b3545e9\/mixed_new_version","new_vocal_transcript":"Можете нажать на колокольчик. Сейчас там музыка, сейчас там музыка. Вау, вау, вау, вау, вау, вау, вау. Давай экспериментаем сразу на конец, сразу на конец. Сейчас запись уже будет.","new_vocal_transcript_chunks":[{"end":3.33,"start":0,"text":"Можете нажать на колокольчик. Сейчас","word_count":5},{"end":5,"start":3.33,"text":"там музыка, сейчас там музыка.","word_count":5},{"end":7.14,"start":5,"text":"Вау, вау, вау, вау, вау,","word_count":5},{"end":8.75,"start":7.14,"text":"вау, вау. Давай экспериментаем сразу","word_count":5},{"end":10,"start":8.75,"text":"на конец, сразу на конец.","word_count":5},{"end":12,"start":10,"text":"Сейчас запись уже будет.","word_count":4}],"new_vocal_url":"http:\/\/212.113.116.182:8080\/api\/download\/54e9f198-b72a-42a4-b0b1-b8ee2b3545e9\/new_vocal","performance_joke":"🎶 Great job! You're like the original, but with extra personality! 😄🎤","processing_info":{"mixed_successfully":true,"new_vocal_file_size_mb":0.18,"original_filename":"vocal_performance.webm","processed_at":"2025-07-12 17:02:16","processed_by":"ALaunert"},"success":true,"track_id":"54e9f198-b72a-42a4-b0b1-b8ee2b3545e9"}

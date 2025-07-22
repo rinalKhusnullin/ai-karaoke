@@ -646,10 +646,10 @@ class KaraokePlayer {
         }
 
         try {
-            // Создаем FormData для отправки
+            // Создаем FormData для отправки на наш backend
             const formData = new FormData();
 
-            // Конвертируем WebM в MP3 если нужно, или отправляем как есть
+            // Конвертируем WebM в файл для отправки
             const audioFile = new File([this.recordingBlob], 'vocal_performance.webm', {
                 type: this.recordingBlob.type
             });
@@ -657,7 +657,8 @@ class KaraokePlayer {
             formData.append('vocal_track', audioFile);
             formData.append('track_id', this.currentTrackId);
 
-            const response = await fetch('http://212.113.116.182:8080/api/compare_vocals', {
+            // Отправляем запрос на наш backend вместо внешнего API
+            const response = await fetch('analyze_recording.php', {
                 method: 'POST',
                 body: formData
             });
@@ -671,7 +672,7 @@ class KaraokePlayer {
             if (result.success) {
                 this.showAnalysisResults(result);
             } else {
-                throw new Error('Анализ не удался');
+                throw new Error(result.error || 'Анализ не удался');
             }
 
         } catch (error) {
@@ -698,6 +699,10 @@ class KaraokePlayer {
     }
 
     createAnalysisModal(data) {
+		console.log(data);
+		BX.ajax.runAction('aikaraoke.api.Song.postMessage', {
+			data: { text: data.performance_joke, score: data.comparison_analysis },
+		});
         const modal = document.createElement('div');
         modal.className = 'analysis-modal';
         modal.id = 'analysis-modal';
@@ -706,7 +711,8 @@ class KaraokePlayer {
         const processingInfo = data.processing_info;
 
         // Определяем цвет оценки на основе общего балла
-        const overallScore = comparison.overall_score || 0;
+		debugger;
+        const overallScore = data.comparison_analysis.overall_similarity_score;
         let scoreColor = '#dc3545'; // красный
         if (overallScore >= 80) scoreColor = '#28a745'; // зеленый
         else if (overallScore >= 60) scoreColor = '#ffc107'; // желтый
@@ -729,7 +735,7 @@ class KaraokePlayer {
                             </div>
                             <div class="score-description">
                                 <h3>Общая оценка исполнения</h3>
-                                <p>${this.getScoreDescription(overallScore)}</p>
+                                <p>${overallScore}</p>
                             </div>
                         </div>
                     </div>

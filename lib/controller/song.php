@@ -65,7 +65,7 @@ class Song extends \Bitrix\Main\Engine\Controller
 		}
 	}
 
-	public function postMessageAction(): void
+	public function postMessageAction($text, $score): void
 	{
 		$userId = CurrentUser::get()?->getId();
 		if (!$userId)
